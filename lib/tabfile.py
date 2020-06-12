@@ -3,8 +3,9 @@ class Tabfile:
     @staticmethod
     def write(file, fields):
         print(f"Making file {file} with fields {fields}")
-        record = yield
-        print(f"Received record {record}")
+        while True:
+            record = yield
+            print(f"Received record {record}")
 
     @staticmethod
     def read(file):
