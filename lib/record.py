@@ -13,6 +13,11 @@ class Record:
         self._fields = kwargs
 
     def __getitem__(self, field):
-        """r.__getitem__(field) ~ r[field
+        """r.__getitem__(field) <==> r[field]
         """
         return self._fields[field]
+
+    def __setitem(self, field, value):
+        """Sets self[field] to a value
+        """
+        self._fields[field] = value
