@@ -28,7 +28,7 @@ In the file `lib\formats.py`
 3) (Optionally) Add a key-value pair `'extension': 'format class'` to the `extensions` dictionary. `'extension'` must start with a period.
 
 ## The Record class
-`lib\record.py` define a `Record` class, that should emitted by `read` and consumed by `write`. It a wrapper around a dictionary, with the constructor that requires the fields `'uniquesequencename'` and `'sequence'` to be present. Example:
+`lib\record.py` define a `Record` class, that should emitted by `read` and consumed by `write`. It's a wrapper around a dictionary, with the constructor that requires the fields `'uniquesequencename'` and `'sequence'` to be present. Example:
 ```python
 Record(uniquesequencename='sequencename', location='Madagascar', sequence='ATGC')
 ```
