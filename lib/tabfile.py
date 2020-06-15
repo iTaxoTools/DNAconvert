@@ -20,7 +20,7 @@ class Tabfile:
                 # enforce uniqueness of 'uniquesequencename'
                 try:
                     uniquename = record['uniquesequencename']
-                    record['uniquesequencename'] += uniquenames[uniquename]
+                    record['uniquesequencename'] += '_' + str(uniquenames[uniquename])
                     uniquenames[uniquename] += 1
                 except KeyError:
                     uniquenames[record['uniquesequencename']] = 1

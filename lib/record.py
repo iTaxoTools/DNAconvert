@@ -17,7 +17,7 @@ class Record:
         """
         return self._fields[field]
 
-    def __setitem(self, field, value):
+    def __setitem__(self, field, value):
         """Sets self[field] to a value
         """
         self._fields[field] = value
