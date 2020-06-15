@@ -1,5 +1,5 @@
 # Internal tab format
-A format representing genetic information in tab-separeted values form
+A format representing genetic information in tab-separated values form
 
 ## Description
 First line is a tab-separated list of field names. Names 'uniquesequencename' and 'sequence' are required.
