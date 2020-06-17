@@ -20,12 +20,14 @@ Installation is currently not intended. Downloading should be enough
 
 ## Supported formats
 * `tab`: [Internal tab format][1]
+* `fasta`: FASTA format
 
 ## Recognised extension
 If format is not provided, the program can infer it from the file extension
 
 Currently recognised:
 * `.tab`, `.txt`, `.tsv`: [Internal tab format][1]
+* `.fas`: FASTA format
 
 ## Adding new formats
 [Link to documentation](doc/ADDING_FORMATS.md)

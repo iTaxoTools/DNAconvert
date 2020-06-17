@@ -15,7 +15,7 @@ class MyFormat:
 The `write` method receives a name of an output file `filename` and a list of fields `fields`. It should be a generator that receives object of
 class `Record` and writes them to the file `filename` according to the format being implemented.
 Each `Record` can be expected to contain all the fields in the list `fields`.
-The method is not expected to return anything.
+The method is not expected to return anything. **It must not mutate the `fields` parameter!**
 
 The `read` method receives a name of an input file `filename`. It should return a list of fields and a generator. The generator should
 yield one-by-one objects of class `Record`, which together contain all the relevant information in file. Each `Record` must contain at
