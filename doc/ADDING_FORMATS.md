@@ -19,7 +19,7 @@ The method is not expected to return anything. **It must not mutate the `fields`
 
 The `read` method receives a name of an input file `filename`. It should return a list of fields and a generator. The generator should
 yield one-by-one objects of class `Record`, which together contain all the relevant information in file. Each `Record` must contain at
-least all the fields named in the list.
+least all the fields named in the list. Can raise `ValueError` if the file cannot be parsed.
 
 ## Registering the format
 In the file `lib\formats.py`
