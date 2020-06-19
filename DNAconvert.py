@@ -5,6 +5,7 @@ import lib.formats
 import os
 import tkinter as tk
 import tkinter.filedialog
+import tkinter.messagebox
 from tkinter import ttk
 
 def parse_format(name, ext):
@@ -34,6 +35,10 @@ def convert_wrapper(infile, outfile, informat_name, outformat_name):
     outformat = parse_format(outformat_name, out_ext)
 
     # check that everything is okay
+    if not infile:
+        raise ValueError(f"No input file name")
+    if not outfile:
+        raise ValueError(f"No output file name")
     if not informat:
         raise ValueError(f"Unknown format {informat_name or in_ext}")
     if not outformat:
@@ -87,7 +92,13 @@ def launch_gui():
 
     # command for the convert button
     def gui_convert():
-        convert_wrapper(infile_name.get(), outfile_name.get(), informat.get(), outformat.get())
+        try:
+            convert_wrapper(infile_name.get(), outfile_name.get(), informat.get(), outformat.get())
+        except ValueError as ex:
+            tkinter.messagebox.showerror("Error", str(ex))
+        except FileNotFoundError as ex:
+            tkinter.messagebox.showerror("Error", str(ex))
+            
 
     # buttons
     infile_browse = ttk.Button(mainframe, text="Browse", command=browse_infile)
