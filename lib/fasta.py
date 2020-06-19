@@ -33,7 +33,7 @@ def split_file(file):
 
 class Fastafile:
     @staticmethod
-    def write(filename, fields):
+    def write(file, fields):
         # copy fields to avoid mutating the reader copy
         fields = fields.copy()
 
@@ -44,33 +44,31 @@ class Fastafile:
             pass
         fields.remove('sequence')
 
-        with open(filename, 'w') as file:
-            while True:
-                # receive a record
-                try:
-                    record = yield
-                except GeneratorExit:
-                    break
+        while True:
+            # receive a record
+            try:
+                record = yield
+            except GeneratorExit:
+                break
 
-                # print the name line
-                if fields:
-                    print('>', end='', file=file)
-                    print(*[sanitize(record[field]) for field in fields if record[field] != ""], sep='_', file=file)
-                else:
-                    # executed if the input file is FASTA
-                    print('>', record['uniquesequencename'], sep="", file=file)
+            # print the name line
+            if fields:
+                print('>', end='', file=file)
+                print(*[sanitize(record[field]) for field in fields if record[field] != ""], sep='_', file=file)
+            else:
+                # executed if the input file is FASTA
+                print('>', record['uniquesequencename'], sep="", file=file)
 
-                # print the sequence
-                print(record['sequence'], file=file)
+            # print the sequence
+            print(record['sequence'], file=file)
 
     @staticmethod
-    def read(filename):
+    def read(file):
         # FASTA always have the same fields
         fields = ['uniquesequencename', 'sequence']
         def record_generator():
-            with open(filename) as file:
-                for chunk in split_file(file):
-                    # 'uniquesequencename' is the first line without the initial character
-                    # 'sequence' is the concatenation of all the other lines
-                    yield Record(uniquesequencename=chunk[0][1:], sequence="".join(chunk[1:]))
+            for chunk in split_file(file):
+                # 'uniquesequencename' is the first line without the initial character
+                # 'sequence' is the concatenation of all the other lines
+                yield Record(uniquesequencename=chunk[0][1:], sequence="".join(chunk[1:]))
         return fields, record_generator

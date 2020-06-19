@@ -46,4 +46,5 @@ if not os.path.exists(args.infile):
     sys.exit(f"Can't find file {args.infile}")
 
 # do the conversion
-convertDNA(args.infile, args.outfile, informat = informat, outformat = outformat)
+with open(args.infile) as infile, open(args.outfile, mode="w") as outfile:
+    convertDNA(infile, outfile, informat = informat, outformat = outformat)
