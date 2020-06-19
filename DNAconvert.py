@@ -24,11 +24,54 @@ def convertDNA(infile, outfile, informat, outformat):
     writer.close()
 
 def launch_gui():
+    # create window
     root = tk.Tk()
     root.title("DNAconvert")
     mainframe = ttk.Frame(root)
     mainframe.grid(column=0, row=0, sticky=(tk.N, tk.W, tk.E, tk.S))
+    
+    # create labels
+    infile_lbl = ttk.Label(mainframe, text="Input File")
+    informat_lbl = ttk.Label(mainframe, text="Format")
+    outfile_lbl = ttk.Label(mainframe, text="Output File")
+    outformat_lbl = ttk.Label(mainframe, text="Format")
 
+    # create file entries
+    infile_name = tk.StringVar()
+    infile_entry = ttk.Entry(mainframe, textvariable=infile_name)
+    outfile_name = tk.StringVar()
+    outfile_entry = ttk.Entry(mainframe, textvariable=outfile_name)
+
+    # create format comboboxes
+    format_list = list(lib.formats.formats.keys())
+    informat = tk.StringVar()
+    outformat = tk.StringVar()
+    informatBox = ttk.Combobox(mainframe, textvariable=informat, values=format_list)
+    outformatBox = ttk.Combobox(mainframe, textvariable=outformat, values=format_list)
+
+    # buttons
+    infile_browse = ttk.Button(mainframe, text="Browse")
+    outfile_browse = ttk.Button(mainframe, text="Browse")
+    convert_btn = ttk.Button(mainframe, text="Convert")
+
+    # place input widget group
+    infile_lbl.grid(column=0, row=0, sticky=tk.W)
+    infile_entry.grid(column=0, row=1, sticky=tk.W)
+    informat_lbl.grid(column=0, row=2, sticky=tk.W)
+    informatBox.grid(column=0, row=3, sticky=tk.W)
+    infile_browse.grid(column=1, row=1, sticky=tk.W)
+
+    # place output widget group
+    outfile_lbl.grid(column=3, row=0, sticky=tk.W)
+    outfile_entry.grid(column=3, row=1, sticky=tk.W)
+    outformat_lbl.grid(column=3, row=2, sticky=tk.W)
+    outformatBox.grid(column=3, row=3, sticky=tk.W)
+    outfile_browse.grid(column=4, row=1, sticky=tk.W)
+
+    # place the convert button
+    convert_btn.grid(column=2, row=4)
+
+    # run the gui
     root.mainloop()
     sys.exit()
 
