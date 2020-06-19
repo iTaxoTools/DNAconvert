@@ -4,6 +4,27 @@ This program can convert between different formats containing genetic informatio
 ## Installation
 Installation is currently not intended. Downloading should be enough
 
+## Generating an executable
+Using [PyInstaller](http://www.pyinstaller.org) is recommended. After the following instruction a directory `dist` will be created (among other) and the executable will be inside it.
+
+### Linux
+Install PyInstaller from PyPI:
+
+    pip install pyinstaller
+
+Then run
+
+    pyinstaller --onefile DNAconvert.py
+
+### Windows
+Install PyInstaller:
+
+[Installing on Windows](https://pyinstaller.readthedocs.io/en/stable/installation.html#installing-in-windows)
+
+Then run
+
+    pyinstaller --onefile --windowed DNAconvert.py
+
 ## Usage
     usage: DNAconvert.py [-h] [--cmd] [--informat INFORMAT]
                          [--outformat OUTFORMAT]
