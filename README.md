@@ -7,6 +7,7 @@ Installation is currently not intended. Downloading should be enough
 ## Usage
     DNAconvert.py [-h] [--informat INFORMAT] [--outformat OUTFORMAT]
                          [infile] [outfile]
+    DNAconvert.py [--gui]
     
     positional arguments:
       infile                the input file
@@ -14,6 +15,7 @@ Installation is currently not intended. Downloading should be enough
     
     optional arguments:
       -h, --help            show this help message and exit
+      --gui                 activates the graphical interface
       --informat INFORMAT   format of the input file
       --outformat OUTFORMAT
                             format of the output file
