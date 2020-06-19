@@ -85,10 +85,14 @@ def launch_gui():
         name = os.path.relpath(tkinter.filedialog.asksaveasfilename())
         outfile_name.set(name)
 
+    # command for the convert button
+    def gui_convert():
+        convert_wrapper(infile_name.get(), outfile_name.get(), informat.get(), outformat.get())
+
     # buttons
     infile_browse = ttk.Button(mainframe, text="Browse", command=browse_infile)
     outfile_browse = ttk.Button(mainframe, text="Browse", command=browse_outfile)
-    convert_btn = ttk.Button(mainframe, text="Convert")
+    convert_btn = ttk.Button(mainframe, text="Convert", command=gui_convert)
 
     # place input widget group
     infile_lbl.grid(column=0, row=0, sticky=tk.W)
