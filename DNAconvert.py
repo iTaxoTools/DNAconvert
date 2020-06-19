@@ -21,8 +21,12 @@ def convertDNA(infile, outfile, informat, outformat):
 
     writer.close()
 
+def launch_gui():
+    sys.exit(0)
+
 # configure the argument parser
 parser = argparse.ArgumentParser(description="Converts between file formats with genetic information")
+parser.add_argument('--gui', help="activates the graphical interface", action='store_true')
 parser.add_argument('--informat', help="format of the input file")
 parser.add_argument('--outformat', help="format of the output file")
 parser.add_argument('infile', nargs='?', help="the input file")
@@ -30,6 +34,12 @@ parser.add_argument('outfile', nargs='?', help="the output file")
 
 # parse the arguments
 args=parser.parse_args()
+
+# goto into the gui version
+if args.gui:
+    launch_gui()
+
+# detect extensions
 _, in_ext = os.path.splitext(args.infile)
 _, out_ext = os.path.splitext(args.outfile)
 
@@ -48,3 +58,4 @@ if not os.path.exists(args.infile):
 # do the conversion
 with open(args.infile) as infile, open(args.outfile, mode="w") as outfile:
     convertDNA(infile, outfile, informat = informat, outformat = outformat)
+
