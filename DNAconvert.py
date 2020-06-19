@@ -3,6 +3,8 @@ import argparse
 import sys
 import lib.formats
 import os
+import tkinter as tk
+from tkinter import ttk
 
 def parse_format(name, ext):
     try:
@@ -22,7 +24,13 @@ def convertDNA(infile, outfile, informat, outformat):
     writer.close()
 
 def launch_gui():
-    sys.exit(0)
+    root = tk.Tk()
+    root.title("DNAconvert")
+    mainframe = ttk.Frame(root)
+    mainframe.grid(column=0, row=0, sticky=(tk.N, tk.W, tk.E, tk.S))
+
+    root.mainloop()
+    sys.exit()
 
 # configure the argument parser
 parser = argparse.ArgumentParser(description="Converts between file formats with genetic information")
