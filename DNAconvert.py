@@ -27,8 +27,12 @@ def launch_gui():
     # create window
     root = tk.Tk()
     root.title("DNAconvert")
-    mainframe = ttk.Frame(root)
+    root.rowconfigure(0, weight=1)
+    root.columnconfigure(0, weight=1)
+    mainframe = ttk.Frame(root, padding=(3,3,3,3))
     mainframe.grid(column=0, row=0, sticky=(tk.N, tk.W, tk.E, tk.S))
+    mainframe.rowconfigure(5, weight=1)
+    mainframe.columnconfigure(2, weight=1)
     
     # create labels
     infile_lbl = ttk.Label(mainframe, text="Input File")
