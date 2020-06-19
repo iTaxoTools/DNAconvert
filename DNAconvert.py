@@ -124,11 +124,10 @@ def launch_gui():
 
     # run the gui
     root.mainloop()
-    sys.exit()
 
 # configure the argument parser
-parser = argparse.ArgumentParser(description="Converts between file formats with genetic information")
-parser.add_argument('--gui', help="activates the graphical interface", action='store_true')
+parser = argparse.ArgumentParser(description="Converts between file formats with genetic information. Uses graphical interface by default.")
+parser.add_argument('--cmd', help="activates the command-line interface", action='store_true')
 parser.add_argument('--informat', help="format of the input file")
 parser.add_argument('--outformat', help="format of the output file")
 parser.add_argument('infile', nargs='?', help="the input file")
@@ -137,8 +136,8 @@ parser.add_argument('outfile', nargs='?', help="the output file")
 # parse the arguments
 args=parser.parse_args()
 
-# goto into the gui version
-if args.gui:
+# launch gui or convert the file
+if not args.cmd:
     launch_gui()
 else:
     try:

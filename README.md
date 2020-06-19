@@ -5,9 +5,10 @@ This program can convert between different formats containing genetic informatio
 Installation is currently not intended. Downloading should be enough
 
 ## Usage
-    DNAconvert.py [-h] [--informat INFORMAT] [--outformat OUTFORMAT]
+    usage: DNAconvert.py [-h] [--cmd] [--informat INFORMAT]
+                         [--outformat OUTFORMAT]
                          [infile] [outfile]
-    DNAconvert.py [--gui]
+           DNAconvert.py
     
     positional arguments:
       infile                the input file
@@ -15,7 +16,7 @@ Installation is currently not intended. Downloading should be enough
     
     optional arguments:
       -h, --help            show this help message and exit
-      --gui                 activates the graphical interface
+      --cmd                 activates the command-line interface
       --informat INFORMAT   format of the input file
       --outformat OUTFORMAT
                             format of the output file
