@@ -23,6 +23,27 @@ def convertDNA(infile, outfile, informat, outformat):
 
     writer.close()
 
+def convert_wrapper(infile, outfile, informat_name, outformat_name):
+    # detect extensions
+    _, in_ext = os.path.splitext(infile)
+    _, out_ext = os.path.splitext(outfile)
+
+    # parse the formats
+    informat = parse_format(informat_name, in_ext)
+    outformat = parse_format(outformat_name, out_ext)
+
+    # check that everything is okay
+    if not informat:
+        raise ValueError(f"Unknown format {informat_name or in_ext}")
+    if not outformat:
+        raise ValueError(f"Unknown format {outformat_name or out_ext}")
+
+    # do the conversion
+    with open(infile) as infile, open(outfile, mode="w") as outfile:
+        convertDNA(infile, outfile, informat = informat, outformat = outformat)
+
+
+
 def launch_gui():
     # create window
     root = tk.Tk()
@@ -93,24 +114,10 @@ args=parser.parse_args()
 # goto into the gui version
 if args.gui:
     launch_gui()
-
-# detect extensions
-_, in_ext = os.path.splitext(args.infile)
-_, out_ext = os.path.splitext(args.outfile)
-
-# parse the formats
-informat = parse_format(args.informat, in_ext)
-outformat = parse_format(args.outformat, out_ext)
-
-# check that everything is okay
-if not informat:
-    sys.exit(f"Unknown format {args.informat or in_ext}")
-if not outformat:
-    sys.exit(f"Unknown format {args.outformat or out_ext}")
-if not os.path.exists(args.infile):
-    sys.exit(f"Can't find file {args.infile}")
-
-# do the conversion
-with open(args.infile) as infile, open(args.outfile, mode="w") as outfile:
-    convertDNA(infile, outfile, informat = informat, outformat = outformat)
-
+else:
+    try:
+        convert_wrapper(args.infile, args.outfile, args.informat, args.outformat)
+    except ValueError as ex:
+        sys.exit(ex)
+    except FileNotFoundError as ex:
+        sys.exit(ex)
