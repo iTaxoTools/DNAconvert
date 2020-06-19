@@ -4,6 +4,7 @@ import sys
 import lib.formats
 import os
 import tkinter as tk
+import tkinter.filedialog
 from tkinter import ttk
 
 def parse_format(name, ext):
@@ -74,9 +75,19 @@ def launch_gui():
     informatBox = ttk.Combobox(mainframe, textvariable=informat, values=format_list)
     outformatBox = ttk.Combobox(mainframe, textvariable=outformat, values=format_list)
 
+    # command for the input "Browse" button
+    def browse_infile():
+        name = os.path.relpath(tkinter.filedialog.askopenfilename())
+        infile_name.set(name)
+
+    # command for the output "Browse" button
+    def browse_outfile():
+        name = os.path.relpath(tkinter.filedialog.asksaveasfilename())
+        outfile_name.set(name)
+
     # buttons
-    infile_browse = ttk.Button(mainframe, text="Browse")
-    outfile_browse = ttk.Button(mainframe, text="Browse")
+    infile_browse = ttk.Button(mainframe, text="Browse", command=browse_infile)
+    outfile_browse = ttk.Button(mainframe, text="Browse", command=browse_outfile)
     convert_btn = ttk.Button(mainframe, text="Convert")
 
     # place input widget group
