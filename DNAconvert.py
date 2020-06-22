@@ -8,6 +8,12 @@ import tkinter.filedialog
 import tkinter.messagebox
 from tkinter import ttk
 
+# splits two component extension
+def splitext(name):
+   name, ext2 = os.path.splitext(name)
+   _, ext1 = os.path.splitext(name)
+   return ext1 + ext2
+
 def parse_format(name, ext):
     try:
         return lib.formats.formats[name] if name else lib.formats.extensions[ext]
@@ -27,8 +33,8 @@ def convertDNA(infile, outfile, informat, outformat):
 
 def convert_wrapper(infile, outfile, informat_name, outformat_name):
     # detect extensions
-    _, in_ext = os.path.splitext(infile)
-    _, out_ext = os.path.splitext(outfile)
+    in_ext = splitext(infile)
+    out_ext = splitext(outfile)
 
     # parse the formats
     informat = parse_format(informat_name, in_ext)
