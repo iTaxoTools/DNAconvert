@@ -3,7 +3,7 @@ from lib.record import *
 
 # replaces sequence of not-alphanum characters with '_'
 def sanitize(s):
-   return '_'.join(re.split(r'[^a-zA-Z0-9]+', s)) 
+    return '_'.join(part for part in (re.split(r'[^a-zA-Z0-9]+', s)) if part) 
 
 # Yields a list of lines that comprise one FASTA record
 def split_file(file):
