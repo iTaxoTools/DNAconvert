@@ -5,6 +5,8 @@ class Tabfile:
 
     @staticmethod
     def write(file, fields):
+        if 'uniquesequencename' not in fields:
+            raise ValueError("Tab format expects a 'uniquesequencename'")
         uniquenames = {} # dictionary remember the 'uniquesequencename' values that have already been seen
 
         # write the heading
@@ -17,12 +19,13 @@ class Tabfile:
             except GeneratorExit:
                 break
             # enforce uniqueness of 'uniquesequencename'
+            uniquename = record['uniquesequencename']
             try:
-                uniquename = record['uniquesequencename']
                 record['uniquesequencename'] += '_' + str(uniquenames[uniquename])
-                uniquenames[uniquename] += 1
             except KeyError:
-                uniquenames[record['uniquesequencename']] = 1
+                uniquenames[uniquename] = 1
+            else:
+                uniquenames[uniquename] += 1
 
             # collect record fields in a list and join them with tabs
             file.writelines('\t'.join([record[field] for field in fields]) + '\n')

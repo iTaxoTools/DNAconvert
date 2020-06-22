@@ -5,11 +5,12 @@ class Record:
         """Creates a record with given fields
         Raises an ValueError if a requred field is not supplied
 
-        Required fields: 'uniquesequencename', 'sequence'
+        Field 'sequence' is required, as at least one other field
         """
-        for required_field in ['uniquesequencename', 'sequence']:
-            if required_field not in kwargs:
-                raise ValueError(f"field '{required_field}' is required")
+        if len(kwargs) < 2:
+            raise ValueError(f"The input has less than 2 fields")
+        if 'sequence' not in kwargs:
+            raise ValueError(f"field 'sequence' is required")
         self._fields = kwargs
 
     def __getitem__(self, field):
