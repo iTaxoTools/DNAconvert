@@ -1,9 +1,7 @@
 import re
 from lib.record import *
+from lib.utils import *
 
-# replaces sequence of not-alphanum characters with '_'
-def sanitize(s):
-    return '_'.join(part for part in (re.split(r'[^a-zA-Z0-9]+', s)) if part) 
 
 # Yields a list of lines that comprise one FASTA record
 def split_file(file):
@@ -34,15 +32,7 @@ def split_file(file):
 class Fastafile:
     @staticmethod
     def write(file, fields):
-        # copy fields to avoid mutating the reader copy
-        fields = fields.copy()
-
-        # now fields contain only the fields' name which comprise the sequence name in FASTA
-        try:
-            fields.remove('uniquesequencename')
-        except ValueError:
-            pass
-        fields.remove('sequence')
+        name_assembler = NameAssembler(fields)
 
         while True:
             # receive a record
@@ -51,13 +41,8 @@ class Fastafile:
             except GeneratorExit:
                 break
 
-            # print the name line
-            if fields:
-                print('>', end='', file=file)
-                print(*[sanitize(record[field]) for field in fields if record[field] != ""], sep='_', file=file)
-            else:
-                # executed if the input file is FASTA
-                print('>', record['uniquesequencename'], sep="", file=file)
+            # print the unique name
+            print(">", name_assembler.name(record), sep="", file=file)
 
             # print the sequence
             print(record['sequence'], file=file)
