@@ -10,13 +10,15 @@ class Aggregator:
         that takes the current accumulator value and the current record
         and returns the new value of the accumulator
         """
-        self._accs, self._reducers = zip(*reducers)
+        accs, reducers = zip(*reducers)
+        self._accs = list(accs)
+        self._reducers = list(reducers)
 
     def send(self, record):
         """ Send a record to collect its information
         updates all the accumulators
         """
-        for i, acc in self._accs.enumerate():
+        for i, acc in enumerate(self._accs):
             self._accs[i] = self._reducers[i](acc, record)
 
     def results(self):
@@ -37,7 +39,7 @@ def _min_reducer(acc, record):
 
 class PhylipAggregator(Aggregator):
     def __init__(self, *reducers):
-        super().__init__(self, (0, _max_reducer), (None, _min_reducer), *reducers)
+        super().__init__((0, _max_reducer), (None, _min_reducer), *reducers)
 
 def sanitize(s):
     """ replaces sequence of not-alphanum characters with '_'
