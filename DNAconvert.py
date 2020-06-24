@@ -7,6 +7,7 @@ import tkinter as tk
 import tkinter.filedialog
 import tkinter.messagebox
 from tkinter import ttk
+import warnings
 
 # splits two component extension
 def splitext(name):
@@ -104,7 +105,10 @@ def launch_gui():
     # command for the convert button
     def gui_convert():
         try:
-            convert_wrapper(infile_name.get(), outfile_name.get(), informat.get(), outformat.get())
+            with warnings.catch_warnings(record=True) as warns:
+                convert_wrapper(infile_name.get(), outfile_name.get(), informat.get(), outformat.get())
+                for w in warns:
+                    tkinter.messagebox.showwarning("Warning", w.message)
         except ValueError as ex:
             tkinter.messagebox.showerror("Error", str(ex))
         except FileNotFoundError as ex:
@@ -152,7 +156,10 @@ if not args.cmd:
     launch_gui()
 else:
     try:
-        convert_wrapper(args.infile, args.outfile, args.informat, args.outformat)
+        with warnings.catch_warnings(record=True) as warns:
+            convert_wrapper(args.infile, args.outfile, args.informat, args.outformat)
+            for w in warns:
+                print(w.message)
     except ValueError as ex:
         sys.exit(ex)
     except FileNotFoundError as ex:
