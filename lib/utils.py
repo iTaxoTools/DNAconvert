@@ -23,6 +23,21 @@ class Aggregator:
         """
         return self._accs
 
+def _max_reducer(acc, record):
+    l = len(record['sequence'])
+    return max(acc, l)
+
+def _min_reducer(acc, record):
+    l = len(record['sequence'])
+    if acc:
+        return min(acc, l)
+    else:
+        return l
+
+class PhylipAggregator(Aggregator):
+    def __init__(self, *reducers):
+        super().__init__(self, (0, _max_reducer), (None, _min_reducer), *reducers)
+
 def sanitize(s):
     """ replaces sequence of not-alphanum characters with '_'
     """
