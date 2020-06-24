@@ -1,4 +1,5 @@
 import re
+import warnings
 
 class Aggregator:
     """Aggregates information about records
@@ -72,3 +73,12 @@ class NameAssembler:
             self.name = self._complex_name
         else:
             self.name = self._simple_name
+
+def dna_aligner(max_length, min_length):
+    if max_length == min_length:
+        return lambda x: x
+    else:
+        warnings.warn("The requested output format requires all sequences to be of equal length which is not the case in your input file. Probably your sequences are unaligned. To complete the conversion, dash-signs have been added at the end of the shorter sequences to adjust their length, but this may impede proper analysis - please check.")
+        def dash_adder(sequence):
+            return sequence + "-" * (max_length - len(sequence))
+        return dash_adder
