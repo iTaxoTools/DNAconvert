@@ -12,13 +12,18 @@ from tkinter import ttk
 def splitext(name):
    name, ext2 = os.path.splitext(name)
    _, ext1 = os.path.splitext(name)
-   return ext1 + ext2
+   return (ext1 + ext2, ext2)
 
-def parse_format(name, ext):
+def parse_format(name, ext_pair):
+    d_ext = ext_pair[0]
+    ext = ext_pair[1]
     try:
-        return lib.formats.formats[name] if name else lib.formats.extensions[ext]
+        return lib.formats.formats[name] if name else lib.formats.extensions[d_ext]
     except KeyError:
-        return None
+        try:
+            return lib.formats.extensions[ext]
+        except KeyError:
+            return None
 
 def convertDNA(infile, outfile, informat, outformat):
     fields, records = informat.read(infile)
@@ -46,9 +51,9 @@ def convert_wrapper(infile, outfile, informat_name, outformat_name):
     if not outfile:
         raise ValueError(f"No output file name")
     if not informat:
-        raise ValueError(f"Unknown format {informat_name or in_ext}")
+        raise ValueError(f"Unknown format {informat_name or in_ext[0]}")
     if not outformat:
-        raise ValueError(f"Unknown format {outformat_name or out_ext}")
+        raise ValueError(f"Unknown format {outformat_name or out_ext[0]}")
 
     # do the conversion
     with open(infile) as infile, open(outfile, mode="w") as outfile:
