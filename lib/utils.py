@@ -84,3 +84,17 @@ def dna_aligner(max_length, min_length):
         def dash_adder(sequence):
             return sequence + "-" * (max_length - len(sequence))
         return dash_adder
+
+def get_species_field(fields):
+    field_names = ['organism'
+                  , 'scientificname'
+                  , 'identification/fullscientificnamestring'
+                  , 'scientific name'
+                  , 'scientific_name'
+                  , 'species'
+                  , 'speciesname'
+                  , 'species name'
+                  , 'species_name'
+                  ]
+    fields_set = set(fields)
+    return next((field for field in field_names if field.casefold() in fields_set), None)
