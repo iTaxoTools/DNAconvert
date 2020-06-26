@@ -7,6 +7,7 @@ formats = dict(
         fasta = fasta.Fastafile,
         relaxed_phylip = phylip.RelPhylipFile,
         fasta_hapview = fasta.HapviewFastafile,
+        phylip = phylip.PhylipFile,
         )
 
 extensions = {
@@ -16,4 +17,5 @@ extensions = {
         ".fas": fasta.Fastafile,
         ".rel.phy": phylip.RelPhylipFile,
         ".hapv.fas": fasta.HapviewFastafile,
+        ".phy": phylip.PhylipFile,
         }
