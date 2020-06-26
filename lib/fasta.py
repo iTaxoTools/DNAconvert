@@ -57,3 +57,78 @@ class Fastafile:
                 # 'sequence' is the concatenation of all the other lines
                 yield Record(uniquesequencename=chunk[0][1:], sequence="".join(chunk[1:]))
         return fields, record_generator
+
+class UnicifierSN(Unicifier):
+    def __init__(self, length_limit=None):
+        super().__init__(length_limit)
+        self._sep = ""
+
+class SpeciesNamer:
+    """makes correspondence between long species name in the record and unique short names
+    """
+    def __init__(self, species, species_field):
+        if not species_field:
+            self._count = 0
+            self.name = self._count_name
+            return
+        # make list of pair of species and first 4 letters of the second part of the name
+        def short_name(name):
+            _, second_part = re.split(r'[ _]', name, maxsplit=1)
+            try:
+                return second_part[0:4]
+            except IndexError:
+                raise ValueError(f"Malformed species name {name}")
+        unicifier = UnicifierSN()
+        self._species_field = species_field
+        self._species = {long_name: unicifier.unique(short_name(long_name)) for long_name in species}
+        self.name = self._dict_name
+
+    def _count_name(self, record):
+        self._count += 1
+        return str(self._count - 1)
+
+    def _dict_name(self, record):
+        return self._species[record[self._species_field]]
+
+class HapviewFastafile:
+    @staticmethod
+    def read(file):
+        # FASTA always have the same fields
+        fields = ['uniquesequencename', 'sequence']
+        def record_generator():
+            for chunk in split_file(file):
+                # 'uniquesequencename' is the first line without the initial character
+                # 'sequence' is the concatenation of all the other lines
+                yield Record(uniquesequencename=chunk[0][1:], sequence="".join(chunk[1:]))
+        return fields, record_generator
+
+    @staticmethod
+    def write(file, fields):
+        species_field = get_species_field(fields)
+        if species_field:
+            def species_reducer(acc, record):
+                acc.add(record[species_field])
+                return acc
+            aggregator = PhylipAggregator((set(), species_reducer))
+        else:
+            aggregator = PhylipAggregator()
+        records = []
+        
+        while True:
+            try:
+                record = yield
+            except GeneratorExit:
+                break
+            aggregator.send(record)
+            records.append(record)
+        
+        [max_length, min_length, species] = aggregator.results()
+        species_namer = SpeciesNamer(species, species_field)
+
+        aligner = dna_aligner(max_length, min_length)
+        name_assembler = NameAssembler(fields)
+        unicifier = Unicifier(100)
+
+        for record in records:
+            print('>', unicifier.unique(name_assembler.name(record)), '.', species_namer.name(record), sep="", file=file)
+            print(aligner(record['sequence']), file=file)

@@ -46,6 +46,7 @@ Then run
 * `tab`: [Internal tab format][1]
 * `fasta`: FASTA format
 * `relaxed_phylip`: relaxed Phylip format
+* `fasta_hapview`: FASTA format for Haplotype Viewer
 
 ## Recognised extension
 If format is not provided, the program can infer it from the file extension
@@ -54,6 +55,7 @@ Currently recognised:
 * `.tab`, `.txt`, `.tsv`: [Internal tab format][1]
 * `.fas`: FASTA format
 * `.rel.phy`: relaxed Phylip format
+* `.hapv.fas`: FASTA format for Haplotype Viewer
 
 ## Adding new formats
 [Link to documentation](doc/ADDING_FORMATS.md)

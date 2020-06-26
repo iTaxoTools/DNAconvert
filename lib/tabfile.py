@@ -1,4 +1,5 @@
 from lib.record import *
+from lib.utils import *
 
 class Tabfile:
     """Class for reading and writing tab-separated files with genetic information"""
@@ -18,14 +19,9 @@ class Tabfile:
                 record = yield
             except GeneratorExit:
                 break
-            # enforce uniqueness of 'uniquesequencename'
-            uniquename = record['uniquesequencename']
-            try:
-                record['uniquesequencename'] += '_' + str(uniquenames[uniquename])
-            except KeyError:
-                uniquenames[uniquename] = 1
-            else:
-                uniquenames[uniquename] += 1
+            # enforce name uniqueness
+            unicifier = Unicifier()
+            record['uniquesequencename'] = unicifier.unique(record['uniquesequencename'])
 
             # collect record fields in a list and join them with tabs
             file.writelines('\t'.join([record[field] for field in fields]) + '\n')

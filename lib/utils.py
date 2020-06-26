@@ -98,3 +98,36 @@ def get_species_field(fields):
                   ]
     fields_set = set(fields)
     return next((field for field in field_names if field.casefold() in fields_set), None)
+
+class Unicifier():
+    """Takes care of making the names unique.
+    Either overwrite the end with consecutive number, if given a length limit.
+    Or keeps tracks on already seen names and prevents name collision by adding a number suffix
+
+    use unique(self, name) method to generate a unique name based on the given one
+    """
+    def __init__(self, length_limit=None):
+        if length_limit:
+            self._length_limit = length_limit
+            self._count = 0
+            self.unique = self._unique_limit
+        else:
+            self._sep = '_'
+            self._seen_name = {}
+            self.unique = self._unique_set
+    
+    def _unique_limit(self, name):
+        suff = str(self._count)
+        self._count += 1
+        return name[0:self._length_limit - len(suff)] + suff
+
+    def _unique_set(self, name):
+        uniquename = name
+        try:
+            uniquename = name + self._sep + str(self._seen_name[name])
+        except KeyError:
+            self._seen_name[name] = 1
+        else:
+            self._seen_name[name] += 1
+        return uniquename
+

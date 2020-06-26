@@ -5,7 +5,8 @@ import lib.phylip as phylip
 formats = dict(
         tab = tabfile.Tabfile,
         fasta = fasta.Fastafile,
-        relaxed_phylip = phylip.RelPhylipFile
+        relaxed_phylip = phylip.RelPhylipFile,
+        fasta_hapview = fasta.HapviewFastafile,
         )
 
 extensions = {
@@ -13,5 +14,6 @@ extensions = {
         ".txt": tabfile.Tabfile,
         ".tsv": tabfile.Tabfile,
         ".fas": fasta.Fastafile,
-        ".rel.phy": phylip.RelPhylipFile
+        ".rel.phy": phylip.RelPhylipFile,
+        ".hapv.fas": fasta.HapviewFastafile,
         }
