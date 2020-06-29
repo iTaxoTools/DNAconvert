@@ -6,8 +6,8 @@ class Tabfile:
 
     @staticmethod
     def write(file, fields):
-        if 'uniquesequencename' not in fields:
-            raise ValueError("Tab format expects a 'uniquesequencename'")
+        if 'seqid' not in fields:
+            raise ValueError("Tab format expects a 'seqid'")
 
         # write the heading
         file.write('\t'.join(fields) + '\n')
@@ -20,7 +20,7 @@ class Tabfile:
                 break
             # enforce name uniqueness
             unicifier = Unicifier()
-            record['uniquesequencename'] = unicifier.unique(record['uniquesequencename'])
+            record['seqid'] = unicifier.unique(record['seqid'])
 
             # collect record fields in a list and join them with tabs
             file.writelines('\t'.join([record[field] for field in fields]) + '\n')
@@ -31,7 +31,7 @@ class Tabfile:
         # read the heading for the list of fields
         fields = file.readline().rstrip('\n').split('\t')
         fields = list(map(str.casefold, fields))
-        for required_field in ['uniquesequencename', 'sequence']:
+        for required_field in ['seqid', 'sequence']:
             if required_field not in fields:
                 raise ValueError(f"Input file is not a valid genetic tab format, missing '{required_field}'")
            

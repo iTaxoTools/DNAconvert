@@ -47,17 +47,17 @@ def sanitize(s):
     return '_'.join(part for part in (re.split(r'[^a-zA-Z0-9]+', s)) if part) 
 
 class NameAssembler:
-    """create 'uniquesequencename' for the record,
+    """create 'seqid' for the record,
     depending on the fields given to the constructor
     """
 
     def _simple_name(self, record):
         """used when there no information fields
         """
-        return record['uniquesequencename']
+        return record['seqid']
 
     def _complex_name(self, record):
-        """used when information fields (all except 'uniquesequencename' and 'sequence') are present
+        """used when information fields (all except 'seqid' and 'sequence') are present
         Their values are concatenated with underscores and forbidden character are replaced with underscores
         taking care of multiple underscores
         """
@@ -66,7 +66,7 @@ class NameAssembler:
     def __init__(self, fields):
         fields = fields.copy()
         try:
-           fields.remove('uniquesequencename')
+           fields.remove('seqid')
            fields.remove('sequence')
         except ValueError:
             pass

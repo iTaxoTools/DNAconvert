@@ -5,7 +5,7 @@ class RelPhylipFile:
     @staticmethod
     def read(file):
         # Phylip always have the same fields
-        fields = ['uniquesequencename', 'sequence']
+        fields = ['seqid', 'sequence']
         def record_generator():
             # skip the first line
             file.readline()
@@ -18,7 +18,7 @@ class RelPhylipFile:
                 # skip if there is no sequence
                 if sequence == "" or sequence.isspace(): continue
                 # return the record
-                yield Record(uniquesequencename=name, sequence=sequence)
+                yield Record(seqid=name, sequence=sequence)
         return fields, record_generator
 
     @staticmethod
@@ -48,7 +48,7 @@ class PhylipFile:
     @staticmethod
     def read(file):
         # Phylip always have the same fields
-        fields = ['uniquesequencename', 'sequence']
+        fields = ['seqid', 'sequence']
         def record_generator():
             # skip the first line
             file.readline()
@@ -59,7 +59,7 @@ class PhylipFile:
                 if len(line) < 10: continue
                 name = line[0:10]
                 sequence = line[10:]
-                yield Record(uniquesequencename=name, sequence=sequence)
+                yield Record(seqid=name, sequence=sequence)
         return fields, record_generator
 
     @staticmethod
