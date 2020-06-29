@@ -11,8 +11,13 @@ class RelPhylipFile:
             file.readline()
 
             for line in file:
+                # skip blank lines
                 if line == "" or line.isspace(): continue
+                # separate name and sequence
                 name, _, sequence = line.partition(" ")
+                # skip if there is no sequence
+                if sequence == "" or sequence.isspace(): continue
+                # return the record
                 yield Record(uniquesequencename=name, sequence=sequence)
         return fields, record_generator
 
@@ -50,6 +55,8 @@ class PhylipFile:
 
             for line in file:
                 if line == "" or line.isspace(): continue
+                # skip is there is no sequence
+                if len(line) < 10: continue
                 name = line[0:10]
                 sequence = line[10:]
                 yield Record(uniquesequencename=name, sequence=sequence)

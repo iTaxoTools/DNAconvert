@@ -53,6 +53,8 @@ class Fastafile:
         fields = ['uniquesequencename', 'sequence']
         def record_generator():
             for chunk in split_file(file):
+                # skip if there is no sequence
+                if len(chunk) <= 1: continue
                 # 'uniquesequencename' is the first line without the initial character
                 # 'sequence' is the concatenation of all the other lines
                 yield Record(uniquesequencename=chunk[0][1:], sequence="".join(chunk[1:]))
@@ -97,6 +99,8 @@ class HapviewFastafile:
         fields = ['uniquesequencename', 'sequence']
         def record_generator():
             for chunk in split_file(file):
+                # skip if there is no sequence
+                if len(chunk) <= 1: continue
                 # 'uniquesequencename' is the first line without the initial character
                 # 'sequence' is the concatenation of all the other lines
                 yield Record(uniquesequencename=chunk[0][1:], sequence="".join(chunk[1:]))

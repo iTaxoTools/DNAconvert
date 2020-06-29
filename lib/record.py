@@ -8,9 +8,9 @@ class Record:
         Field 'sequence' is required, as at least one other field
         """
         if len(kwargs) < 2:
-            raise ValueError(f"The input has less than 2 fields")
+            raise ValueError("The input has less than 2 fields")
         if 'sequence' not in kwargs:
-            raise ValueError(f"field 'sequence' is required")
+            raise ValueError("field 'sequence' is required")
         self._fields = kwargs
 
     def __getitem__(self, field):

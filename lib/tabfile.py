@@ -8,7 +8,6 @@ class Tabfile:
     def write(file, fields):
         if 'uniquesequencename' not in fields:
             raise ValueError("Tab format expects a 'uniquesequencename'")
-        uniquenames = {} # dictionary remember the 'uniquesequencename' values that have already been seen
 
         # write the heading
         file.write('\t'.join(fields) + '\n')
@@ -31,6 +30,7 @@ class Tabfile:
     def read(file):
         # read the heading for the list of fields
         fields = file.readline().rstrip('\n').split('\t')
+        fields = list(map(str.casefold, fields))
         for required_field in ['uniquesequencename', 'sequence']:
             if required_field not in fields:
                 raise ValueError(f"Input file is not a valid genetic tab format, missing '{required_field}'")

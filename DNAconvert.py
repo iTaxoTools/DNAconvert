@@ -48,9 +48,9 @@ def convert_wrapper(infile, outfile, informat_name, outformat_name):
 
     # check that everything is okay
     if not infile:
-        raise ValueError(f"No input file name")
+        raise ValueError("No input file name")
     if not outfile:
-        raise ValueError(f"No output file name")
+        raise ValueError("No output file name")
     if not informat:
         raise ValueError(f"Unknown format {informat_name or in_ext[0]}")
     if not outformat:
