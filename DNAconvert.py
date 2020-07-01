@@ -8,6 +8,8 @@ import tkinter.filedialog
 import tkinter.messagebox
 from tkinter import ttk
 import warnings
+import gzip
+import lib.fasta
 
 # splits two component extension
 def splitext(name):
@@ -27,6 +29,10 @@ def parse_format(name, ext_pair):
             return None
 
 def convertDNA(infile, outfile, informat, outformat):
+    if informat is lib.fasta.FastQFile and outformat is lib.fasta.Fastafile:
+        lib.fasta.FastQFile.to_fasta(infile, outfile)
+        return
+
     fields, records = informat.read(infile)
     
     writer = outformat.write(outfile, fields)
@@ -56,8 +62,14 @@ def convert_wrapper(infile, outfile, informat_name, outformat_name):
     if not outformat:
         raise ValueError(f"Unknown format {outformat_name or out_ext[0]}")
 
+    # open the input file
+    if in_ext[1] == ".gz":
+        infile = gzip.open(infile)
+    else:
+        infile = open(infile)
+
     # do the conversion
-    with open(infile) as infile, open(outfile, mode="w") as outfile:
+    with infile, open(outfile, mode="w") as outfile:
         convertDNA(infile, outfile, informat = informat, outformat = outformat)
 
 

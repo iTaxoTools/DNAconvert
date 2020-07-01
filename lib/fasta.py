@@ -145,3 +145,14 @@ class HapviewFastafile:
         for record in records:
             print('>', unicifier.unique(name_assembler.name(record)), '.', species_namer.name(record), sep="", file=file)
             print(aligner(record['sequence']), file=file)
+
+class FastQFile:
+    
+    @staticmethod
+    def to_fasta(infile, outfile):
+        for line in infile:
+            if line[0] == '@':
+                print('>', line[1:], sep="", end="", file=outfile)
+                line = infile.readline()
+                print(line, file=outfile, end="")
+
