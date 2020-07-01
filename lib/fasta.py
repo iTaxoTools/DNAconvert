@@ -156,3 +156,28 @@ class FastQFile:
                 line = infile.readline()
                 print(line, file=outfile, end="")
 
+    @staticmethod
+    def read(file):
+        fields = ['seqid', 'sequence', 'quality_score_identifier', 'quality_score']
+        def record_generator():
+            for line in file:
+                if line[0] == '@':
+                    seqid = line[1:].rstrip()
+                    sequence = file.readline().rstrip()
+                    quality_score_identifier = file.readline().rstrip()
+                    quality_score = file.readline().rstrip()
+                    yield Record(seqid=seqid, sequence=sequence, quality_score_identifier=quality_score_identifier, quality_score=quality_score)
+        return fields, record_generator
+
+    @staticmethod
+    def write(file, fields):
+        if not {'seqid', 'sequence', 'quality_score_identifier', 'quality_score'} <= set(fields):
+            raise ValueError('FastQ requires the fields seqid, sequence, quality_score_identifier and quality_score')
+        while True:
+            try:
+                record = yield
+            except GeneratorExit:
+                break
+            print('@', record['seqid'], sep="", file=file)
+            for field in ['sequence', 'quality_score_identifier', 'quality_score']:
+                print(record[field], file=file)

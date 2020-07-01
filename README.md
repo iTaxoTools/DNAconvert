@@ -48,6 +48,7 @@ Then run
 * `relaxed_phylip`: relaxed Phylip format
 * `fasta_hapview`: FASTA format for Haplotype Viewer
 * `phylip`: Phylip format
+* `fastq`: FASTQ format
 
 ## Recognised extension
 If format is not provided, the program can infer it from the file extension
@@ -58,6 +59,10 @@ Currently recognised:
 * `.rel.phy`: relaxed Phylip format
 * `.hapv.fas`: FASTA format for Haplotype Viewer
 * `.phy`: Phylip format
+* `.fastq`, `.fq`: FASTQ format
+* `.fastq.gz`, `.fq.gz`: FASTQ format compressed with Gzip
+
+Files with extension `.gz` are uncompressed automatically
 
 ## Adding new formats
 [Link to documentation](doc/ADDING_FORMATS.md)
