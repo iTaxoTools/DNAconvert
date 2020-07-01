@@ -67,9 +67,14 @@ class NameAssembler:
         fields = fields.copy()
         try:
            fields.remove('seqid')
-           fields.remove('sequence')
         except ValueError:
             pass
+        try:
+            i = fields.index('sequence')
+        except ValueError:
+            pass
+        else:
+            fields = fields[:i]
         if fields:
             self._fields = fields
             self.name = self._complex_name
