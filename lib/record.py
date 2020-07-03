@@ -22,3 +22,6 @@ class Record:
         """Sets self[field] to a value
         """
         self._fields[field] = value
+
+    def get(self, field):
+        return self._fields.get(field)

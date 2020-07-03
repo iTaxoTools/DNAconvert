@@ -9,7 +9,7 @@ formats = dict(
         fasta_hapview = fasta.HapviewFastafile,
         phylip = phylip.PhylipFile,
         fastq = fasta.FastQFile,
-        fasta_genbank = fasta.GenbankFastaFile,
+        fasta_gbexport = fasta.GenbankFastaFile,
         )
 
 extensions = {

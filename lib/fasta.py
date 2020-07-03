@@ -182,7 +182,33 @@ class FastQFile:
             for field in ['sequence', 'quality_score_identifier', 'quality_score']:
                 print(record[field], file=file)
 
+class NameAssemblerGB(NameAssembler):
+    def __init__(self, fields):
+        if 'seqid' in fields:
+            self.name = self._simple_name
+        else:
+            self._fields = [field for field in ['organism', 'specimen_voucher'] if field in fields]
+            self.name = self._complex_name
+
 class GenbankFastaFile:
+    genbankfields = ['organism', 'mol_type', 'altitude', 'bio_material', 'cell_line', 'cell_type', 'chromosome', 'citation', 'clone', 'clone_lib', 'collected_by', 'collection_date', 'country', 'cultivar', 'culture_collectiondb_xref', 'dev_stage', 'ecotype', 'environmental_samplefocus', 'germlinehaplogroup', 'haplotype', 'host', 'identified_by', 'isolate', 'isolation_source', 'lab_host', 'lat_lon', 'macronuclearmap', 'mating_type', 'metagenome_source', 'note', 'organelle', 'PCR_primersplasmid', 'pop_variant', 'proviralrearrangedsegment', 'serotype', 'serovar', 'sex', 'specimen_voucher', 'strain', 'sub_clone', 'submitter_seqid', 'sub_species', 'sub_strain', 'tissue_lib', 'tissue_type', 'transgenictype_material', 'variety']
+
+    @staticmethod
+    def prepare(fields, record):
+        if 'country' in fields:
+            region = record.get('region')
+            locality = record.get('locality')
+            if region:
+                record['country'] = record['country'] + f": {region}" + (f", {locality}" if locality else "")
+            else:
+                record['country'] = record['country'] + (f": {locality}" if locality else "")
+        if 'organism' not in fields:
+            try:
+                record['organism'] = record['species']
+            except KeyError:
+                pass
+        record['sequence'] = record['sequence'].strip("nN?")
+
     @staticmethod
     def parse_ident(line):
         if line[0] != '>':
@@ -220,4 +246,28 @@ class GenbankFastaFile:
                 yield Record(seqid=seqid, sequence="".join(chunk[1:]), **values)
             if skipped > 0: warnings.warn(f"{skipped} records did not contain a sequence and are therefore not included in the converted file")
         return fields, record_generator
-
+    
+    @staticmethod
+    def write(file, fields):
+        seqid_exists = [x for x in ['seqid'] if 'seqid' in fields]
+        fields = [field for field in fields if field in GenbankFastaFile.genbankfields]
+        if not (('organism' in fields or 'species' in fields) and ('specimen_voucher' in fields or 'isolate' in fields or 'clone' in fields or 'haplotype' in fields)):
+            warnings.warn("Your file has been converted. However, apparently in your tab file either the organism, or a unique source identifier (specimen-voucher, isolate, clone) was missing, which may be required for submission to GenBank")
+        length_okay = True
+        no_dashes = True
+        name_assembler = NameAssemblerGB(seqid_exists + fields)
+        unicifier = Unicifier(25)
+        while True:
+            try:
+                record = yield
+            except GeneratorExit:
+                break
+            GenbankFastaFile.prepare(fields, record)
+            if length_okay and len(record['sequence']) < 200:
+                length_okay = False
+                warnings.warn("Some of your sequences are <200 bp in length and therefore will probably not accepted by the GenBank nucleotide database")
+            if no_dashes and '-' in record['sequence']:
+                no_dashes = False
+                warnings.warn("Some of your sequences contain dashes (gaps) which is only allowed if you submit them as alignment. If you do not wish to submit your sequences as alignment, please remove the dashes before conversion.")
+            print('>'+unicifier.unique(name_assembler.name(record)), *[f"[{field}={record[field]}]" for field in fields], file=file)
+            print(record['sequence'], file=file)
