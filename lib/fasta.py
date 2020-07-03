@@ -181,3 +181,43 @@ class FastQFile:
             print('@', record['seqid'], sep="", file=file)
             for field in ['sequence', 'quality_score_identifier', 'quality_score']:
                 print(record[field], file=file)
+
+class GenbankFastaFile:
+    @staticmethod
+    def parse_ident(line):
+        if line[0] != '>':
+            raise ValueError("Genbank fasta: invalid identifier line\n" + line)
+        [seqid, values_str] = line[1:].split(maxsplit=1)
+        values = {}
+        for m in re.finditer(r'\[([^=\]]+)=([^\]]+)\]', values_str):
+            field = m.group(1).strip()
+            value = m.group(2).strip()
+            if field == 'country':
+                place = re.split(r'[,:] ', value)
+                values.update(zip(['country', 'region', 'locality'], place + ['', '']))
+            else:
+                values[field] = value
+        return seqid, values
+
+    @staticmethod
+    def read(file):
+        while True:
+            line = file.readline()
+            if line == "" or line.isspace(): continue
+            _, values = GenbankFastaFile.parse_ident(line)
+            fields = ['seqid'] + list(values.keys()) + ['sequence']
+            break
+        file.seek(0, 0)
+        def record_generator():
+            skipped = 0
+            for chunk in split_file(file):
+                # skip if there is no sequence
+                if len(chunk) <= 1: 
+                    skipped += 1
+                    continue
+                ident = chunk[0]
+                seqid, values = GenbankFastaFile.parse_ident(ident)
+                yield Record(seqid=seqid, sequence="".join(chunk[1:]), **values)
+            if skipped > 0: warnings.warn(f"{skipped} records did not contain a sequence and are therefore not included in the converted file")
+        return fields, record_generator
+

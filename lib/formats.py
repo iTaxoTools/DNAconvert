@@ -9,6 +9,7 @@ formats = dict(
         fasta_hapview = fasta.HapviewFastafile,
         phylip = phylip.PhylipFile,
         fastq = fasta.FastQFile,
+        fasta_genbank = fasta.GenbankFastaFile,
         )
 
 extensions = {
@@ -24,4 +25,5 @@ extensions = {
         ".fastq.gz": fasta.FastQFile,
         ".fq.gz": fasta.FastQFile,
         ".gz": fasta.FastQFile,
+        ".gb.fas": fasta.GenbankFastaFile,
         }
