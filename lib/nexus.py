@@ -1,4 +1,4 @@
-from typing import TextIO
+from typing import TextIO, Optional
 
 class Tokenizer:
     punctiation = set('=;')
@@ -11,18 +11,18 @@ class Tokenizer:
         self.line = ""
         self.line_pos = 0
 
-    def peek_char(self: Tokenizer):
+    def peek_char(self: Tokenizer) -> Optional(str):
         try:
-            c = self.line[self.line_pose]
+            c = self.line[self.line_pos]
         except IndexError:
             self.line = self.file.readline
-            if self.line = "": raise StopIteration
+            if self.line == "": return None
             self.line_pos = 0
             c = self.line[0]
         finally:
             return c
 
-    def get_char(self: Tokenizer):
+    def get_char(self: Tokenizer) -> Optional(str):
         c = self.peek_char()
         self.line_pos += 1
         return c
@@ -34,18 +34,18 @@ class Tokenizer:
     def skip_comment(self: Tokenizer):
         while True:
             c = self.get_char()
-            if c == '[':
+            if c == None:
+                raise ValueError("Nexus: EOF inside a comment")
+            elif c == '[':
                 self.skip_comment
             elif c == ']':
                 break
-            elif c == '':
-                raise ValueError("Nexus: EOF inside a comment")
 
     def read_quoted(self: Tokenizer):
         s = ""
         while True:
             c = self.get_char()
-            if c == '':
+            if c == None:
                 raise ValueError("Nexus: EOF inside a quoted value")
             elif c == '\'':
                 if self.peek_char == '\'':
@@ -62,8 +62,11 @@ class Tokenizer:
         if self.token: return self.replace_token("")
         while True:
             c = self.get_char()
-            if c == '':
-                raise StopIteration
+            if c == None:
+                if self.token:
+                    return self.token
+                else:
+                    raise StopIteration
             elif c in Tokenizer.punctiation: 
                 return self.replace_token(c)
             elif c == '[':
