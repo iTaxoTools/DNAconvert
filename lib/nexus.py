@@ -1,5 +1,6 @@
-from typing import TextIO, Optional, Tuple, Callable, Iterator, List, Set, ClassVar
+from typing import TextIO, Optional, Tuple, Callable, Iterator, List, Set, ClassVar, Generator
 from lib.record import *
+from lib.utils import *
 import re
 
 
@@ -167,7 +168,20 @@ class NexusReader:
                     f"In the Nexus file: {arg} has no corresponding sequence")
 
 
+def seqid_max_reducer(acc: int, record: Record) -> int:
+    l = len(record['seqid'])
+    return max(acc, l)
+
+
 class NexusFile:
+
+    nexus_preamble: ClassVar[str] = """\
+#NEXUS
+
+begin data;
+
+format datatype=DNA missing=N missing=? Gap=- Interleave=yes;
+"""
 
     @staticmethod
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
@@ -181,3 +195,37 @@ class NexusFile:
                     for seqid, sequence in records:
                         yield Record(seqid=seqid, sequence=sequence)
         return fields, record_generator
+
+    @staticmethod
+    def write(file: TextIO, fields: List[str]) -> Generator:
+        aggregator = PhylipAggregator((0, seqid_max_reducer))
+        records = []
+        name_assembler = NameAssembler(fields)
+        unicifier = Unicifier(100)
+
+        while True:
+            try:
+                record = yield
+            except GeneratorExit:
+                break
+            record['seqid'] = unicifier.unique(name_assembler.name(record))
+            aggregator.send(record)
+            records.append(record)
+
+        [max_length, min_length, seqid_max_length] = aggregator.results()
+
+        aligner = dna_aligner(max_length, min_length)
+
+        print(NexusFile.nexus_preamble, file=file)
+
+        print(
+            f"dimensions Nchar={max_length} Ntax={len(records)};\n", file=file)
+
+        print("matrix", file=file)
+
+        for record in records:
+            print(record['seqid'].ljust(seqid_max_length), aligner(
+                record['sequence']), file=file)
+
+        print(";\n", file=file)
+        print("end;", file=file)

@@ -1,7 +1,11 @@
+from typing import Optional
+
+
 class Record:
     """Class for records with a smart constructor that guarantees the presence of required fields
     """
-    def __init__(self, **kwargs):
+
+    def __init__(self, **kwargs: str):
         """Creates a record with given fields
         Raises an ValueError if a requred field is not supplied
 
@@ -13,15 +17,15 @@ class Record:
             raise ValueError("field 'sequence' is required")
         self._fields = kwargs
 
-    def __getitem__(self, field):
+    def __getitem__(self, field: str) -> str:
         """r.__getitem__(field) <==> r[field]
         """
         return self._fields[field]
 
-    def __setitem__(self, field, value):
+    def __setitem__(self, field: str, value: str) -> None:
         """Sets self[field] to a value
         """
         self._fields[field] = value
 
-    def get(self, field):
+    def get(self, field: str) -> Optional[str]:
         return self._fields.get(field)

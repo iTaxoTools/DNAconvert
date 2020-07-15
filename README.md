@@ -50,6 +50,7 @@ Then run
 * `phylip`: Phylip format
 * `fastq`: FASTQ format
 * `fasta_gbexport`: FASTA format for export into Genbank repository
+* `nexus`: NEXUS format
 
 ## Recognised extension
 If format is not provided, the program can infer it from the file extension
@@ -63,6 +64,7 @@ Currently recognised:
 * `.fastq`, `.fq`: FASTQ format
 * `.fastq.gz`, `.fq.gz`: FASTQ format compressed with Gzip
 * `.gb.fas`: FASTA format for export into Genbank repository
+* `.nex`: NEXUS format
 
 Files with extension `.gz` are uncompressed automatically
 
