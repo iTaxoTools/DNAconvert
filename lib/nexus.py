@@ -131,7 +131,7 @@ class NexusCommands:
 
 class NexusReader:
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.read_matrix = False
 
     def block_reset(self) -> None:
@@ -187,7 +187,7 @@ format datatype=DNA missing=N missing=? Gap=- Interleave=yes;
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
         fields = ['seqid', 'sequence']
 
-        def record_generator():
+        def record_generator() -> Iterator[Record]:
             nexus_reader = NexusReader()
             for command, args in NexusCommands(file):
                 records = nexus_reader.execute(command, args)

@@ -49,7 +49,7 @@ def convertDNA(infile: TextIO, outfile: TextIO, informat: Type, outformat: Type)
     writer.close()
 
 
-def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, outformat_name: str):
+def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, outformat_name: str) -> None:
     # detect extensions
     in_ext = splitext(infile_path)
     out_ext = splitext(outfile_path)
@@ -79,7 +79,7 @@ def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, out
         convertDNA(infile, outfile, informat=informat, outformat=outformat)
 
 
-def launch_gui():
+def launch_gui() -> None:
     # create window
     root = tk.Tk()
     root.title("DNAconvert")
@@ -112,23 +112,23 @@ def launch_gui():
         mainframe, textvariable=outformat, values=format_list)
 
     # command for the input "Browse" button
-    def browse_infile():
+    def browse_infile() -> None:
         name = os.path.relpath(tkinter.filedialog.askopenfilename())
         infile_name.set(name)
 
     # command for the output "Browse" button
-    def browse_outfile():
+    def browse_outfile() -> None:
         name = os.path.relpath(tkinter.filedialog.asksaveasfilename())
         outfile_name.set(name)
 
     # command for the convert button
-    def gui_convert():
+    def gui_convert() -> None:
         try:
             with warnings.catch_warnings(record=True) as warns:
                 convert_wrapper(infile_name.get(), outfile_name.get(),
                                 informat.get(), outformat.get())
                 for w in warns:
-                    tkinter.messagebox.showwarning("Warning", w.message)
+                    tkinter.messagebox.showwarning("Warning", str(w.message))
         except ValueError as ex:
             tkinter.messagebox.showerror("Error", str(ex))
         except FileNotFoundError as ex:

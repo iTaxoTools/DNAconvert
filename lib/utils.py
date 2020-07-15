@@ -1,4 +1,4 @@
-from typing import List, Callable, Optional, Dict
+from typing import List, Callable, Optional, Dict, Any
 from lib.record import *
 import re
 import warnings
@@ -8,7 +8,7 @@ class Aggregator:
     """Aggregates information about records
     """
 
-    def __init__(self, *reducers):
+    def __init__(self, *reducers: Any):
         """ Takes pairs of accumulators and reducers
         each reducer should a pure function
         that takes the current accumulator value and the current record
@@ -18,14 +18,14 @@ class Aggregator:
         self._accs = list(accs)
         self._reducers = list(reducers)
 
-    def send(self, record):
+    def send(self, record: Record) -> None:
         """ Send a record to collect its information
         updates all the accumulators
         """
         for i, acc in enumerate(self._accs):
             self._accs[i] = self._reducers[i](acc, record)
 
-    def results(self):
+    def results(self) -> List[Any]:
         """ Returns the current values of the accumulators
         """
         return self._accs
@@ -45,7 +45,7 @@ def _min_reducer(acc: int, record: Record) -> int:
 
 
 class PhylipAggregator(Aggregator):
-    def __init__(self, *reducers):
+    def __init__(self, *reducers: Any):
         super().__init__((0, _max_reducer), (None, _min_reducer), *reducers)
 
 
@@ -97,8 +97,8 @@ def dna_aligner(max_length: int, min_length: int) -> Callable[[str], str]:
     else:
         warnings.warn("The requested output format requires all sequences to be of equal length which is not the case in your input file. Probably your sequences are unaligned. To complete the conversion, dash-signs have been added at the end of the shorter sequences to adjust their length, but this may impede proper analysis - please check.")
 
-        def dash_adder(sequence):
-            return sequence + "-" * (max_length - len(sequence))
+        def dash_adder(sequence: str) -> str:
+            return sequence.ljust(max_length, '-')
         return dash_adder
 
 
