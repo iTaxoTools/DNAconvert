@@ -264,7 +264,7 @@ class GenbankFastaFile:
             break
         file.seek(0, 0)
 
-        def record_generator():
+        def record_generator() -> Iterator[Record]:
             skipped = 0
             for chunk in split_file(file):
                 # skip if there is no sequence
@@ -304,5 +304,5 @@ class GenbankFastaFile:
                 no_dashes = False
                 warnings.warn("Some of your sequences contain dashes (gaps) which is only allowed if you submit them as alignment. If you do not wish to submit your sequences as alignment, please remove the dashes before conversion.")
             print('>'+unicifier.unique(name_assembler.name(record)), *
-                  [f"[{field}={record[field]}]" for field in fields], file=file)
+                  [f"[{field}={record[field].strip()}]" for field in fields], file=file)
             print(record['sequence'], file=file)
