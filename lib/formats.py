@@ -2,6 +2,7 @@ import lib.tabfile as tabfile
 import lib.fasta as fasta
 import lib.phylip as phylip
 import lib.nexus as nexus
+import lib.genbank as genbank
 
 formats = dict(
     tab=tabfile.Tabfile,
@@ -12,6 +13,7 @@ formats = dict(
     fastq=fasta.FastQFile,
     fasta_gbexport=fasta.GenbankFastaFile,
     nexus=nexus.NexusFile,
+    genbank=genbank.GenbankFile,
 )
 
 extensions = {
@@ -29,4 +31,5 @@ extensions = {
     ".gz": fasta.FastQFile,
     ".gb.fas": fasta.GenbankFastaFile,
     ".nex": nexus.NexusFile,
+    ".gb": genbank.GenbankFile,
 }

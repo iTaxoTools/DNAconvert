@@ -63,7 +63,7 @@ class NameAssembler:
     def _simple_name(self, record: Record) -> str:
         """used when there no information fields
         """
-        return record['seqid']
+        return sanitize(record['seqid'])
 
     def _complex_name(self, record: Record) -> str:
         """used when information fields (all except 'seqid' and 'sequence') are present

@@ -54,6 +54,7 @@ Then run
 * `fastq`: FASTQ format
 * `fasta_gbexport`: FASTA format for export into Genbank repository
 * `nexus`: NEXUS format
+* `genbank`: Genbank flat file format
 
 ## Recognised extension
 If format is not provided, the program can infer it from the file extension
@@ -68,6 +69,7 @@ Currently recognised:
 * `.fastq.gz`, `.fq.gz`: FASTQ format compressed with Gzip
 * `.gb.fas`: FASTA format for export into Genbank repository
 * `.nex`: NEXUS format
+* `.gb`: Genbank flat file format
 
 Files with extension `.gz` are uncompressed automatically
 
