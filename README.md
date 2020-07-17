@@ -26,9 +26,9 @@ Then run
     pyinstaller --onefile --windowed DNAconvert.py
 
 ## Usage
-    usage: DNAconvert.py [-h] [--cmd] [--informat INFORMAT]
-                         [--outformat OUTFORMAT]
-                         [infile] [outfile]
+    usage: DNAconvert.py [-h] [--cmd] [--allow_empty_sequences]
+                     [--informat INFORMAT] [--outformat OUTFORMAT]
+                     [infile] [outfile]
            DNAconvert.py
     
     positional arguments:
@@ -38,6 +38,9 @@ Then run
     optional arguments:
       -h, --help            show this help message and exit
       --cmd                 activates the command-line interface
+      --allow_empty_sequences
+                            set this to keep the empty sequences in the output
+                            file
       --informat INFORMAT   format of the input file
       --outformat OUTFORMAT
                             format of the output file

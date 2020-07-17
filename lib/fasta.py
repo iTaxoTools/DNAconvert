@@ -57,18 +57,10 @@ class Fastafile:
         fields = ['seqid', 'sequence']
 
         def record_generator() -> Iterator[Record]:
-            skipped = 0
             for chunk in split_file(file):
-                # skip if there is no sequence
-                if len(chunk) <= 1:
-                    skipped += 1
-                    continue
                 # 'seqid' is the first line without the initial character
                 # 'sequence' is the concatenation of all the other lines
                 yield Record(seqid=chunk[0][1:], sequence="".join(chunk[1:]))
-            if skipped > 0:
-                warnings.warn(
-                    f"{skipped} records did not contain a sequence and are therefore not included in the converted file")
         return fields, record_generator
 
 
@@ -116,18 +108,10 @@ class HapviewFastafile:
         fields = ['seqid', 'sequence']
 
         def record_generator() -> Iterator[Record]:
-            skipped = 0
             for chunk in split_file(file):
-                # skip if there is no sequence
-                if len(chunk) <= 1:
-                    skipped += 1
-                    continue
                 # 'seqid' is the first line without the initial character
                 # 'sequence' is the concatenation of all the other lines
                 yield Record(seqid=chunk[0][1:], sequence="".join(chunk[1:]))
-            if skipped > 0:
-                warnings.warn(
-                    f"{skipped} records did not contain a sequence and are therefore not included in the converted file")
         return fields, record_generator
 
     @ staticmethod
@@ -265,18 +249,10 @@ class GenbankFastaFile:
         file.seek(0, 0)
 
         def record_generator() -> Iterator[Record]:
-            skipped = 0
             for chunk in split_file(file):
-                # skip if there is no sequence
-                if len(chunk) <= 1:
-                    skipped += 1
-                    continue
                 ident = chunk[0]
                 seqid, values = GenbankFastaFile.parse_ident(ident)
                 yield Record(seqid=seqid, sequence="".join(chunk[1:]), **values)
-            if skipped > 0:
-                warnings.warn(
-                    f"{skipped} records did not contain a sequence and are therefore not included in the converted file")
         return fields, record_generator
 
     @staticmethod

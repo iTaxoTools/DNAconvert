@@ -33,7 +33,7 @@ def parse_format(name: Optional[str], ext_pair: Tuple[str, str]) -> Optional[Typ
             return None
 
 
-def convertDNA(infile: TextIO, outfile: TextIO, informat: Type, outformat: Type) -> None:
+def convertDNA(infile: TextIO, outfile: TextIO, informat: Type, outformat: Type, **options: bool) -> None:
     if informat is lib.fasta.FastQFile and outformat is lib.fasta.Fastafile:
         lib.fasta.FastQFile.to_fasta(infile, outfile)
         return
@@ -43,13 +43,20 @@ def convertDNA(infile: TextIO, outfile: TextIO, informat: Type, outformat: Type)
     writer = outformat.write(outfile, fields)
     next(writer)
 
+    skipped = 0
     for record in records():
-        writer.send(record)
+        if record['sequence'] or options['allow_empty_sequences']:
+            writer.send(record)
+        else:
+            skipped += 1
 
+    if skipped > 0:
+        warnings.warn(
+            f"{skipped} records did not contain a sequence and are therefore not included in the converted file.\n If you would like to keep the empty sequences, check 'Allow empty sequences' or pass the option '- -allow_empty_sequences")
     writer.close()
 
 
-def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, outformat_name: str) -> None:
+def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, outformat_name: str, **options: bool) -> None:
     # detect extensions
     in_ext = splitext(infile_path)
     out_ext = splitext(outfile_path)
@@ -76,7 +83,8 @@ def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, out
 
     # do the conversion
     with infile, open(outfile_path, mode="w") as outfile:
-        convertDNA(infile, outfile, informat=informat, outformat=outformat)
+        convertDNA(infile, outfile, informat=informat,
+                   outformat=outformat, **options)
 
 
 def launch_gui() -> None:
@@ -126,7 +134,7 @@ def launch_gui() -> None:
         try:
             with warnings.catch_warnings(record=True) as warns:
                 convert_wrapper(infile_name.get(), outfile_name.get(),
-                                informat.get(), outformat.get())
+                                informat.get(), outformat.get(), allow_empty_sequences=allow_empty_sequences.get())
                 for w in warns:
                     tkinter.messagebox.showwarning("Warning", str(w.message))
         except ValueError as ex:
@@ -139,6 +147,11 @@ def launch_gui() -> None:
     outfile_browse = ttk.Button(
         mainframe, text="Browse", command=browse_outfile)
     convert_btn = ttk.Button(mainframe, text="Convert", command=gui_convert)
+
+    # checkbox to allow empty sequences
+    allow_empty_sequences = tk.BooleanVar()
+    allow_es_chk = ttk.Checkbutton(
+        mainframe, text="Allow empty sequences", variable=allow_empty_sequences)
 
     # place input widget group
     infile_lbl.grid(column=0, row=0, sticky=tk.W)
@@ -154,8 +167,9 @@ def launch_gui() -> None:
     outformatBox.grid(column=3, row=3, sticky=tk.W)
     outfile_browse.grid(column=4, row=1, sticky=tk.W)
 
-    # place the convert button
+    # place the convert button and the checkbox
     convert_btn.grid(column=2, row=4)
+    allow_es_chk.grid(column=2, row=5)
 
     # run the gui
     root.mainloop()
@@ -166,6 +180,8 @@ parser = argparse.ArgumentParser(
     description="Converts between file formats with genetic information. Uses graphical interface by default.")
 parser.add_argument(
     '--cmd', help="activates the command-line interface", action='store_true')
+parser.add_argument('--allow_empty_sequences', action='store_true',
+                    help="set this to keep the empty sequences in the output file")
 parser.add_argument('--informat', help="format of the input file")
 parser.add_argument('--outformat', help="format of the output file")
 parser.add_argument('infile', nargs='?', help="the input file")
@@ -181,7 +197,7 @@ else:
     try:
         with warnings.catch_warnings(record=True) as warns:
             convert_wrapper(args.infile, args.outfile,
-                            args.informat, args.outformat)
+                            args.informat, args.outformat, allow_empty_sequences=args.allow_empty_sequences)
             for w in warns:
                 print(w.message)
     except ValueError as ex:
