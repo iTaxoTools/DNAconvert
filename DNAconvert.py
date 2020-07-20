@@ -137,6 +137,8 @@ def launch_gui() -> None:
                                 informat.get(), outformat.get(), allow_empty_sequences=allow_empty_sequences.get())
                 for w in warns:
                     tkinter.messagebox.showwarning("Warning", str(w.message))
+            tkinter.messagebox.showinfo(
+                "Done.", "The conversion has been completed")
         except ValueError as ex:
             tkinter.messagebox.showerror("Error", str(ex))
         except FileNotFoundError as ex:
