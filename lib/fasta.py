@@ -199,8 +199,8 @@ class NameAssemblerGB(NameAssembler):
 
 
 class GenbankFastaFile:
-    genbankfields = ['organism', 'mol_type', 'altitude', 'bio_material', 'cell_line', 'cell_type', 'chromosome', 'citation', 'clone', 'clone_lib', 'collected_by', 'collection_date', 'country', 'cultivar', 'culture_collectiondb_xref', 'dev_stage', 'ecotype', 'environmental_samplefocus', 'germlinehaplogroup', 'haplotype', 'host', 'identified_by', 'isolate', 'isolation_source',
-                     'lab_host', 'lat_lon', 'macronuclearmap', 'mating_type', 'metagenome_source', 'note', 'organelle', 'PCR_primersplasmid', 'pop_variant', 'proviralrearrangedsegment', 'serotype', 'serovar', 'sex', 'specimen_voucher', 'strain', 'sub_clone', 'submitter_seqid', 'sub_species', 'sub_strain', 'tissue_lib', 'tissue_type', 'transgenictype_material', 'variety']
+    genbankfields = ['seqid', 'organism', 'accession', 'specimen_voucher', 'strain', 'isolate', 'country', 'sequence', 'mol_type', 'altitude', 'bio_material', 'cell_line', 'cell_type', 'chromosome', 'citation', 'clone', 'clone_lib', 'collected_by', 'collection_date', 'cultivar', 'culture_collectiondb_xref', 'dev_stage', 'ecotype', 'environmental_samplefocus', 'germlinehaplogroup',
+                     'haplotype', 'host', 'identified_by', 'isolation_source', 'lab_host', 'lat_lon', 'macronuclearmap', 'mating_type', 'metagenome_source', 'note', 'organelle', 'PCR_primersplasmid', 'pop_variant', 'proviralrearrangedsegment', 'serotype', 'serovar', 'sex', 'sub_clone', 'submitter_seqid', 'sub_species', 'sub_strain', 'tissue_lib', 'tissue_type', 'transgenictype_material', 'variety']
 
     @ staticmethod
     def prepare(fields: List[str], record: Record) -> None:
@@ -235,36 +235,29 @@ class GenbankFastaFile:
                     zip(['country', 'region', 'locality'], place + ['', '']))
             else:
                 values[field] = value
+        for field in GenbankFastaFile.genbankfields:
+            if not (field == "seqid" or field == "sequence"):
+                values.setdefault(field, "")
         return seqid, values
 
     @ staticmethod
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
-        while True:
-            line = file.readline()
-            if line == "" or line.isspace():
-                continue
-            _, values = GenbankFastaFile.parse_ident(line)
-            fields = ['seqid'] + list(values.keys()) + ['sequence']
-            break
-        file.seek(0, 0)
-
         def record_generator() -> Iterator[Record]:
             for chunk in split_file(file):
                 ident = chunk[0]
                 seqid, values = GenbankFastaFile.parse_ident(ident)
                 yield Record(seqid=seqid, sequence="".join(chunk[1:]), **values)
-        return fields, record_generator
+        return GenbankFastaFile.genbankfields, record_generator
 
     @staticmethod
     def write(file: TextIO, fields: List[str]) -> Generator:
-        seqid_exists = [x for x in ['seqid'] if 'seqid' in fields]
         fields = [
             field for field in fields if field in GenbankFastaFile.genbankfields]
         if not (('organism' in fields or 'species' in fields) and ('specimen_voucher' in fields or 'isolate' in fields or 'clone' in fields or 'haplotype' in fields)):
             warnings.warn("Your file has been converted. However, apparently in your tab file either the organism, or a unique source identifier (specimen-voucher, isolate, clone) was missing, which may be required for submission to GenBank")
         length_okay = True
         no_dashes = True
-        name_assembler = NameAssemblerGB(seqid_exists + fields)
+        name_assembler = NameAssemblerGB(fields)
         unicifier = Unicifier(25)
         while True:
             try:
@@ -280,5 +273,5 @@ class GenbankFastaFile:
                 no_dashes = False
                 warnings.warn("Some of your sequences contain dashes (gaps) which is only allowed if you submit them as alignment. If you do not wish to submit your sequences as alignment, please remove the dashes before conversion.")
             print('>'+unicifier.unique(name_assembler.name(record)), *
-                  [f"[{field}={record[field].strip()}]" for field in fields], file=file)
+                  [f"[{field}={record[field].strip()}]" for field in fields if not (field == "seqid" or field == "sequence")], file=file)
             print(record['sequence'], file=file)
