@@ -32,11 +32,17 @@ class Aggregator:
 
 
 def _max_reducer(acc: int, record: Record) -> int:
+    """
+    returns the maximum between acc and the length of sequence in record
+    """
     l = len(record['sequence'])
     return max(acc, l)
 
 
 def _min_reducer(acc: int, record: Record) -> int:
+    """
+    returns the minimum between acc and the length of sequence in record
+    """
     l = len(record['sequence'])
     if acc:
         return min(acc, l)
@@ -45,6 +51,11 @@ def _min_reducer(acc: int, record: Record) -> int:
 
 
 class PhylipAggregator(Aggregator):
+    """
+    Specialization of the Aggregator for the Phylip format
+    with two default reducers
+    """
+
     def __init__(self, *reducers: Any):
         super().__init__((0, _max_reducer), (None, _min_reducer), *reducers)
 
@@ -58,6 +69,8 @@ def sanitize(s: str) -> str:
 class NameAssembler:
     """create 'seqid' for the record,
     depending on the fields given to the constructor
+
+    the name(self, record) method is used for 'seqid' generation
     """
 
     def _simple_name(self, record: Record) -> str:
@@ -73,39 +86,58 @@ class NameAssembler:
         return "_".join(sanitize(record[field]) for field in self._fields if record[field] != "")
 
     def __init__(self, fields: List[str]):
+        # copy the fields to not mutate the original
         fields = fields.copy()
         try:
+            # seqid should not be used for the name generation
             fields.remove('seqid')
         except ValueError:
             pass
         try:
+            # only the fields before the sequence field will be used
             i = fields.index('sequence')
         except ValueError:
             pass
         else:
+            # collect the relevant fields
             fields = fields[:i]
         if fields:
+            # generate 'seqid' from the fields
             self._fields = fields
             self.name = self._complex_name
         else:
+            # copy the 'seqid'
             self.name = self._simple_name
 
 
 def dna_aligner(max_length: int, min_length: int) -> Callable[[str], str]:
+    """
+    returns a function that takes a sequence and pads it to the max_length
+
+    min_legth is used for optimisation
+    """
     if max_length == min_length:
+        # nothing needs to be done
         return lambda x: x
     else:
+        # warn the user about the padding
         warnings.warn("The requested output format requires all sequences to be of equal length which is not the case in your input file. Probably your sequences are unaligned. To complete the conversion, dash-signs have been added at the end of the shorter sequences to adjust their length, but this may impede proper analysis - please check.")
 
         def dash_adder(sequence: str) -> str:
+            # pad the sequences
             return sequence.ljust(max_length, '-')
         return dash_adder
 
 
 def get_species_field(fields: List[str]) -> Optional[str]:
+    """
+    calculates the field name, that contains the species name
+    """
+    # allowed names
     field_names = ['organism', 'scientificname', 'identification/fullscientificnamestring',
                    'scientific name', 'scientific_name', 'species', 'speciesname', 'species name', 'species_name']
     fields_set = set(fields)
+    # find the first allowed name in the given field names
     return next((field for field in field_names if field.casefold() in fields_set), None)
 
 
@@ -119,25 +151,32 @@ class Unicifier():
 
     def __init__(self, length_limit: Optional[int] = None):
         if length_limit:
+            # limit-based generation
             self._length_limit = length_limit
             self._count = 0
             self.unique = self._unique_limit
         else:
+            # memorization-bases generation
             self._sep = '_'
             self._seen_name: Dict[str, int] = {}
             self.unique = self._unique_set
 
     def _unique_limit(self, name: str) -> str:
+        # overwrite the end with counter
         suff = str(self._count)
         self._count += 1
         return name[0:self._length_limit - len(suff)] + suff
 
     def _unique_set(self, name: str) -> str:
+        # unless already seen, the result is the input
         uniquename = name
         try:
+            # try to generate the unique name based on the memorized ones
             uniquename = name + self._sep + str(self._seen_name[name])
         except KeyError:
+            # the name have not been seen before
             self._seen_name[name] = 1
         else:
+            # increment the amount the name have been seen
             self._seen_name[name] += 1
         return uniquename

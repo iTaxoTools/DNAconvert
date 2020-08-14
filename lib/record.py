@@ -28,4 +28,8 @@ class Record:
         self._fields[field] = value
 
     def get(self, field: str) -> Optional[str]:
+        """
+        returns the value of the field
+        returns None if it doesn't exists
+        """
         return self._fields.get(field)

@@ -4,6 +4,7 @@ import lib.phylip as phylip
 import lib.nexus as nexus
 import lib.genbank as genbank
 
+# formats' names dictionary
 formats = dict(
     tab=tabfile.Tabfile,
     fasta=fasta.Fastafile,
@@ -16,6 +17,7 @@ formats = dict(
     genbank=genbank.GenbankFile,
 )
 
+# extensions' dictionary
 extensions = {
     ".tab": tabfile.Tabfile,
     ".txt": tabfile.Tabfile,

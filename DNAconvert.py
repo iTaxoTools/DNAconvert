@@ -12,51 +12,97 @@ import gzip
 import lib.fasta
 from typing import Tuple, Type, Optional, TextIO, cast
 
-# splits two component extension
-
 
 def splitext(name: str) -> Tuple[str, str]:
+    """
+    Returns the two-part extension and the one-part extension of a file name
+
+    Example:
+        splitext("abc.fas.gb.gz") == (".gb.gz", ".gz")
+    """
     name, ext2 = os.path.splitext(name)
     _, ext1 = os.path.splitext(name)
     return (ext1 + ext2, ext2)
 
 
 def parse_format(name: Optional[str], ext_pair: Tuple[str, str]) -> Optional[Type]:
+    """
+    Lookups the format class based on the format name or the extensions.
+
+    Only checks the extensions, if the name is None.
+    Two-part extension has the priority
+
+    Examples:
+        parse_format("fasta", ext_pair) == lib.fasta.Fastafile
+
+        parse_format(None, (".hapv.fas", ".fas") == lib.fasta.HapviewFastafile
+
+        parse_format(None, (".txt.fas", ".fas") == lib.fasta.Fastafile
+    """
+    # destruct the ext_pair
     d_ext = ext_pair[0]
     ext = ext_pair[1]
+
     try:
+        # lookup the format name, or the two-part extension, if it doesn't exist
         return lib.formats.formats[name] if name else lib.formats.extensions[d_ext]
     except KeyError:
+        # both the format name and the two-part extension are unknown
         try:
+            # lookup the one-part extension
             return lib.formats.extensions[ext]
         except KeyError:
+            # all the lookups failed
             return None
 
 
 def convertDNA(infile: TextIO, outfile: TextIO, informat: Type, outformat: Type, **options: bool) -> None:
+    """
+    Converts infile of format informat to outfile of format outformat with given options
+
+    Possible options:
+        allow_empty_sequnces: if set, the records with empty sequences are also recorded in the outfile.
+           By default, records with empty sequences are discarded
+    """
+    # take a shortcut for convertion FastQ into FASTA
     if informat is lib.fasta.FastQFile and outformat is lib.fasta.Fastafile:
         lib.fasta.FastQFile.to_fasta(infile, outfile)
         return
 
+    # initialize reading the file
     fields, records = informat.read(infile)
 
+    # start the writer
     writer = outformat.write(outfile, fields)
     next(writer)
 
+    # keep track of the number of skipped records
     skipped = 0
+    # iterate over the records in infile
     for record in records():
+        # when 'allow_empty_sequences' is set, the condition is always true and the record is passed to the writer
+        # otherwise only the records with non-empty sequences are passed
         if record['sequence'] or options['allow_empty_sequences']:
             writer.send(record)
         else:
             skipped += 1
 
+    # finish the writing
+    writer.close()
+
+    # inform the user about the number of skipped records
     if skipped > 0:
         warnings.warn(
             f"{skipped} records did not contain a sequence and are therefore not included in the converted file.\n If you would like to keep the empty sequences, check 'Allow empty sequences' or pass the option '- -allow_empty_sequences")
-    writer.close()
 
 
 def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, outformat_name: str, **options: bool) -> None:
+    """
+    This the wrapper for convertDNA. It parses the arguments and deals with the errors.
+
+    Detects formats based on informat_name, outformat_name and extensions
+    Passes options to the convertDNA
+    """
     # detect extensions
     in_ext = splitext(infile_path)
     out_ext = splitext(outfile_path)
@@ -77,6 +123,7 @@ def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, out
 
     # open the input file
     if in_ext[1] == ".gz":
+        # if the input file is a gz archive, unpack it
         infile: TextIO = cast(TextIO, gzip.open(infile_path, mode='rt'))
     else:
         infile = open(infile_path)
@@ -88,6 +135,11 @@ def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, out
 
 
 def launch_gui() -> None:
+    """
+    This function runs the graphical interface
+
+    It is used when DNAconvert is launched without arguments
+    """
     # create window
     root = tk.Tk()
     root.title("DNAconvert")
@@ -132,13 +184,17 @@ def launch_gui() -> None:
     # command for the convert button
     def gui_convert() -> None:
         try:
+            # catch all warnings
             with warnings.catch_warnings(record=True) as warns:
                 convert_wrapper(infile_name.get(), outfile_name.get(),
                                 informat.get(), outformat.get(), allow_empty_sequences=allow_empty_sequences.get())
+                # display the warnings generated during the conversion
                 for w in warns:
                     tkinter.messagebox.showwarning("Warning", str(w.message))
+            # notify the user that the converions is finished
             tkinter.messagebox.showinfo(
                 "Done.", "The conversion has been completed")
+        # show the ValueErrors and FileNotFoundErrors
         except ValueError as ex:
             tkinter.messagebox.showerror("Error", str(ex))
         except FileNotFoundError as ex:
@@ -184,10 +240,11 @@ parser.add_argument(
     '--cmd', help="activates the command-line interface", action='store_true')
 parser.add_argument('--allow_empty_sequences', action='store_true',
                     help="set this to keep the empty sequences in the output file")
-parser.add_argument('--informat', help="format of the input file")
-parser.add_argument('--outformat', help="format of the output file")
-parser.add_argument('infile', nargs='?', help="the input file")
-parser.add_argument('outfile', nargs='?', help="the output file")
+parser.add_argument('--informat', default="", help="format of the input file")
+parser.add_argument('--outformat', default="",
+                    help="format of the output file")
+parser.add_argument('infile', default="", nargs='?', help="the input file")
+parser.add_argument('outfile', default="", nargs='?', help="the output file")
 
 # parse the arguments
 args = parser.parse_args()
@@ -196,12 +253,17 @@ args = parser.parse_args()
 if not args.cmd:
     launch_gui()
 else:
+    # launch in the command-line mode
     try:
+        # catch the warnging
         with warnings.catch_warnings(record=True) as warns:
             convert_wrapper(args.infile, args.outfile,
                             args.informat, args.outformat, allow_empty_sequences=args.allow_empty_sequences)
+
+            # display the warnings generated during the conversion
             for w in warns:
                 print(w.message)
+    # show the ValueErrors and FileNotFoundErrors
     except ValueError as ex:
         sys.exit(ex)
     except FileNotFoundError as ex:

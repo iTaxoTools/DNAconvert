@@ -1,6 +1,6 @@
-from lib.record import *
-from lib.utils import *
 from typing import TextIO, List, Tuple, Callable, Iterator, Generator
+from lib.utils import *
+rom lib.record import *
 
 
 class Tabfile:
@@ -8,6 +8,9 @@ class Tabfile:
 
     @staticmethod
     def write(file: TextIO, fields: List[str]) -> Generator:
+        """
+        the writer method for tab format
+        """
         if 'seqid' not in fields:
             raise ValueError("Tab format expects a 'seqid'")
 
@@ -30,6 +33,9 @@ class Tabfile:
 
     @staticmethod
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
+        """
+        the reader method for tab format
+        """
         # read the heading for the list of fields
         fields = file.readline().rstrip('\n').split('\t')
         fields = list(map(str.casefold, fields))
