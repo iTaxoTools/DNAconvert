@@ -1,7 +1,9 @@
+from lib.ext_ASCII_conv_table import ext_ascii_trans
 from typing import List, Callable, Optional, Dict, Any
 from lib.record import *
 import re
 import warnings
+import unicodedata
 
 
 class Aggregator:
@@ -62,7 +64,9 @@ class PhylipAggregator(Aggregator):
 
 def sanitize(s: str) -> str:
     """ replaces sequence of not-alphanum characters with '_'
+    replaces some extended ASCII characters with ASCII representations
     """
+    s = unicodedata.normalize('NFKC', s).translate(ext_ascii_trans)
     return '_'.join(part for part in (re.split(r'[^a-zA-Z0-9]+', s)) if part)
 
 
