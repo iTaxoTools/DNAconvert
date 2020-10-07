@@ -77,6 +77,15 @@ class NameAssembler:
     the name(self, record) method is used for 'seqid' generation
     """
 
+    @staticmethod
+    def _species_abbr(species: str) -> str:
+        try:
+            genus, species = species.split(maxsplit=1)
+        except ValueError:
+            return species
+        else:
+            return genus[0:3] + species
+
     def _simple_name(self, record: Record) -> str:
         """used when there no information fields
         """
@@ -87,7 +96,11 @@ class NameAssembler:
         Their values are concatenated with underscores and forbidden character are replaced with underscores
         taking care of multiple underscores
         """
-        return "_".join(sanitize(record[field]) for field in self._fields if record[field] != "")
+        parts = [record[field]
+                 for field in self._fields if record[field] != ""]
+        if self._fields[0] == 'species':
+            parts[0] = NameAssembler._species_abbr(parts[0])
+        return "_".join(map(sanitize, parts))
 
     def __init__(self, fields: List[str]):
         # copy the fields to not mutate the original
@@ -107,6 +120,9 @@ class NameAssembler:
             fields = fields[:i]
         if fields:
             # generate 'seqid' from the fields
+            if 'species' in fields:
+                i = fields.index('species')
+                fields[0], fields[i] = fields[i], fields[0]
             self._fields = fields
             self.name = self._complex_name
         else:
