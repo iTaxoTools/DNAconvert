@@ -128,10 +128,12 @@ def read_sequence(lines: Iterator[str]) -> str:
         # collect all the sequence parts, ignore the numbers
         for word in line.split():
             if not word.isdigit():
+                if word.endswith(r'//'):
+                    sequence = sequence + word[:-2]
+                    return sequence
                 sequence = sequence + word
         if line.startswith(r'//'):
-            break
-    return sequence
+            return sequence
 
 
 # field that need to be present in every record
