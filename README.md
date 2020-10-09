@@ -61,7 +61,7 @@ If format is not provided, the program can infer it from the file extension
 
 Currently recognised:
 * `.tab`, `.txt`, `.tsv`: [Internal tab format][1]
-* `.fas`: FASTA format
+* `.fas`, `.fasta`, `.fna`: FASTA format
 * `.rel.phy`: relaxed Phylip format
 * `.hapv.fas`: FASTA format for Haplotype Viewer
 * `.phy`: Phylip format
