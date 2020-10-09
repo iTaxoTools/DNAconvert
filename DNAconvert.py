@@ -106,11 +106,11 @@ def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, out
     # if infile_path is a directory, convert all files in it
     if os.path.isdir(infile_path):
         with os.scandir(infile_path) as files:
-            for infile in files:
-                basename, _ = os.path.splitext(infile.name)
+            for infile_curr in files:
+                basename, _ = os.path.splitext(infile_curr.name)
                 outfile_path_curr = outfile_path.replace(
                     '#', basename, 1) if '#' in outfile_path else os.path.join(outfile_path, infile.name)
-                convert_wrapper(infile.path, outfile_path_curr,
+                convert_wrapper(infile_curr.path, outfile_path_curr,
                                 informat_name, outformat_name, **options)
         return
 
@@ -211,8 +211,14 @@ def launch_gui() -> None:
         except FileNotFoundError as ex:
             tkinter.messagebox.showerror("Error", str(ex))
 
+    def browse_indir() -> None:
+        name = os.path.relpath(tkinter.filedialog.askdirectory())
+        infile_name.set(name)
+
     # buttons
     infile_browse = ttk.Button(mainframe, text="Browse", command=browse_infile)
+    indir_browse = ttk.Button(
+        mainframe, text="Browse Dir", command=browse_indir)
     outfile_browse = ttk.Button(
         mainframe, text="Browse", command=browse_outfile)
     convert_btn = ttk.Button(mainframe, text="Convert", command=gui_convert)
@@ -228,6 +234,7 @@ def launch_gui() -> None:
     informat_lbl.grid(column=0, row=2, sticky=tk.W)
     informatBox.grid(column=0, row=3, sticky=tk.W)
     infile_browse.grid(column=1, row=1, sticky=tk.W)
+    indir_browse.grid(column=1, row=2, sticky="w")
 
     # place output widget group
     outfile_lbl.grid(column=3, row=0, sticky=tk.W)
