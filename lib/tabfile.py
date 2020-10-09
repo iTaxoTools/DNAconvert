@@ -39,10 +39,14 @@ class Tabfile:
         # read the heading for the list of fields
         fields = file.readline().rstrip('\n').split('\t')
         fields = list(map(str.casefold, fields))
-        for required_field in ['seqid', 'sequence']:
-            if required_field not in fields:
-                raise ValueError(
-                    f"Input file is not a valid genetic tab format, missing '{required_field}'")
+        if 'seqid' not in fields and len(fields) >= 2:
+            warnings.warn(
+                "The field 'seqid' is missing. Conversion will proceed, but please check the converted file for correctness.")
+        if 'sequence' not in fields:
+            if len(sequence_candidates := [i for i, field in enumerate(fields) if 'sequence' in field]) == 1:
+                warnings.warn("The field 'sequence' is missing, but another field containing the same term was found and is interpreted as containing the sequences. Conversion will proceed, but please check the converted file for correctness")
+                i = sequence_candidates[0]
+                fields[i] = 'sequence'
 
         # closure that will iterate over the subsequent lines and yield the records
         def record_generator() -> Iterator[Record]:
