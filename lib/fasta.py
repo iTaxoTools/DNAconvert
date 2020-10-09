@@ -271,7 +271,7 @@ class GenbankFastaFile:
     """class for the Genbank FASTA submission format"""
 
     # the list of Genbank fields
-    genbankfields = ['seqid', 'organism', 'accession', 'specimen_voucher', 'strain', 'isolate', 'country', 'sequence', 'mol_type', 'altitude', 'bio_material', 'cell_line', 'cell_type', 'chromosome', 'citation', 'clone', 'clone_lib', 'collected_by', 'collection_date', 'cultivar', 'culture_collectiondb_xref', 'dev_stage', 'ecotype', 'environmental_samplefocus', 'germlinehaplogroup',
+    genbankfields = ['seqid', 'organism', 'accession', 'specimen-voucher', 'strain', 'isolate', 'country', 'sequence', 'mol_type', 'altitude', 'bio_material', 'cell_line', 'cell_type', 'chromosome', 'citation', 'clone', 'clone_lib', 'collected_by', 'collection_date', 'cultivar', 'culture_collectiondb_xref', 'dev_stage', 'ecotype', 'environmental_samplefocus', 'germlinehaplogroup',
                      'haplotype', 'host', 'identified_by', 'isolation_source', 'lab_host', 'lat_lon', 'macronuclearmap', 'mating_type', 'metagenome_source', 'note', 'organelle', 'PCR_primersplasmid', 'pop_variant', 'proviralrearrangedsegment', 'serotype', 'serovar', 'sex', 'sub_clone', 'submitter_seqid', 'sub_species', 'sub_strain', 'tissue_lib', 'tissue_type', 'transgenictype_material', 'variety']
 
     @ staticmethod
@@ -352,9 +352,9 @@ class GenbankFastaFile:
         """Genbank FASTA writer method"""
         # discard the invalid fields
         fields = [
-            field for field in fields if field in GenbankFastaFile.genbankfields]
+            field if field != 'specimen_voucher' else 'specimen-voucher' for field in fields if field in GenbankFastaFile.genbankfields or field == 'specimen_voucher']
         # raise a warning if the required fields are not present
-        if not (('organism' in fields or 'species' in fields) and ('specimen_voucher' in fields or 'isolate' in fields or 'clone' in fields or 'haplotype' in fields)):
+        if not (('organism' in fields or 'species' in fields) and ('specimen-voucher' in fields or 'isolate' in fields or 'clone' in fields or 'haplotype' in fields)):
             warnings.warn("Your file has been converted. However, apparently in your tab file either the organism, or a unique source identifier (specimen-voucher, isolate, clone) was missing, which may be required for submission to GenBank")
 
         # so far no sequence <200bp
