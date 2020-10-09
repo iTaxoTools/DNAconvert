@@ -103,6 +103,17 @@ def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, out
     Detects formats based on informat_name, outformat_name and extensions
     Passes options to the convertDNA
     """
+    # if infile_path is a directory, convert all files in it
+    if os.path.isdir(infile_path):
+        with os.scandir(infile_path) as files:
+            for infile in files:
+                basename, _ = os.path.splitext(infile.name)
+                outfile_path_curr = outfile_path.replace(
+                    '#', basename, 1) if '#' in outfile_path else os.path.join(outfile_path, infile.name)
+                convert_wrapper(infile.path, outfile_path_curr,
+                                informat_name, outformat_name, **options)
+        return
+
     # detect extensions
     in_ext = splitext(infile_path)
     out_ext = splitext(outfile_path)

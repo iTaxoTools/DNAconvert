@@ -45,6 +45,14 @@ Then run
       --outformat OUTFORMAT
                             format of the output file
 
+### Batch processing
+
+If `infile` is a directory, all files in it will be converted. In this case `informat` and `outformat` arguments are required.
+
+Specifying names of the output files:
+* `outfile` contains a '#' character: '#' will be replaced with the base names of input files.
+* `outfile` is a directory: the output files will be written in it, with the same names as input files.
+
 ## Supported formats
 * `tab`: [Internal tab format][1]
 * `fasta`: FASTA format
