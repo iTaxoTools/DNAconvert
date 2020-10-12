@@ -184,13 +184,21 @@ def launch_gui() -> None:
 
     # command for the input "Browse" button
     def browse_infile() -> None:
-        name = os.path.relpath(tkinter.filedialog.askopenfilename())
-        infile_name.set(name)
+        if (newpath := tkinter.filedialog.askopenfilename()):
+            try:
+                newpath = os.path.relpath(newpath)
+            except:
+                newpath = os.path.abspath(newpath)
+            infile_name.set(newpath)
 
     # command for the output "Browse" button
     def browse_outfile() -> None:
-        name = os.path.relpath(tkinter.filedialog.asksaveasfilename())
-        outfile_name.set(name)
+        if (newpath := os.path.relpath(tkinter.filedialog.asksaveasfilename())):
+            try:
+                newpath = os.path.relpath(newpath)
+            except:
+                newpath = os.path.abspath(newpath)
+            outfile_name.set(newpath)
 
     # command for the convert button
     def gui_convert() -> None:
@@ -212,8 +220,12 @@ def launch_gui() -> None:
             tkinter.messagebox.showerror("Error", str(ex))
 
     def browse_indir() -> None:
-        name = os.path.relpath(tkinter.filedialog.askdirectory())
-        infile_name.set(name)
+        if (newpath := os.path.relpath(tkinter.filedialog.askdirectory())):
+            try:
+                newpath = os.path.relpath(newpath)
+            except:
+                newpath = os.path.abspath(newpath)
+            infile_name.set(newpath)
 
     # buttons
     infile_browse = ttk.Button(mainframe, text="Browse", command=browse_infile)
