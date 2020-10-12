@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import io
 import sys
 import lib.formats
 import os
@@ -10,7 +11,8 @@ from tkinter import ttk
 import warnings
 import gzip
 import lib.fasta
-from typing import Tuple, Type, Optional, TextIO, cast
+from typing import Tuple, Type, Optional, TextIO, cast, Any
+import lib.guiutils as guiutils
 
 
 def splitext(name: str) -> Tuple[str, str]:
@@ -182,6 +184,35 @@ def launch_gui() -> None:
     outformatBox = ttk.Combobox(
         mainframe, textvariable=outformat, values=format_list)
 
+    # create input boxes for small conversions
+    box_frame = ttk.Frame(mainframe)
+    box_frame.rowconfigure(0, weight=1)
+    box_frame.columnconfigure(0, weight=1)
+    box_frame.columnconfigure(1, weight=1)
+    input_box = guiutils.ScrolledText(
+        box_frame, label="Small conversion input")
+    output_box = guiutils.ScrolledText(
+        box_frame, label="Small conversion output")
+    input_box.grid(row=0, column=0, sticky='nsew')
+    output_box.grid(row=0, column=1, sticky='nsew')
+
+    def enable_boxes(*args: Any) -> None:
+        """
+        Enables input_box and output_box if infile_name is empty, disables otherwise
+        """
+        if infile_name.get():
+            input_box.text.configure(state=tk.DISABLED)
+            output_box.text.configure(state=tk.DISABLED)
+            input_box.label.configure(state=tk.DISABLED)
+            output_box.label.configure(state=tk.DISABLED)
+        else:
+            input_box.text.configure(state=tk.NORMAL)
+            output_box.text.configure(state=tk.NORMAL)
+            input_box.label.configure(state=tk.NORMAL)
+            output_box.label.configure(state=tk.NORMAL)
+
+    infile_name.trace_add("write", enable_boxes)
+
     # command for the input "Browse" button
     def browse_infile() -> None:
         if (newpath := tkinter.filedialog.askopenfilename()):
@@ -200,13 +231,32 @@ def launch_gui() -> None:
                 newpath = os.path.abspath(newpath)
             outfile_name.set(newpath)
 
+    def small_convert() -> None:
+        if not (informat.get() and outformat.get()):
+            raise ValueError(
+                "For small conversions both format need to be specified")
+        input_data = io.StringIO(input_box.text.get("1.0", "end"))
+        output_data = io.StringIO()
+        input_format = parse_format(informat.get(), ("", ""))
+        output_format = parse_format(outformat.get(), ("", ""))
+        assert(input_format is not None)
+        assert(output_format is not None)
+        convertDNA(input_data, output_data, input_format, output_format,
+                   allow_empty_sequences=allow_empty_sequences.get())
+        output_box.text.delete("1.0", "end")
+        output_box.text.insert("1.0", output_data.getvalue())
+
     # command for the convert button
+
     def gui_convert() -> None:
         try:
             # catch all warnings
             with warnings.catch_warnings(record=True) as warns:
-                convert_wrapper(infile_name.get(), outfile_name.get(),
-                                informat.get(), outformat.get(), allow_empty_sequences=allow_empty_sequences.get())
+                if not infile_name.get():
+                    small_convert()
+                else:
+                    convert_wrapper(infile_name.get(), outfile_name.get(),
+                                    informat.get(), outformat.get(), allow_empty_sequences=allow_empty_sequences.get())
                 # display the warnings generated during the conversion
                 for w in warns:
                     tkinter.messagebox.showwarning("Warning", str(w.message))
@@ -258,6 +308,10 @@ def launch_gui() -> None:
     # place the convert button and the checkbox
     convert_btn.grid(column=2, row=4)
     allow_es_chk.grid(column=2, row=5)
+
+    # place the boxes
+    mainframe.rowconfigure(6, weight=1)
+    box_frame.grid(column=0, row=6, columnspan=5, sticky='nsew')
 
     # run the gui
     root.mainloop()
