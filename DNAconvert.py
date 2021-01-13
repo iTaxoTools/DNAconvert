@@ -156,6 +156,8 @@ def launch_gui() -> None:
     # create window
     root = tk.Tk()
     root.title("DNAconvert")
+    if os.name == "nt":
+        root.wm_iconbitmap(os.path.join('data', 'DNAconvert_transparent.ico'))
     root.rowconfigure(0, weight=1)
     root.columnconfigure(0, weight=1)
     mainframe = ttk.Frame(root, padding=(3, 3, 3, 3))
@@ -190,9 +192,9 @@ def launch_gui() -> None:
     box_frame.columnconfigure(0, weight=1)
     box_frame.columnconfigure(1, weight=1)
     input_box = guiutils.ScrolledText(
-        box_frame, label="Small conversion input")
+        box_frame, label="Instead of specifying an file name, your data can also be pasted here\n(recommended only for small data sets)")
     output_box = guiutils.ScrolledText(
-        box_frame, label="Small conversion output")
+        box_frame, label="If data have been pasted into the window on the left, the converted output will be shown here\n")
     input_box.grid(row=0, column=0, sticky='nsew')
     output_box.grid(row=0, column=1, sticky='nsew')
 
