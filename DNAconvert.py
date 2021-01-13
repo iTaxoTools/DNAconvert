@@ -137,9 +137,10 @@ def convert_wrapper(infile_path: str, outfile_path: str, informat_name: str, out
     # open the input file
     if in_ext[1] == ".gz":
         # if the input file is a gz archive, unpack it
-        infile: TextIO = cast(TextIO, gzip.open(infile_path, mode='rt'))
+        infile: TextIO = cast(TextIO, gzip.open(
+            infile_path, mode='rt', errors='replace'))
     else:
-        infile = open(infile_path)
+        infile = open(infile_path, errors='replace')
 
     # do the conversion
     with infile, open(outfile_path, mode="w") as outfile:
