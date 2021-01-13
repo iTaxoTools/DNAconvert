@@ -114,7 +114,7 @@ class PhylipFile:
         # formats all the sequences to the same maximum length
         aligner = dna_aligner(max_length, min_length)
         # generate the seqid from the fields
-        name_assembler = NameAssembler(fields)
+        name_assembler = NameAssembler(fields, abbreviate_species=True)
         # makes seqid unique within 10 characters
         unicifier = Unicifier(10)
 

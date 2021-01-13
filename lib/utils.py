@@ -98,13 +98,14 @@ class NameAssembler:
         """
         parts = [record[field]
                  for field in self._fields if record[field] != ""]
-        if self._fields[0] == 'species':
+        if self.abbreviate_species and self._fields[0] == 'species':
             parts[0] = NameAssembler._species_abbr(parts[0])
         return "_".join(map(sanitize, parts))
 
-    def __init__(self, fields: List[str]):
+    def __init__(self, fields: List[str], *, abbreviate_species: bool = False):
         # copy the fields to not mutate the original
         fields = fields.copy()
+        self.abbreviate_species = abbreviate_species
         try:
             # seqid should not be used for the name generation
             fields.remove('seqid')
