@@ -1,8 +1,22 @@
+import os
 import lib.tabfile as tabfile
 import lib.fasta as fasta
 import lib.phylip as phylip
 import lib.nexus as nexus
 import lib.genbank as genbank
+
+cfg_dict = {}
+for line in open(os.path.join('data', 'cfg.tab')).readlines():
+    option, _, value = line.strip().partition("\t")
+    cfg_dict[option] = value
+
+if cfg_dict['nexus_parser'] == 'python-nexus':
+    nexus_format = nexus.NexusFileSimple
+elif cfg_dict['nexus_parser'] == 'internal':
+    nexus_format = nexus.NexusFile
+else:
+    raise ValueError(
+        f"The value of 'nexus_parser' in {os.path.join('data', 'cfg.tab')} should be either 'python-nexus' or 'internal'")
 
 # formats' names dictionary
 formats = dict(
@@ -13,7 +27,7 @@ formats = dict(
     phylip=phylip.PhylipFile,
     fastq=fasta.FastQFile,
     fasta_gbexport=fasta.GenbankFastaFile,
-    nexus=nexus.NexusFile,
+    nexus=nexus_format,
     genbank=genbank.GenbankFile,
 )
 
@@ -35,6 +49,6 @@ extensions = {
     ".fq.gz": fasta.FastQFile,
     ".gz": fasta.FastQFile,
     ".gb.fas": fasta.GenbankFastaFile,
-    ".nex": nexus.NexusFile,
+    ".nex": nexus_format,
     ".gb": genbank.GenbankFile,
 }
