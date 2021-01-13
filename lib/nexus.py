@@ -2,6 +2,7 @@ from typing import TextIO, Optional, Tuple, Callable, Iterator, List, Set, Class
 from lib.record import *
 from lib.utils import *
 import re
+import nexus
 
 
 class Tokenizer:
@@ -335,3 +336,20 @@ format datatype=DNA missing=N missing=? Gap=- Interleave=yes;
         # finish the block
         print(";\n", file=file)
         print("end;", file=file)
+
+
+class NexusFileSimple(NexusFile):
+
+    @staticmethod
+    def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
+        """NEXUS reader method using parser from python-nexus"""
+        # NEXUS always have the same fields
+        fields = ['seqid', 'sequence']
+
+        def record_generator() -> Iterator[Record]:
+            nexus_file = nexus.NexusReader.from_file(file.name)
+            if 'data' in nexus_file.blocks:
+                for seqid, sequence in nexus_file.data.matrix.items():
+                    yield Record(seqid=seqid, sequence="".join(sequence))
+
+        return fields, record_generator

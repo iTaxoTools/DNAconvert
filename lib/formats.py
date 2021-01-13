@@ -13,7 +13,8 @@ formats = dict(
     phylip=phylip.PhylipFile,
     fastq=fasta.FastQFile,
     fasta_gbexport=fasta.GenbankFastaFile,
-    nexus=nexus.NexusFile,
+    # nexus=nexus.NexusFile,
+    nexus=nexus.NexusFileSimple,
     genbank=genbank.GenbankFile,
 )
 
@@ -35,6 +36,7 @@ extensions = {
     ".fq.gz": fasta.FastQFile,
     ".gz": fasta.FastQFile,
     ".gb.fas": fasta.GenbankFastaFile,
-    ".nex": nexus.NexusFile,
+    # ".nex": nexus.NexusFile,
+    ".nex": nexus.NexusFileSimple,
     ".gb": genbank.GenbankFile,
 }
