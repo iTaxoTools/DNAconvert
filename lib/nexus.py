@@ -2,7 +2,7 @@ from typing import TextIO, Optional, Tuple, Callable, Iterator, List, Set, Class
 from lib.record import *
 from lib.utils import *
 import re
-import nexus
+import nexus as python_nexus
 
 
 class Tokenizer:
@@ -347,7 +347,7 @@ class NexusFileSimple(NexusFile):
         fields = ['seqid', 'sequence']
 
         def record_generator() -> Iterator[Record]:
-            nexus_file = nexus.NexusReader.from_file(file.name)
+            nexus_file = python_nexus.NexusReader.from_file(file.name)
             if 'data' in nexus_file.blocks:
                 for seqid, sequence in nexus_file.data.matrix.items():
                     yield Record(seqid=seqid, sequence="".join(sequence))

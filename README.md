@@ -1,6 +1,9 @@
 # DNAconvert tool
 This program can convert between different formats containing genetic information
 
+## Dependencies
+* [python\-nexus](https://pypi.org/project/python-nexus/)
+
 ## Installation
 Installation is currently not intended. Downloading should be enough
 
@@ -85,3 +88,12 @@ Files with extension `.gz` are uncompressed automatically
 [Link to documentation](doc/ADDING_FORMATS.md)
 
 [1]: doc/TAB_FORMAT.md
+
+## Options
+DNAconvert uses two parsers for NEXUS format: internal and the one from python-nexus package.
+
+In the file `data/cfg.tab` the string of form
+```
+nexus_parser<Tab>(method)
+```
+determines the parser. `(method)` is either `internal` or `python-nexus`.
