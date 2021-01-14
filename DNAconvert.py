@@ -42,8 +42,7 @@ def parse_format(name: Optional[str], ext_pair: Tuple[str, str]) -> Optional[Typ
         parse_format(None, (".txt.fas", ".fas") == lib.fasta.Fastafile
     """
     # destruct the ext_pair
-    d_ext = ext_pair[0]
-    ext = ext_pair[1]
+    d_ext, ext = ext_pair
 
     try:
         # lookup the format name, or the two-part extension, if it doesn't exist
@@ -218,7 +217,8 @@ def launch_gui() -> None:
 
     # command for the input "Browse" button
     def browse_infile() -> None:
-        if (newpath := tkinter.filedialog.askopenfilename()):
+        newpath = tkinter.filedialog.askopenfilename()
+        if newpath:
             try:
                 newpath = os.path.relpath(newpath)
             except:
@@ -227,7 +227,8 @@ def launch_gui() -> None:
 
     # command for the output "Browse" button
     def browse_outfile() -> None:
-        if (newpath := os.path.relpath(tkinter.filedialog.asksaveasfilename())):
+        newpath = os.path.relpath(tkinter.filedialog.asksaveasfilename())
+        if newpath:
             try:
                 newpath = os.path.relpath(newpath)
             except:
@@ -273,7 +274,8 @@ def launch_gui() -> None:
             tkinter.messagebox.showerror("Error", str(ex))
 
     def browse_indir() -> None:
-        if (newpath := os.path.relpath(tkinter.filedialog.askdirectory())):
+        newpath = os.path.relpath(tkinter.filedialog.askdirectory())
+        if newpath:
             try:
                 newpath = os.path.relpath(newpath)
             except:

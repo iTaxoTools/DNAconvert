@@ -43,7 +43,9 @@ class Tabfile:
             warnings.warn(
                 "The field 'seqid' is missing. Conversion will proceed, but please check the converted file for correctness.")
         if 'sequence' not in fields:
-            if len(sequence_candidates := [i for i, field in enumerate(fields) if 'sequence' in field]) == 1:
+            sequence_candidates = [i for i, field in enumerate(
+                fields) if 'sequence' in field]
+            if len(sequence_candidates) == 1:
                 warnings.warn("The field 'sequence' is missing, but another field containing the same term was found and is interpreted as containing the sequences. Conversion will proceed, but please check the converted file for correctness")
                 i = sequence_candidates[0]
                 fields[i] = 'sequence'

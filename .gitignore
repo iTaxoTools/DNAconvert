@@ -2,3 +2,4 @@ __pycache__
 testfiles/
 references/
 .vim/
+venv/
