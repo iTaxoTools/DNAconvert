@@ -31,6 +31,13 @@ formats = dict(
     genbank=genbank.GenbankFile,
 )
 
+informats_gui = list(formats.keys())
+informats_gui.remove('fasta_hapview')
+
+outformats_gui = list(formats.keys())
+outformats_gui.remove('fasta_hapview')
+outformats_gui.remove('genbank')
+
 # extensions' dictionary
 extensions = {
     ".tab": tabfile.Tabfile,

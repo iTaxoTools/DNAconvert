@@ -161,7 +161,7 @@ def launch_gui() -> None:
     root.rowconfigure(0, weight=1)
     root.columnconfigure(0, weight=1)
     mainframe = ttk.Frame(root, padding=(3, 3, 3, 3))
-    mainframe.grid(column=0, row=0, sticky=(tk.N, tk.W, tk.E, tk.S))
+    mainframe.grid(column=0, row=0, sticky='nsew')
     mainframe.rowconfigure(5, weight=1)
     mainframe.columnconfigure(2, weight=1)
 
@@ -178,13 +178,12 @@ def launch_gui() -> None:
     outfile_entry = ttk.Entry(mainframe, textvariable=outfile_name)
 
     # create format comboboxes
-    format_list = list(lib.formats.formats.keys())
     informat = tk.StringVar()
     outformat = tk.StringVar()
     informatBox = ttk.Combobox(
-        mainframe, textvariable=informat, values=format_list)
+        mainframe, textvariable=informat, values=lib.formats.informats_gui)
     outformatBox = ttk.Combobox(
-        mainframe, textvariable=outformat, values=format_list)
+        mainframe, textvariable=outformat, values=lib.formats.outformats_gui)
 
     # create input boxes for small conversions
     box_frame = ttk.Frame(mainframe)
