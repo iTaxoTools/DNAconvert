@@ -389,6 +389,6 @@ class GenbankFastaFile:
                 warnings.warn("Some of your sequences contain dashes (gaps) which is only allowed if you submit them as alignment. If you do not wish to submit your sequences as alignment, please remove the dashes before conversion.")
             # print seqid and attributes
             print('>'+unicifier.unique(name_assembler.name(record)), *
-                  [f"[{field.replace('_', '-')}={record[field].strip()}]" for field in fields if not (field == "seqid" or field == "sequence")], file=file)
+                  [f"[{field.replace('_', '-')}={record[field].strip()}]" for field in fields if record[field] and not record[field].isspace() and not (field == "seqid" or field == "sequence")], file=file)
             # print the sequence
             print(record['sequence'], file=file)
