@@ -46,7 +46,7 @@ def parse_format(name: Optional[str], ext_pair: Tuple[str, str]) -> Optional[Typ
 
     try:
         # lookup the format name, or the two-part extension, if it doesn't exist
-        return lib.formats.formats[name] if name else lib.formats.extensions[d_ext]
+        return lib.formats.formats[name] if name else lib.formats.extensions[d_ext.lower()]
     except KeyError:
         # both the format name and the two-part extension are unknown
         try:
