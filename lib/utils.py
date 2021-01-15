@@ -5,6 +5,9 @@ import re
 import warnings
 import unicodedata
 
+# read by lib.utils.Unicifier._unique_limit
+GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING = False
+
 
 class Aggregator:
     """Aggregates information about records
@@ -183,6 +186,8 @@ class Unicifier():
             self.unique = self._unique_set
 
     def _unique_limit(self, name: str) -> str:
+        if GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING:
+            return name[0:self._length_limit]
         # overwrite the end with counter
         suff = str(self._count)
         self._count += 1

@@ -64,7 +64,9 @@ def convertDNA(infile: TextIO, outfile: TextIO, informat: Type, outformat: Type,
     Possible options:
         allow_empty_sequnces: if set, the records with empty sequences are also recorded in the outfile.
            By default, records with empty sequences are discarded
+        disable_automatic_renaming: if set, disables automatic renaming of sequence names
     """
+    lib.utils.GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING = options['disable_automatic_renaming']
     # take a shortcut for convertion FastQ into FASTA
     if informat is lib.fasta.FastQFile and outformat is lib.fasta.Fastafile:
         lib.fasta.FastQFile.to_fasta(infile, outfile)
@@ -328,6 +330,8 @@ parser.add_argument(
     '--cmd', help="activates the command-line interface", action='store_true')
 parser.add_argument('--allow_empty_sequences', action='store_true',
                     help="set this to keep the empty sequences in the output file")
+parser.add_argument('--disable_automatic_renaming', action='store_true',
+                    help="disables automatic renaming, may result in duplicate sequence names in Phylip and Nexus files")
 parser.add_argument('--informat', default="", help="format of the input file")
 parser.add_argument('--outformat', default="",
                     help="format of the output file")
@@ -346,7 +350,7 @@ else:
         # catch the warnging
         with warnings.catch_warnings(record=True) as warns:
             convert_wrapper(args.infile, args.outfile,
-                            args.informat, args.outformat, allow_empty_sequences=args.allow_empty_sequences)
+                            args.informat, args.outformat, allow_empty_sequences=args.allow_empty_sequences, disable_automatic_renaming=args.disable_automatic_renaming)
 
             # display the warnings generated during the conversion
             for w in warns:
