@@ -7,6 +7,7 @@ import os
 import tkinter as tk
 import tkinter.filedialog
 import tkinter.messagebox
+import tkinter.font
 from tkinter import ttk
 import warnings
 import gzip
@@ -162,10 +163,35 @@ def launch_gui() -> None:
         root.wm_iconbitmap(os.path.join('data', 'DNAconvert_transparent.ico'))
     root.rowconfigure(0, weight=1)
     root.columnconfigure(0, weight=1)
+
+    style = ttk.Style()
+    style.configure("ConvertButton.TButton", background="blue")
     mainframe = ttk.Frame(root, padding=(3, 3, 3, 3))
-    mainframe.grid(column=0, row=0, sticky='nsew')
+    mainframe.grid(column=0, row=2, sticky='nsew')
     mainframe.rowconfigure(5, weight=1)
     mainframe.columnconfigure(2, weight=1)
+
+    # banner frame
+    banner_frame = ttk.Frame(root)
+    banner_img = tk.PhotoImage(file=os.path.join(
+        "data", "Coverpic_Linnaeus_transparentbackground_70px.png"))
+    banner_image = ttk.Label(banner_frame, image=[banner_img])
+    banner_image.grid(row=0, column=0, rowspan=3, sticky='nsw')
+    org_name = ttk.Label(banner_frame, text="iTaxoTools")
+    org_name.grid(row=3, column=0, sticky='nsw')
+    program_name = ttk.Label(
+        banner_frame, text="DNAconvert", font=tk.font.Font(size=30))
+    program_name.grid(row=1, column=1, sticky='nsw')
+    program_description = ttk.Label(
+        banner_frame, text="A versatile  DNA sequence format converter", font=tk.font.Font(size=14))
+    author = ttk.Label(
+        banner_frame, text="DNAconvert code by Vladimir Kharchev: https://github.com/iTaxoTools/DNAconvert", font=tk.font.Font(size=8))
+    author.grid(row=2, column=1, columnspan=2, sticky='nsw')
+    program_description.grid(row=1, column=2, sticky='nw')
+    banner_frame.grid(column=0, row=0, sticky='nsw')
+
+    banner_sep = ttk.Separator(root)
+    banner_sep.grid(row=1, column=0, sticky='nsew')
 
     # create labels
     infile_lbl = ttk.Label(mainframe, text="Input File")
@@ -193,9 +219,9 @@ def launch_gui() -> None:
     box_frame.columnconfigure(0, weight=1)
     box_frame.columnconfigure(1, weight=1)
     input_box = guiutils.ScrolledText(
-        box_frame, label="Instead of specifying an file name, your data can also be pasted here\n(recommended only for small data sets)")
+        box_frame, label="Instead of specifying an file name, your data can also be pasted here\n(recommended only for small data sets)", width=30, height=12)
     output_box = guiutils.ScrolledText(
-        box_frame, label="If data have been pasted into the window on the left, the converted output will be shown here\n")
+        box_frame, label="If data have been pasted into the window on the left, the converted output will be shown here\n", width=30, height=12)
     input_box.grid(row=0, column=0, sticky='nsew')
     output_box.grid(row=0, column=1, sticky='nsew')
 
@@ -289,7 +315,8 @@ def launch_gui() -> None:
         mainframe, text="Browse Dir", command=browse_indir)
     outfile_browse = ttk.Button(
         mainframe, text="Browse", command=browse_outfile)
-    convert_btn = ttk.Button(mainframe, text="Convert", command=gui_convert)
+    convert_btn = ttk.Button(mainframe, text="Convert",
+                             command=gui_convert, style="ConvertButton.TButton")
 
     # checkbox to allow empty sequences
     allow_empty_sequences = tk.BooleanVar()
