@@ -344,6 +344,8 @@ class NexusFileSimple(NexusFile):
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
         """NEXUS reader method using parser from python-nexus"""
         # NEXUS always have the same fields
+        raise ValueError(
+            "python-nexus parser is temporarily disabled. Use 'internal' parser instead")
         fields = ['seqid', 'sequence']
 
         def record_generator() -> Iterator[Record]:
