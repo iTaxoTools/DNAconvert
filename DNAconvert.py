@@ -161,7 +161,7 @@ def launch_gui() -> None:
     root = tk.Tk()
     root.title("DNAconvert")
     if os.name == "nt":
-        root.wm_iconbitmap(os.path.join('data', 'DNAconvert_transparent.ico'))
+        root.wm_iconbitmap(os.path.join('data', 'dnaconvert.ico'))
     root.rowconfigure(2, weight=1)
     root.columnconfigure(0, weight=1)
 
