@@ -7,12 +7,12 @@ class ScrolledText():
     A text input widget with two scrollbars
     """
 
-    def __init__(self, parent: tk.Widget, *, label: str) -> None:
+    def __init__(self, parent: tk.Widget, *, width: int, height: int, label: str) -> None:
         self.frame = ttk.Frame(parent)
         self.frame.rowconfigure(1, weight=1)
         self.frame.columnconfigure(0, weight=1)
         self.label = ttk.Label(self.frame, text=label)
-        self.text = tk.Text(self.frame, width=50, height=20)
+        self.text = tk.Text(self.frame, width=width, height=height)
         self.vbar = ttk.Scrollbar(
             self.frame, orient=tk.VERTICAL, command=self.text.yview)
         self.hbar = ttk.Scrollbar(

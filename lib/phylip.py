@@ -124,4 +124,4 @@ class PhylipFile:
         # write the records
         for record in records:
             print(unicifier.unique(name_assembler.name(record)),
-                  aligner(record['sequence']), sep="", file=file)
+                  aligner(record['sequence']), sep=" ", file=file)

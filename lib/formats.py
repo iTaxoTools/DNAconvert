@@ -1,3 +1,4 @@
+from typing import Dict, Type, Any
 import os
 import lib.tabfile as tabfile
 import lib.fasta as fasta
@@ -19,7 +20,7 @@ else:
         f"The value of 'nexus_parser' in {os.path.join('data', 'cfg.tab')} should be either 'python-nexus' or 'internal'")
 
 # formats' names dictionary
-formats = dict(
+formats: Dict[str, Type[Any]] = dict(
     tab=tabfile.Tabfile,
     fasta=fasta.Fastafile,
     relaxed_phylip=phylip.RelPhylipFile,
