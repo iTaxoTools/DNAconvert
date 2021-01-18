@@ -236,7 +236,7 @@ class NexusReader:
             if arg.casefold() == 'datatype':
                 if next(args) != '=':
                     continue
-                if re.search(r'DNA|RNA|Nucleotide|Protein', next(args)):
+                if re.search(r'DNA|RNA|Nucleotide|Protein', next(args), flags=re.IGNORECASE):
                     self.read_matrix = True
 
     def sequences(self, args: Iterator[str]) -> Optional[Iterator[Tuple[str, str]]]:
