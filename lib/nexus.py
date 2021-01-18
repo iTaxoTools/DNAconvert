@@ -1,6 +1,7 @@
-from typing import TextIO, Optional, Tuple, Callable, Iterator, List, Set, ClassVar, Generator
+from typing import TextIO, Optional, Tuple, Callable, Iterator, List, Set, ClassVar, Generator, DefaultDict
 from lib.record import *
 from lib.utils import *
+from collections import defaultdict
 import re
 import nexus as python_nexus
 
@@ -202,12 +203,16 @@ class NexusReader:
     """
 
     def __init__(self) -> None:
-        # indicates if the current block's matrix contains useable information
-        self.read_matrix = False
+        self.block_reset()
 
     def block_reset(self) -> None:
         """Resets the machine to the initial state at the end of each block"""
+        # indicates if the current block's matrix contains useable information
         self.read_matrix = False
+        # indicates if the current block's matrix is interleaved
+        self.interleave = False
+        # holds the length of sequence for the current block
+        self.nchar = None
 
     def execute(self, command: str, args: Iterator[str]) -> Optional[Iterator[Tuple[str, str]]]:
         """
@@ -219,6 +224,8 @@ class NexusReader:
         if command == 'format':
             self.configure_format(args)
             return None
+        elif command == 'dimensions':
+            self.read_dimensions(args)
         elif command == 'end' or command == 'endblock':
             self.block_reset()
             return None
@@ -238,6 +245,18 @@ class NexusReader:
                     continue
                 if re.search(r'DNA|RNA|Nucleotide|Protein', next(args), flags=re.IGNORECASE):
                     self.read_matrix = True
+            elif arg.casefold() == 'interleave':
+                self.interleave = True
+
+    def read_dimensions(self, args: Iterator[str]) -> None:
+        for arg in args:
+            if arg.casefold() == 'nchar':
+                if next(args) != '=':
+                    continue
+                try:
+                    self.nchar = int(next(args))
+                except ValueError:
+                    pass
 
     def sequences(self, args: Iterator[str]) -> Optional[Iterator[Tuple[str, str]]]:
         """
@@ -245,13 +264,33 @@ class NexusReader:
         """
         if not self.read_matrix:
             return None
+        if self.interleave:
+            return self.sequences_interleaved(args)
+        else:
+            return self.sequences_noninterleaved(args)
+
+    @staticmethod
+    def sequences_interleaved(args: Iterator[str]) -> Iterator[Tuple[str, str]]:
+        matrix: DefaultDict[str, str] = defaultdict(str)
         for arg in args:
             try:
-                yield (arg, next(args))
+                matrix[arg] += next(args)
             except StopIteration:
                 # expects the value to come in pairs (name, sequence)
                 raise ValueError(
                     f"In the Nexus file: {arg} has no corresponding sequence")
+        return iter(matrix.items())
+
+    def sequences_noninterleaved(self, args: Iterator[str]) -> Iterator[Tuple[str, str]]:
+        if not self.nchar:
+            raise ValueError(
+                "Cannot parse non-interleaved NEXUS file without an 'nchar' value")
+        for arg in args:
+            seqid = arg
+            sequence = ""
+            while (len(sequence) < self.nchar):
+                sequence += next(args)
+            yield (seqid, sequence)
 
 
 def seqid_max_reducer(acc: int, record: Record) -> int:
