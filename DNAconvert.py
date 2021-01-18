@@ -161,7 +161,7 @@ def launch_gui() -> None:
     root = tk.Tk()
     root.title("DNAconvert")
     if os.name == "nt":
-        root.wm_iconbitmap(os.path.join('data', 'DNAconvert_transparent.ico'))
+        root.wm_iconbitmap(os.path.join('data', 'dnaconvert.ico'))
     root.rowconfigure(2, weight=1)
     root.columnconfigure(0, weight=1)
 
@@ -177,17 +177,15 @@ def launch_gui() -> None:
         "data", "Coverpic_Linnaeus_transparentbackground_70px.png"))
     banner_image = ttk.Label(banner_frame, image=banner_img)
     banner_image.grid(row=0, column=0, rowspan=3, sticky='nsw')
-    org_name = ttk.Label(banner_frame, text="iTaxoTools")
-    org_name.grid(row=3, column=0, sticky='nsw')
     program_name = ttk.Label(
         banner_frame, text="DNAconvert", font=tkfont.Font(size=30))
-    program_name.grid(row=1, column=1, sticky='nsw')
+    program_name.grid(row=1, column=1, sticky='sw')
     program_description = ttk.Label(
         banner_frame, text="A versatile  DNA sequence format converter", font=tkfont.Font(size=14))
     author = ttk.Label(
         banner_frame, text="DNAconvert code by Vladimir Kharchev: https://github.com/iTaxoTools/DNAconvert", font=tkfont.Font(size=8))
     author.grid(row=2, column=1, columnspan=2, sticky='nsw')
-    program_description.grid(row=1, column=2, sticky='nw')
+    program_description.grid(row=1, column=2, sticky='sw', ipady=6, ipadx=15)
     banner_frame.grid(column=0, row=0, sticky='nsw')
 
     # frame for convert button and checkboxes
@@ -222,7 +220,7 @@ def launch_gui() -> None:
     box_frame.columnconfigure(0, weight=1)
     box_frame.columnconfigure(1, weight=1)
     input_box = guiutils.ScrolledText(
-        box_frame, label="Instead of specifying an file name, your data can also be pasted here (recommended only for small data sets)", width=30, height=12)
+        box_frame, label="Instead of specifying an file name, your data can also be pasted here\n(recommended only for small data sets)", width=30, height=12)
     input_box.label.configure(wraplength=500)
     output_box = guiutils.ScrolledText(
         box_frame, label="If data have been pasted into the window on the left, the converted output will be shown here", width=30, height=12)
@@ -359,8 +357,11 @@ def launch_gui() -> None:
     disable_automatic_renaming_chk.grid(column=0, row=0, sticky="n")
     dar_lbl.grid(column=1, row=0)
 
+    # place a separator above boxes
+    ttk.Separator(root).grid(column=0, row=3, sticky="nsew", ipady=10)
+
     # place the boxes
-    box_frame.grid(column=0, row=3, sticky='nsew')
+    box_frame.grid(column=0, row=4, sticky='nsew')
 
     # run the gui
     root.mainloop()
