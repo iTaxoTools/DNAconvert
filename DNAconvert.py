@@ -222,9 +222,11 @@ def launch_gui() -> None:
     box_frame.columnconfigure(0, weight=1)
     box_frame.columnconfigure(1, weight=1)
     input_box = guiutils.ScrolledText(
-        box_frame, label="Instead of specifying an file name, your data can also be pasted here\n(recommended only for small data sets)", width=30, height=12)
+        box_frame, label="Instead of specifying an file name, your data can also be pasted here (recommended only for small data sets)", width=30, height=12)
+    input_box.label.configure(wraplength=500)
     output_box = guiutils.ScrolledText(
-        box_frame, label="If data have been pasted into the window on the left, the converted output will be shown here\n", width=30, height=12)
+        box_frame, label="If data have been pasted into the window on the left, the converted output will be shown here", width=30, height=12)
+    output_box.label.configure(wraplength=500)
     input_box.grid(row=0, column=0, sticky='nsew')
     output_box.grid(row=0, column=1, sticky='nsew')
 
