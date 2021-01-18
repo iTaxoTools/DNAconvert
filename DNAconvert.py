@@ -162,14 +162,13 @@ def launch_gui() -> None:
     root.title("DNAconvert")
     if os.name == "nt":
         root.wm_iconbitmap(os.path.join('data', 'DNAconvert_transparent.ico'))
-    root.rowconfigure(0, weight=1)
+    root.rowconfigure(2, weight=1)
     root.columnconfigure(0, weight=1)
 
     style = ttk.Style()
     style.configure("ConvertButton.TButton", background="blue")
     mainframe = ttk.Frame(root, padding=(3, 3, 3, 3))
     mainframe.grid(column=0, row=2, sticky='nsew')
-    mainframe.rowconfigure(5, weight=1)
     mainframe.columnconfigure(2, weight=1)
 
     # banner frame
@@ -191,14 +190,17 @@ def launch_gui() -> None:
     program_description.grid(row=1, column=2, sticky='nw')
     banner_frame.grid(column=0, row=0, sticky='nsw')
 
+    # frame for convert button and checkboxes
+    middle_frame = ttk.Frame(mainframe)
+
     banner_sep = ttk.Separator(root)
     banner_sep.grid(row=1, column=0, sticky='nsew')
 
     # create labels
     infile_lbl = ttk.Label(mainframe, text="Input File")
-    informat_lbl = ttk.Label(mainframe, text="Format")
+    informat_lbl = ttk.Label(mainframe, text="Input Format")
     outfile_lbl = ttk.Label(mainframe, text="Output File")
-    outformat_lbl = ttk.Label(mainframe, text="Format")
+    outformat_lbl = ttk.Label(mainframe, text="Output Format")
 
     # create file entries
     infile_name = tk.StringVar()
@@ -215,7 +217,7 @@ def launch_gui() -> None:
         mainframe, textvariable=outformat, values=lib.formats.outformats_gui)
 
     # create input boxes for small conversions
-    box_frame = ttk.Frame(mainframe)
+    box_frame = ttk.Frame(root)
     box_frame.rowconfigure(0, weight=1)
     box_frame.columnconfigure(0, weight=1)
     box_frame.columnconfigure(1, weight=1)
@@ -288,7 +290,7 @@ def launch_gui() -> None:
                     small_convert()
                 else:
                     convert_wrapper(infile_name.get(), outfile_name.get(),
-                                    informat.get(), outformat.get(), allow_empty_sequences=allow_empty_sequences.get())
+                                    informat.get(), outformat.get(), allow_empty_sequences=allow_empty_sequences.get(), disable_automatic_renaming=disable_automatic_renaming.get())
                 # display the warnings generated during the conversion
                 for w in warns:
                     tkinter.messagebox.showwarning("Warning", str(w.message))
@@ -313,39 +315,50 @@ def launch_gui() -> None:
     # buttons
     infile_browse = ttk.Button(mainframe, text="Browse", command=browse_infile)
     indir_browse = ttk.Button(
-        mainframe, text="Browse Dir", command=browse_indir)
+        mainframe, text="Browse input directory\n(for batch conversions)", command=browse_indir)
     outfile_browse = ttk.Button(
         mainframe, text="Browse", command=browse_outfile)
-    convert_btn = ttk.Button(mainframe, text="Convert",
+    convert_btn = ttk.Button(middle_frame, text="Convert",
                              command=gui_convert, style="ConvertButton.TButton")
 
     # checkbox to allow empty sequences
     allow_empty_sequences = tk.BooleanVar()
     allow_es_chk = ttk.Checkbutton(
-        mainframe, text="Allow empty sequences", variable=allow_empty_sequences)
+        middle_frame, text="Allow empty sequences", variable=allow_empty_sequences)
+
+    # checkbox to disable automatic renaming
+    dar_frame = ttk.Frame(middle_frame)
+    disable_automatic_renaming = tk.BooleanVar()
+    disable_automatic_renaming_chk = ttk.Checkbutton(
+        dar_frame, variable=disable_automatic_renaming)
+    dar_lbl = ttk.Label(
+        dar_frame, text="Check to disable automatic renaming\n(may result in duplicate sequence names\nin Phylip and Nexus files)")
 
     # place input widget group
     infile_lbl.grid(column=0, row=0, sticky=tk.W)
     infile_entry.grid(column=0, row=1, sticky=tk.W)
-    informat_lbl.grid(column=0, row=2, sticky=tk.W)
-    informatBox.grid(column=0, row=3, sticky=tk.W)
+    informat_lbl.grid(column=0, row=3, sticky=tk.W)
+    informatBox.grid(column=0, row=4, sticky=tk.W)
     infile_browse.grid(column=1, row=1, sticky=tk.W)
     indir_browse.grid(column=1, row=2, sticky="w")
 
     # place output widget group
     outfile_lbl.grid(column=3, row=0, sticky=tk.W)
     outfile_entry.grid(column=3, row=1, sticky=tk.W)
-    outformat_lbl.grid(column=3, row=2, sticky=tk.W)
-    outformatBox.grid(column=3, row=3, sticky=tk.W)
+    outformat_lbl.grid(column=3, row=3, sticky=tk.W)
+    outformatBox.grid(column=3, row=4, sticky=tk.W)
     outfile_browse.grid(column=4, row=1, sticky=tk.W)
 
-    # place the convert button and the checkbox
-    convert_btn.grid(column=2, row=4)
-    allow_es_chk.grid(column=2, row=5)
+    # place the convert button and the checkboxes
+    middle_frame.grid(column=2, row=0, rowspan=5)
+    convert_btn.grid(column=0, row=1)
+    allow_es_chk.grid(column=0, row=2, sticky="w")
+    dar_frame.grid(column=0, row=3, sticky="w")
+    disable_automatic_renaming_chk.grid(column=0, row=0, sticky="n")
+    dar_lbl.grid(column=1, row=0)
 
     # place the boxes
-    mainframe.rowconfigure(6, weight=1)
-    box_frame.grid(column=0, row=6, columnspan=5, sticky='nsew')
+    box_frame.grid(column=0, row=3, sticky='nsew')
 
     # run the gui
     root.mainloop()
