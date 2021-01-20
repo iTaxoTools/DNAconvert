@@ -174,7 +174,7 @@ def launch_gui() -> None:
     # banner frame
     banner_frame = ttk.Frame(root)
     banner_img = tk.PhotoImage(file=os.path.join(
-        "data", "Coverpic_Linnaeus_transparentbackground_70px.png"))
+        "data", "iTaxoTools Digital linneaeus MICROLOGO.png"))
     banner_image = ttk.Label(banner_frame, image=banner_img)
     banner_image.grid(row=0, column=0, rowspan=3, sticky='nsw')
     program_name = ttk.Label(
