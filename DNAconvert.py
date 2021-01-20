@@ -276,7 +276,7 @@ def launch_gui() -> None:
         assert(input_format is not None)
         assert(output_format is not None)
         convertDNA(input_data, output_data, input_format, output_format,
-                   allow_empty_sequences=allow_empty_sequences.get())
+                   allow_empty_sequences=allow_empty_sequences.get(), disable_automatic_renaming=disable_automatic_renaming.get())
         output_box.text.delete("1.0", "end")
         output_box.text.insert("1.0", output_data.getvalue())
 
