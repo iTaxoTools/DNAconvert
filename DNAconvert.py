@@ -298,9 +298,7 @@ def launch_gui() -> None:
             tkinter.messagebox.showinfo(
                 "Done.", "The conversion has been completed")
         # show the ValueErrors and FileNotFoundErrors
-        except ValueError as ex:
-            tkinter.messagebox.showerror("Error", str(ex))
-        except FileNotFoundError as ex:
+        except Exception as ex:
             tkinter.messagebox.showerror("Error", str(ex))
 
     def browse_indir() -> None:
