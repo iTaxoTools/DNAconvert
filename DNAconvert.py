@@ -178,14 +178,14 @@ def launch_gui() -> None:
     banner_image = ttk.Label(banner_frame, image=banner_img)
     banner_image.grid(row=0, column=0, rowspan=3, sticky='nsw')
     program_name = ttk.Label(
-        banner_frame, text="DNAconvert", font=tkfont.Font(size=30))
+        banner_frame, text="DNAconvert", font=tkfont.Font(size=20))
     program_name.grid(row=1, column=1, sticky='sw')
     program_description = ttk.Label(
-        banner_frame, text="A versatile  DNA sequence format converter", font=tkfont.Font(size=14))
+        banner_frame, text="A versatile  DNA sequence format converter")
     author = ttk.Label(
         banner_frame, text="DNAconvert code by Vladimir Kharchev: https://github.com/iTaxoTools/DNAconvert", font=tkfont.Font(size=8))
     author.grid(row=2, column=1, columnspan=2, sticky='nsw')
-    program_description.grid(row=1, column=2, sticky='sw', ipady=6, ipadx=15)
+    program_description.grid(row=1, column=2, sticky='sw', ipady=4, ipadx=15)
     banner_frame.grid(column=0, row=0, sticky='nsw')
 
     # frame for convert button and checkboxes
