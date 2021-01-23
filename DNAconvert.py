@@ -174,18 +174,18 @@ def launch_gui() -> None:
     # banner frame
     banner_frame = ttk.Frame(root)
     banner_img = tk.PhotoImage(file=os.path.join(
-        "data", "Coverpic_Linnaeus_transparentbackground_70px.png"))
+        "data", "iTaxoTools Digital linneaeus MICROLOGO.png"))
     banner_image = ttk.Label(banner_frame, image=banner_img)
     banner_image.grid(row=0, column=0, rowspan=3, sticky='nsw')
     program_name = ttk.Label(
-        banner_frame, text="DNAconvert", font=tkfont.Font(size=30))
+        banner_frame, text="DNAconvert", font=tkfont.Font(size=20))
     program_name.grid(row=1, column=1, sticky='sw')
     program_description = ttk.Label(
-        banner_frame, text="A versatile  DNA sequence format converter", font=tkfont.Font(size=14))
+        banner_frame, text="A versatile  DNA sequence format converter")
     author = ttk.Label(
         banner_frame, text="DNAconvert code by Vladimir Kharchev: https://github.com/iTaxoTools/DNAconvert", font=tkfont.Font(size=8))
     author.grid(row=2, column=1, columnspan=2, sticky='nsw')
-    program_description.grid(row=1, column=2, sticky='sw', ipady=6, ipadx=15)
+    program_description.grid(row=1, column=2, sticky='sw', ipady=4, ipadx=15)
     banner_frame.grid(column=0, row=0, sticky='nsw')
 
     # frame for convert button and checkboxes
@@ -276,7 +276,7 @@ def launch_gui() -> None:
         assert(input_format is not None)
         assert(output_format is not None)
         convertDNA(input_data, output_data, input_format, output_format,
-                   allow_empty_sequences=allow_empty_sequences.get())
+                   allow_empty_sequences=allow_empty_sequences.get(), disable_automatic_renaming=disable_automatic_renaming.get())
         output_box.text.delete("1.0", "end")
         output_box.text.insert("1.0", output_data.getvalue())
 
@@ -298,9 +298,7 @@ def launch_gui() -> None:
             tkinter.messagebox.showinfo(
                 "Done.", "The conversion has been completed")
         # show the ValueErrors and FileNotFoundErrors
-        except ValueError as ex:
-            tkinter.messagebox.showerror("Error", str(ex))
-        except FileNotFoundError as ex:
+        except Exception as ex:
             tkinter.messagebox.showerror("Error", str(ex))
 
     def browse_indir() -> None:

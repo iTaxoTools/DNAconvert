@@ -3,3 +3,4 @@ testfiles/
 references/
 .vim/
 venv/
+pyrightconfig.json
