@@ -359,7 +359,7 @@ def launch_gui() -> None:
     ttk.Separator(root).grid(column=0, row=3, sticky="nsew", ipady=10)
 
     # place the boxes
-    box_frame.grid(column=0, row=4, sticky='nsew')
+    box_frame.grid(column=0, row=4, sticky='nsew', padx=5)
 
     # run the gui
     root.mainloop()
