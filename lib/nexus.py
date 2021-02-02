@@ -309,9 +309,9 @@ class NexusFile:
 #NEXUS
 
 begin data;
-
-format datatype=DNA missing=N missing=? Gap=- Interleave=yes;
 """
+
+    nexus_format_line = "format datatype=DNA missing=N missing=? Gap=- Interleave=yes;"
 
     @staticmethod
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
@@ -364,7 +364,12 @@ format datatype=DNA missing=N missing=? Gap=- Interleave=yes;
 
         # print the dimensions command
         print(
-            f"dimensions Nchar={max_length} Ntax={len(records)};\n", file=file)
+            f"dimensions Nchar={max_length} Ntax={len(records)};", file=file)
+
+        # print the format command
+        print(NexusFile.nexus_format_line, file=file)
+
+        file.write('\n')
 
         # print the matrix command
         print("matrix", file=file)
