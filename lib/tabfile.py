@@ -41,16 +41,26 @@ class Tabfile:
         fields = list(map(str.casefold, fields))
         if 'seqid' not in fields and len(fields) >= 2:
             warnings.warn(
-                "The field 'seqid' is missing. Conversion will proceed, but please check the converted file for correctness.")
+                "The column 'seqid' is missing. Conversion will proceed, but please check the converted file for correctness.")
         if 'sequence' not in fields:
             sequence_candidates = [i for i, field in enumerate(
                 fields) if 'sequence' in field]
             if len(sequence_candidates) == 1:
-                warnings.warn("The field 'sequence' is missing, but another field containing the same term was found and is interpreted as containing the sequences. Conversion will proceed, but please check the converted file for correctness")
+                warnings.warn("The column 'sequence' is missing, but another column header containing the same term was found and is interpreted as containing the sequences. Conversion will proceed, but please check the converted file for correctness")
                 i = sequence_candidates[0]
                 fields[i] = 'sequence'
+            elif len(sequence_candidates) > 1:
+                i = sequence_candidates[0]
+                warnings.warn(
+                    f"The column 'sequence' is missing, the column '{fields[i]}' is interpreted as containing the sequences. Conversion will proceed, but please check the converted file for correctness")
+                fields[i] = 'sequence'
+            else:
+                warnings.warn(
+                    f"The column 'sequence' is missing, the last column '{fields[-1]}' is interpreted as containing the sequences. Conversion will proceed, but please check the converted file for correctness")
+                fields[-1] = 'sequence'
 
         # closure that will iterate over the subsequent lines and yield the records
+
         def record_generator() -> Iterator[Record]:
             for line in file:
                 line = line.rstrip('\n')
