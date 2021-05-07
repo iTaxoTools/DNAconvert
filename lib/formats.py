@@ -22,6 +22,7 @@ else:
 # formats' names dictionary
 formats: Dict[str, Type[Any]] = dict(
     tab=tabfile.Tabfile,
+    tab_noheaders=tabfile.NoHeaderTab,
     fasta=fasta.Fastafile,
     relaxed_phylip=phylip.RelPhylipFile,
     fasta_hapview=fasta.HapviewFastafile,
