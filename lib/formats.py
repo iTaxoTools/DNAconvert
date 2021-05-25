@@ -31,6 +31,7 @@ formats: Dict[str, Type[Any]] = dict(
     fasta_gbexport=fasta.GenbankFastaFile,
     nexus=nexus_format,
     genbank=genbank.GenbankFile,
+    moid_fas=fasta.MoidFastaFile
 )
 
 informats_gui = list(formats.keys())
