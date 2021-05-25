@@ -392,3 +392,50 @@ class GenbankFastaFile:
                   [f"[{field.replace('_', '-')}={record[field].strip()}]" for field in fields if record[field] and not record[field].isspace() and not (field == "seqid" or field == "sequence")], file=file)
             # print the sequence
             print(record['sequence'], file=file)
+
+class MoidFastaFile:
+    """class for MoID FASTA format"""
+    @staticmethod
+    def write(file: TextIO, fields: List[str]) -> Generator:
+        """MoID writer method"""
+
+        # assemble the name from fields if 'specimen_voucher' or 'isolate' is missing
+        # in this case, also put a limit on number of characters
+        name_assembler = NameAssembler(fields, abbreviate_species=True)
+        unicifier = Unicifier(10)
+
+        # the writing loop
+        while True:
+            # receive a record
+            try:
+                record = yield
+            except GeneratorExit:
+                break
+
+            if 'specimen_voucher' in fields or 'specimen-voucher' in fields or 'isolate' in fields:
+                name = record['specimen_voucher'] if 'specimen_voucher' in fields else record['specimen-voucher'] if 'specimen-voucher' in fields else record['isolate']
+                name = sanitize(name)
+            else:
+                name = unicifier.unique(name_assembler.name(record))
+            species = record['species'] if 'species' in fields else record['organism'] if 'organism' in fields else ""
+            species = sanitize(species)
+
+            print(">", name, "|", species, sep="", file=file)
+            print(record['sequence'], file=file)
+
+
+    @staticmethod
+    def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
+        """MoID reader method"""
+
+        # MoID always have the same fields
+        fields = ['seqid', 'species', 'sequence']
+
+        def record_generator() -> Iterator[Record]:
+            for chunk in split_file(file):
+                # 'seqid' is the part of the first line between the initial character and '|'
+                # 'species' is the part of the first line after '|'
+                # 'sequence' is the concatenation of all the other lines
+                seqid, _, species = chunk[0][1:].partition('|') 
+                yield Record(seqid=seqid, species=species, sequence="".join(chunk[1:]))
+        return fields, record_generator
