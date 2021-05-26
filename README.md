@@ -70,6 +70,7 @@ Specifying names of the output files:
 * `fasta_gbexport`: FASTA format for export into Genbank repository
 * `nexus`: NEXUS format
 * `genbank`: Genbank flat file format
+* `moid_fas`: FASTA format with sequence name matching requirements for the tool MolD
 
 ## Recognised extension
 If format is not provided, the program can infer it from the file extension
