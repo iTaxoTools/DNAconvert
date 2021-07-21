@@ -1,7 +1,7 @@
 import re
 import warnings
-from lib.record import *
-from lib.utils import *
+from .record import *
+from .utils import *
 from typing import TextIO, Iterator, List, Generator, Tuple, Set
 
 
@@ -393,6 +393,7 @@ class GenbankFastaFile:
             # print the sequence
             print(record['sequence'], file=file)
 
+
 class MoidFastaFile:
     """class for MoID FASTA format"""
     @staticmethod
@@ -413,7 +414,8 @@ class MoidFastaFile:
                 break
 
             if 'specimen_voucher' in fields or 'specimen-voucher' in fields or 'isolate' in fields:
-                name = record['specimen_voucher'] if 'specimen_voucher' in fields else record['specimen-voucher'] if 'specimen-voucher' in fields else record['isolate']
+                name = record['specimen_voucher'] if 'specimen_voucher' in fields else record[
+                    'specimen-voucher'] if 'specimen-voucher' in fields else record['isolate']
                 name = sanitize(name)
             else:
                 name = unicifier.unique(name_assembler.name(record))
@@ -422,7 +424,6 @@ class MoidFastaFile:
 
             print(">", name, "|", species, sep="", file=file)
             print(record['sequence'], file=file)
-
 
     @staticmethod
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
@@ -436,6 +437,6 @@ class MoidFastaFile:
                 # 'seqid' is the part of the first line between the initial character and '|'
                 # 'species' is the part of the first line after '|'
                 # 'sequence' is the concatenation of all the other lines
-                seqid, _, species = chunk[0][1:].partition('|') 
+                seqid, _, species = chunk[0][1:].partition('|')
                 yield Record(seqid=seqid, species=species, sequence="".join(chunk[1:]))
         return fields, record_generator

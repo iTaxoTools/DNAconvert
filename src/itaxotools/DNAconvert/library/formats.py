@@ -1,10 +1,10 @@
 from typing import Dict, Type, Any
 import os
-import DNAconvert.library.tabfile as tabfile
-import DNAconvert.library.fasta as fasta
-import DNAconvert.library.phylip as phylip
-import DNAconvert.library.nexus as nexus
-import DNAconvert.library.genbank as genbank
+from . import tabfile
+from . import fasta
+from . import phylip
+from . import nexus
+from . import genbank
 
 cfg_dict = {}
 for line in open(os.path.join("data", "cfg.tab")).readlines():

@@ -2,7 +2,7 @@
 import argparse
 import io
 import sys
-import DNAconvert.library.formats as formats
+from .library import formats
 import os
 import tkinter as tk
 import tkinter.filedialog
@@ -11,10 +11,10 @@ import tkinter.font as tkfont
 from tkinter import ttk
 import warnings
 import gzip
-import DNAconvert.library.fasta as fasta
+from .library import fasta
 from typing import Tuple, Type, Optional, TextIO, Any
-import DNAconvert.library.guiutils as guiutils
-import DNAconvert.library.utils as utils
+from .library import guiutils
+from .library import utils
 
 
 def splitext(name: str) -> Tuple[str, str]:
@@ -421,53 +421,54 @@ def launch_gui() -> None:
     root.mainloop()
 
 
-# configure the argument parser
-parser = argparse.ArgumentParser(
-    description="Converts between file formats with genetic information. Uses graphical interface by default."
-)
-parser.add_argument(
-    "--cmd", help="activates the command-line interface", action="store_true"
-)
-parser.add_argument(
-    "--allow_empty_sequences",
-    action="store_true",
-    help="set this to keep the empty sequences in the output file",
-)
-parser.add_argument(
-    "--disable_automatic_renaming",
-    action="store_true",
-    help="disables automatic renaming, may result in duplicate sequence names in Phylip and Nexus files",
-)
-parser.add_argument("--informat", default="", help="format of the input file")
-parser.add_argument("--outformat", default="", help="format of the output file")
-parser.add_argument("infile", default="", nargs="?", help="the input file")
-parser.add_argument("outfile", default="", nargs="?", help="the output file")
+def main() -> None:
+    # configure the argument parser
+    parser = argparse.ArgumentParser(
+        description="Converts between file formats with genetic information. Uses graphical interface by default."
+    )
+    parser.add_argument(
+        "--cmd", help="activates the command-line interface", action="store_true"
+    )
+    parser.add_argument(
+        "--allow_empty_sequences",
+        action="store_true",
+        help="set this to keep the empty sequences in the output file",
+    )
+    parser.add_argument(
+        "--disable_automatic_renaming",
+        action="store_true",
+        help="disables automatic renaming, may result in duplicate sequence names in Phylip and Nexus files",
+    )
+    parser.add_argument("--informat", default="", help="format of the input file")
+    parser.add_argument("--outformat", default="", help="format of the output file")
+    parser.add_argument("infile", default="", nargs="?", help="the input file")
+    parser.add_argument("outfile", default="", nargs="?", help="the output file")
 
-# parse the arguments
-args = parser.parse_args()
+    # parse the arguments
+    args = parser.parse_args()
 
-# launch gui or convert the file
-if not args.cmd:
-    launch_gui()
-else:
-    # launch in the command-line mode
-    try:
-        # catch the warnging
-        with warnings.catch_warnings(record=True) as warns:
-            convert_wrapper(
-                args.infile,
-                args.outfile,
-                args.informat,
-                args.outformat,
-                allow_empty_sequences=args.allow_empty_sequences,
-                disable_automatic_renaming=args.disable_automatic_renaming,
-            )
+    # launch gui or convert the file
+    if not args.cmd:
+        launch_gui()
+    else:
+        # launch in the command-line mode
+        try:
+            # catch the warnging
+            with warnings.catch_warnings(record=True) as warns:
+                convert_wrapper(
+                    args.infile,
+                    args.outfile,
+                    args.informat,
+                    args.outformat,
+                    allow_empty_sequences=args.allow_empty_sequences,
+                    disable_automatic_renaming=args.disable_automatic_renaming,
+                )
 
-            # display the warnings generated during the conversion
-            for w in warns:
-                print(w.message)
-    # show the ValueErrors and FileNotFoundErrors
-    except ValueError as ex:
-        sys.exit(ex)
-    except FileNotFoundError as ex:
-        sys.exit(ex)
+                # display the warnings generated during the conversion
+                for w in warns:
+                    print(w.message)
+        # show the ValueErrors and FileNotFoundErrors
+        except ValueError as ex:
+            sys.exit(ex)
+        except FileNotFoundError as ex:
+            sys.exit(ex)
