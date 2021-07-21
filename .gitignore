@@ -4,3 +4,7 @@ references/
 .vim/
 venv/
 pyrightconfig.json
+*.egg-info
+
+Pipfile
+Pipfile.lock
