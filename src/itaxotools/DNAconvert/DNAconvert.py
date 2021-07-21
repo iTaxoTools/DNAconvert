@@ -15,6 +15,7 @@ from .library import fasta
 from typing import Tuple, Type, Optional, TextIO, Any
 from .library import guiutils
 from .library import utils
+from .library.resources import get_resource
 
 
 def splitext(name: str) -> Tuple[str, str]:
@@ -186,7 +187,7 @@ def launch_gui() -> None:
     root = tk.Tk()
     root.title("DNAconvert")
     if os.name == "nt":
-        root.wm_iconbitmap(os.path.join("data", "dnaconvert.ico"))
+        root.wm_iconbitmap(get_resource("dnaconvert.ico"))
     root.rowconfigure(2, weight=1)
     root.columnconfigure(0, weight=1)
 
@@ -199,7 +200,7 @@ def launch_gui() -> None:
     # banner frame
     banner_frame = ttk.Frame(root)
     banner_img = tk.PhotoImage(
-        file=os.path.join("data", "iTaxoTools Digital linneaeus MICROLOGO.png")
+        file=get_resource("iTaxoTools Digital linneaeus MICROLOGO.png")
     )
     banner_image = ttk.Label(banner_frame, image=banner_img)
     banner_image.grid(row=0, column=0, rowspan=3, sticky="nsw")

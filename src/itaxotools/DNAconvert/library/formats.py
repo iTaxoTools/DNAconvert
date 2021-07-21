@@ -5,9 +5,10 @@ from . import fasta
 from . import phylip
 from . import nexus
 from . import genbank
+from .resources import get_resource
 
 cfg_dict = {}
-for line in open(os.path.join("data", "cfg.tab")).readlines():
+for line in open(get_resource("cfg.tab")).readlines():
     option, _, value = line.strip().partition("\t")
     cfg_dict[option] = value
 
