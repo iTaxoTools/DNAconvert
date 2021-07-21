@@ -5,6 +5,8 @@ references/
 venv/
 pyrightconfig.json
 *.egg-info
+build/
+dist/
 
 Pipfile
 Pipfile.lock
