@@ -1,12 +1,15 @@
-#!/usr/bin/env python3
+# PyInstaller entry points for setuptools
+# https://pyinstaller.readthedocs.io/en/stable/hooks.html
 
-from typing import List
+# When a module is detected by PyInstaller, it will search
+# for corresponding hooks and tests in this directory.
+
 import os
 
 
-def get_hook_dirs() -> List[str]:
+def get_hook_dirs():
     return [os.path.dirname(__file__)]
 
 
-def get_pyinstaller_tests() -> List[str]:
+def get_PyInstaller_tests():
     return [os.path.dirname(__file__)]
