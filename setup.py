@@ -17,7 +17,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 setup(
     name='DNAconvert',
 
-    version='0.1.0',
+    version='0.1.dev1',
 
     description='Converts between genetic formats',
 
@@ -39,6 +39,7 @@ setup(
         # that you indicate you support Python 3. These classifiers are *not*
         # checked by 'pip install'. See instead 'python_requires' below.
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3 :: Only',
     ],
@@ -51,7 +52,7 @@ setup(
         where='src',
     ),
 
-    python_requires='>=3.9, <4',
+    python_requires='>=3.8, <4',
 
     install_requires=[
         'python-nexus'
