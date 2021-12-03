@@ -1,6 +1,6 @@
 from typing import TextIO, List, Tuple, Callable, Iterator, Generator
-from lib.utils import *
-from lib.record import *
+from .utils import *
+from .record import *
 
 
 class Tabfile:

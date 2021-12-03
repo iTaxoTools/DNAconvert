@@ -1,6 +1,6 @@
 from typing import TextIO, Optional, Tuple, Callable, Iterator, List, Set, ClassVar, Generator, DefaultDict
-from lib.record import *
-from lib.utils import *
+from .record import *
+from .utils import *
 from collections import defaultdict
 import re
 import nexus as python_nexus

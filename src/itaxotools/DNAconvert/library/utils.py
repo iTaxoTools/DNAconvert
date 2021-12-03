@@ -1,6 +1,6 @@
-from lib.ext_ASCII_conv_table import ext_ascii_trans
+from .ext_ASCII_conv_table import ext_ascii_trans
 from typing import List, Callable, Optional, Dict, Any
-from lib.record import *
+from .record import *
 import re
 import warnings
 import unicodedata

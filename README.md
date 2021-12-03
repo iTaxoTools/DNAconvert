@@ -90,9 +90,9 @@ Currently recognised:
 Files with extension `.gz` are uncompressed automatically
 
 ## Adding new formats
-[Link to documentation](doc/ADDING_FORMATS.md)
+[Link to documentation](docs/ADDING_FORMATS.md)
 
-[1]: doc/TAB_FORMAT.md
+[1]: docs/TAB_FORMAT.md
 
 ## Options
 DNAconvert uses two parsers for NEXUS format: internal and the one from python-nexus package.

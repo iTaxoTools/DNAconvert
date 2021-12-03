@@ -1,6 +1,6 @@
 import warnings
-from lib.utils import *
-from lib.record import *
+from .utils import *
+from .record import *
 from typing import TextIO, Tuple, List, Callable, Iterator, Generator
 
 
