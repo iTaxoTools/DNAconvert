@@ -1,4 +1,5 @@
 altgraph==0.17.2
+appdirs==1.4.4
 attrs==21.2.0
 clldutils==3.10.1
 colorlog==6.6.0

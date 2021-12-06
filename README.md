@@ -1,43 +1,26 @@
-# DNAconvert tool
-This program can convert between different formats containing genetic information
-
-## Dependencies
-* [python\-nexus](https://pypi.org/project/python-nexus/)
+# DNAconvert
+Convert between different file formats containing genetic information.
 
 ## Installation
-Installation is currently not intended. Downloading should be enough
+Install the latest version directly using pip (requires Python 3.8 or later):
+```
+pip install git+https://github.com/iTaxoTools/DNAconvert.git#egg=DNAconvert
+```
 
-## Generating an executable
-Using [PyInstaller](http://www.pyinstaller.org) is recommended. After the following instruction a directory `dist` will be created (among other) and the executable will be inside it.
-
-### Linux
-Install PyInstaller from PyPI:
-
-    pip install pyinstaller
-
-Then run
-
-    pyinstaller --onefile DNAconvert.py
-
-### Windows
-Install PyInstaller:
-
-[Installing on Windows](https://pyinstaller.readthedocs.io/en/stable/installation.html#installing-in-windows)
-
-Then run
-
-    pyinstaller --onefile --windowed DNAconvert.py
+## Executables
+Download and run the standalone executables without installing Python.</br>
+[See the latest release here.](https://github.com/iTaxoTools/DNAconvert/releases/latest)
 
 ## Usage
-    usage: DNAconvert.py [-h] [--cmd] [--allow_empty_sequences]
+    usage: DNAconvert [-h] [--cmd] [--allow_empty_sequences]
                      [--informat INFORMAT] [--outformat OUTFORMAT]
                      [infile] [outfile]
-           DNAconvert.py
-    
+           DNAconvert
+
     positional arguments:
       infile                the input file
       outfile               the output file
-    
+
     optional arguments:
       -h, --help            show this help message and exit
       --cmd                 activates the command-line interface
@@ -95,10 +78,27 @@ Files with extension `.gz` are uncompressed automatically
 [1]: docs/TAB_FORMAT.md
 
 ## Options
-DNAconvert uses two parsers for NEXUS format: internal and the one from python-nexus package.
+DNAconvert uses two parsers for NEXUS format: internal (default) and the one from python-nexus package.
 
-In the file `data/cfg.tab` the string of form
+In the file `DNAconvert/config.json` (found in `%APPDATA%\iTaxoTools` or in `$XDG_CONFIG_HOME$/`) the key-value pair
 ```
-nexus_parser<Tab>(method)
+"nexus_parser" : "(method)""
 ```
 determines the parser. `(method)` is either `internal` or `python-nexus`.
+
+## Generating an executable
+Using [PyInstaller](http://www.pyinstaller.org) is recommended. You should first clone the repository and install DNAconvert with all dependencies (includes PyInstaller):
+```
+git clone https://github.com/iTaxoTools/DNAconvert.git
+cd DNAconvert
+pip install ".[dev]"
+```
+
+After the following instruction, the directory `dist` will be created (among others) and the executable will be inside it:
+```
+pyinstaller scripts/DNAconvert.spec
+```
+
+## Dependencies
+Automatically installed when using pip:
+* [python\-nexus](https://pypi.org/project/python-nexus/)
