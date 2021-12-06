@@ -32,4 +32,4 @@ exe = EXE(pyz,
           upx_exclude=[],
           runtime_tmpdir=None,
           console=False,
-          icon='../src/itaxotools/DNAconvert/logos/dnaconvert.ico' )
+          icon='../src/itaxotools/DNAconvert/resources/dnaconvert.ico' )
