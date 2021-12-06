@@ -56,7 +56,7 @@ setup(
 
     install_requires=[
         'python-nexus',
-        'appdirs'
+        'appdirs',
     ],
 
     extras_require={
