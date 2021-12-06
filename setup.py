@@ -70,8 +70,8 @@ setup(
             'DNAconvert=itaxotools.DNAconvert:main',
         ],
         'pyinstaller40': [
-            'hook-dirs = itaxotools.__pyinstaller:get_hook_dirs',
-            'tests = itaxotools.__pyinstaller:get_pyinstaller_tests'
+            'hook-dirs = itaxotools.__pyinstaller.DNAconvert:get_hook_dirs',
+            'tests = itaxotools.__pyinstaller.DNAconvert:get_pyinstaller_tests'
         ]
     },
 
