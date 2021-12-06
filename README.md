@@ -80,9 +80,9 @@ Files with extension `.gz` are uncompressed automatically
 ## Options
 DNAconvert uses two parsers for NEXUS format: internal (default) and the one from python-nexus package.
 
-In the file `data/cfg.tab` (found at the installed location) the string of form
+In the file `DNAconvert/config.json` (found in `%APPDATA%\iTaxoTools` or in `$XDG_CONFIG_HOME$/`) the key-value pair
 ```
-nexus_parser<Tab>(method)
+"nexus_parser" : "(method)""
 ```
 determines the parser. `(method)` is either `internal` or `python-nexus`.
 

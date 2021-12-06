@@ -6,19 +6,17 @@ from . import phylip
 from . import nexus
 from . import genbank
 from .resources import get_resource
+from .config import get_config
 
-cfg_dict = {}
-for line in open(get_resource("cfg.tab")).readlines():
-    option, _, value = line.strip().partition("\t")
-    cfg_dict[option] = value
 
-if cfg_dict["nexus_parser"] == "python-nexus":
+config = get_config()
+if config.nexus_parser == "python-nexus":
     nexus_format = nexus.NexusFileSimple
-elif cfg_dict["nexus_parser"] == "internal":
+elif config.nexus_parser == "internal":
     nexus_format = nexus.NexusFile
 else:
     raise ValueError(
-        f"The value of 'nexus_parser' in {os.path.join('data', 'cfg.tab')} should be either 'python-nexus' or 'internal'"
+        f"The value of 'nexus_parser' in 'config.json' should be either 'python-nexus' or 'internal'"
     )
 
 # formats' names dictionary
