@@ -11,3 +11,5 @@ dist/
 
 Pipfile
 Pipfile.lock
+
+dna_src
