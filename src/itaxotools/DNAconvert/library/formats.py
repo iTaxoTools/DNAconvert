@@ -31,7 +31,7 @@ formats: Dict[str, Type[Any]] = dict(
     nexus=nexus_format,
     nexml=nexml.NeXMLFile,
     genbank=genbank.GenbankFile,
-    moid_fas=fasta.MoidFastaFile,
+    mold_fasta=fasta.MolDFastaFile,
 )
 
 informats_gui = list(formats.keys())
