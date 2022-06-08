@@ -1,11 +1,10 @@
 from typing import Dict, Type, Any
-import os
 from . import tabfile
 from . import fasta
 from . import phylip
 from . import nexus
 from . import genbank
-from .resources import get_resource
+from . import nexml
 from .config import get_config
 
 
@@ -16,7 +15,7 @@ elif config.nexus_parser == "internal":
     nexus_format = nexus.NexusFile
 else:
     raise ValueError(
-        f"The value of 'nexus_parser' in 'config.json' should be either 'python-nexus' or 'internal'"
+        "The value of 'nexus_parser' in 'config.json' should be either 'python-nexus' or 'internal'"
     )
 
 # formats' names dictionary
@@ -30,8 +29,9 @@ formats: Dict[str, Type[Any]] = dict(
     fastq=fasta.FastQFile,
     fasta_gbexport=fasta.GenbankFastaFile,
     nexus=nexus_format,
+    nexml=nexml.NeXMLFile,
     genbank=genbank.GenbankFile,
-    moid_fas=fasta.MoidFastaFile,
+    mold_fasta=fasta.MolDFastaFile,
 )
 
 informats_gui = list(formats.keys())
@@ -47,7 +47,6 @@ extensions = {
     ".txt": tabfile.Tabfile,
     ".tsv": tabfile.Tabfile,
     ".fas": fasta.Fastafile,
-    ".fasta": fasta.Fastafile,
     ".fna": fasta.Fastafile,
     ".fasta": fasta.Fastafile,
     ".rel.phy": phylip.RelPhylipFile,
@@ -61,4 +60,5 @@ extensions = {
     ".gb.fas": fasta.GenbankFastaFile,
     ".nex": nexus_format,
     ".gb": genbank.GenbankFile,
+    ".xml": nexml.NeXMLFile,
 }

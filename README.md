@@ -52,8 +52,9 @@ Specifying names of the output files:
 * `fastq`: FASTQ format
 * `fasta_gbexport`: FASTA format for export into Genbank repository
 * `nexus`: NEXUS format
+* `nexml`: DnaCharacterMatrix in NeXML format
 * `genbank`: Genbank flat file format
-* `moid_fas`: FASTA format with sequence name matching requirements for the tool MolD
+* `mold_fasta`: FASTA format with sequence name matching requirements for the tool MolD
 
 ## Recognised extension
 If format is not provided, the program can infer it from the file extension
@@ -68,6 +69,7 @@ Currently recognised:
 * `.fastq.gz`, `.fq.gz`: FASTQ format compressed with Gzip
 * `.gb.fas`: FASTA format for export into Genbank repository
 * `.nex`: NEXUS format
+* `.xml`: NeXML format
 * `.gb`: Genbank flat file format
 
 Files with extension `.gz` are uncompressed automatically
@@ -102,3 +104,4 @@ pyinstaller scripts/DNAconvert.spec
 ## Dependencies
 Automatically installed when using pip:
 * [python\-nexus](https://pypi.org/project/python-nexus/)
+* [dendropy](https://pypi.org/project/DendroPy/)
