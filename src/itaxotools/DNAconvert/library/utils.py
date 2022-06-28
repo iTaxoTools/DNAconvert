@@ -10,11 +10,10 @@ GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING = False
 
 
 class Aggregator:
-    """Aggregates information about records
-    """
+    """Aggregates information about records"""
 
     def __init__(self, *reducers: Any):
-        """ Takes pairs of accumulators and reducers
+        """Takes pairs of accumulators and reducers
         each reducer should a pure function
         that takes the current accumulator value and the current record
         and returns the new value of the accumulator
@@ -24,15 +23,14 @@ class Aggregator:
         self._reducers = list(reducers)
 
     def send(self, record: Record) -> None:
-        """ Send a record to collect its information
+        """Send a record to collect its information
         updates all the accumulators
         """
         for i, acc in enumerate(self._accs):
             self._accs[i] = self._reducers[i](acc, record)
 
     def results(self) -> List[Any]:
-        """ Returns the current values of the accumulators
-        """
+        """Returns the current values of the accumulators"""
         return self._accs
 
 
@@ -40,7 +38,7 @@ def _max_reducer(acc: int, record: Record) -> int:
     """
     returns the maximum between acc and the length of sequence in record
     """
-    l = len(record['sequence'])
+    l = len(record["sequence"])
     return max(acc, l)
 
 
@@ -48,7 +46,7 @@ def _min_reducer(acc: int, record: Record) -> int:
     """
     returns the minimum between acc and the length of sequence in record
     """
-    l = len(record['sequence'])
+    l = len(record["sequence"])
     if acc:
         return min(acc, l)
     else:
@@ -66,11 +64,11 @@ class PhylipAggregator(Aggregator):
 
 
 def sanitize(s: str) -> str:
-    """ replaces sequence of not-alphanum characters with '_'
+    """replaces sequence of not-alphanum characters with '_'
     replaces some extended ASCII characters with ASCII representations
     """
-    s = unicodedata.normalize('NFKC', s).translate(ext_ascii_trans)
-    return '_'.join(part for part in (re.split(r'[^a-zA-Z0-9]+', s)) if part)
+    s = unicodedata.normalize("NFKC", s).translate(ext_ascii_trans)
+    return "_".join(part for part in (re.split(r"[^a-zA-Z0-9]+", s)) if part)
 
 
 class NameAssembler:
@@ -90,18 +88,16 @@ class NameAssembler:
             return genus[0:3] + species
 
     def _simple_name(self, record: Record) -> str:
-        """used when there no information fields
-        """
-        return sanitize(record['seqid'])
+        """used when there no information fields"""
+        return sanitize(record["seqid"])
 
     def _complex_name(self, record: Record) -> str:
         """used when information fields (all except 'seqid' and 'sequence') are present
         Their values are concatenated with underscores and forbidden character are replaced with underscores
         taking care of multiple underscores
         """
-        parts = [record[field]
-                 for field in self._fields if record[field] != ""]
-        if self.abbreviate_species and self._fields[0] == 'species':
+        parts = [record[field] for field in self._fields if record[field] != ""]
+        if self.abbreviate_species and self._fields[0] == "species":
             parts[0] = NameAssembler._species_abbr(parts[0])
         return "_".join(map(sanitize, parts))
 
@@ -111,12 +107,12 @@ class NameAssembler:
         self.abbreviate_species = abbreviate_species
         try:
             # seqid should not be used for the name generation
-            fields.remove('seqid')
+            fields.remove("seqid")
         except ValueError:
             pass
         try:
             # only the fields before the sequence field will be used
-            i = fields.index('sequence')
+            i = fields.index("sequence")
         except ValueError:
             pass
         else:
@@ -124,8 +120,8 @@ class NameAssembler:
             fields = fields[:i]
         if fields:
             # generate 'seqid' from the fields
-            if 'species' in fields:
-                i = fields.index('species')
+            if "species" in fields:
+                i = fields.index("species")
                 fields[0], fields[i] = fields[i], fields[0]
             self._fields = fields
             self.name = self._complex_name
@@ -145,11 +141,14 @@ def dna_aligner(max_length: int, min_length: int) -> Callable[[str], str]:
         return lambda x: x
     else:
         # warn the user about the padding
-        warnings.warn("The requested output format requires all sequences to be of equal length which is not the case in your input file. Probably your sequences are unaligned. To complete the conversion, dash-signs have been added at the end of the shorter sequences to adjust their length, but this may impede proper analysis - please check.")
+        warnings.warn(
+            "The requested output format requires all sequences to be of equal length which is not the case in your input file. Probably your sequences are unaligned. To complete the conversion, dash-signs have been added at the end of the shorter sequences to adjust their length, but this may impede proper analysis - please check."
+        )
 
         def dash_adder(sequence: str) -> str:
             # pad the sequences
-            return sequence.ljust(max_length, '-')
+            return sequence.ljust(max_length, "-")
+
         return dash_adder
 
 
@@ -158,14 +157,25 @@ def get_species_field(fields: List[str]) -> Optional[str]:
     calculates the field name, that contains the species name
     """
     # allowed names
-    field_names = ['organism', 'scientificname', 'identification/fullscientificnamestring',
-                   'scientific name', 'scientific_name', 'species', 'speciesname', 'species name', 'species_name']
+    field_names = [
+        "organism",
+        "scientificname",
+        "identification/fullscientificnamestring",
+        "scientific name",
+        "scientific_name",
+        "species",
+        "speciesname",
+        "species name",
+        "species_name",
+    ]
     fields_set = set(fields)
     # find the first allowed name in the given field names
-    return next((field for field in field_names if field.casefold() in fields_set), None)
+    return next(
+        (field for field in field_names if field.casefold() in fields_set), None
+    )
 
 
-class Unicifier():
+class Unicifier:
     """Takes care of making the names unique.
     Either overwrite the end with consecutive number, if given a length limit.
     Or keeps tracks on already seen names and prevents name collision by adding a number suffix
@@ -181,17 +191,17 @@ class Unicifier():
             self.unique = self._unique_limit
         else:
             # memorization-bases generation
-            self._sep = '_'
+            self._sep = "_"
             self._seen_name: Dict[str, int] = {}
             self.unique = self._unique_set
 
     def _unique_limit(self, name: str) -> str:
         if GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING:
-            return name[0:self._length_limit]
+            return name[0 : self._length_limit]
         # overwrite the end with counter
-        suff = str(self._count)
+        suff = f"_{self._count}"
         self._count += 1
-        return name[0:self._length_limit - len(suff)] + suff
+        return name[0 : self._length_limit - len(suff)] + suff
 
     def _unique_set(self, name: str) -> str:
         # unless already seen, the result is the input
