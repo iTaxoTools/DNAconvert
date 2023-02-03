@@ -13,9 +13,12 @@ Download and run the standalone executables without installing Python.</br>
 
 ## Usage
     usage: DNAconvert [-h] [--cmd] [--allow_empty_sequences]
-                     [--informat INFORMAT] [--outformat OUTFORMAT]
-                     [infile] [outfile]
-           DNAconvert
+                      [--automatic_renaming] [--preserve_spaces]
+                      [--informat INFORMAT] [--outformat OUTFORMAT]
+                      [infile] [outfile]
+
+    Converts between file formats with genetic information. Uses graphical
+    interface by default.
 
     positional arguments:
       infile                the input file
@@ -27,7 +30,9 @@ Download and run the standalone executables without installing Python.</br>
       --allow_empty_sequences
                             set this to keep the empty sequences in the output
                             file
-      --automatic_renaming  enables automatic renaming of sequences (to avoid duplicate sequence names in Phylip and Nexus files)
+      --automatic_renaming  enables automatic renaming of sequences (to avoid
+                            duplicate sequence names in Phylip and Nexus files)
+      --preserve_spaces     preserve spaces in sequences
       --informat INFORMAT   format of the input file
       --outformat OUTFORMAT
                             format of the output file
