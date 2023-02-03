@@ -437,6 +437,9 @@ def main() -> None:
         action="store_true",
         help="enables automatic renaming of sequences (to avoid duplicate sequence names in Phylip and Nexus files)",
     )
+    parser.add_argument(
+        "--preserve_spaces", action="store_true", help="preserve spaces in sequences"
+    )
     parser.add_argument("--informat", default="", help="format of the input file")
     parser.add_argument("--outformat", default="", help="format of the output file")
     parser.add_argument("infile", default="", nargs="?", help="the input file")
@@ -460,7 +463,7 @@ def main() -> None:
                     args.outformat,
                     allow_empty_sequences=args.allow_empty_sequences,
                     automatic_renaming=args.automatic_renaming,
-                    preserve_spaces=False,
+                    preserve_spaces=args.preserve_spaces,
                 )
 
                 # display the warnings generated during the conversion
