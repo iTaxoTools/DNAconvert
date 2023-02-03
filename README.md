@@ -27,9 +27,7 @@ Download and run the standalone executables without installing Python.</br>
       --allow_empty_sequences
                             set this to keep the empty sequences in the output
                             file
-      --disable_automatic_renaming
-                            disables automatic renaming, may result in duplicate
-                            sequence names in Phylip and Nexus files
+      --automatic_renaming  enables automatic renaming of sequences (to avoid duplicate sequence names in Phylip and Nexus files)
       --informat INFORMAT   format of the input file
       --outformat OUTFORMAT
                             format of the output file
