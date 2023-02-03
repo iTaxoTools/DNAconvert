@@ -74,6 +74,7 @@ def convertDNA(
         allow_empty_sequnces: if set, the records with empty sequences are also recorded in the outfile.
            By default, records with empty sequences are discarded
         automatic_renaming: if set, enables automatic renaming of sequence names
+        preserve_spaces: if set, the spaces in sequences are not removed
     """
     utils.GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING = not options["automatic_renaming"]
     # take a shortcut for convertion FastQ into FASTA
@@ -92,6 +93,8 @@ def convertDNA(
     skipped = 0
     # iterate over the records in infile
     for record in records():
+        if not options["preserve_spaces"]:
+            record["sequence"] = record["sequence"].replace(" ", "")
         # when 'allow_empty_sequences' is set, the condition is always true and the record is passed to the writer
         # otherwise only the records with non-empty sequences are passed
         if record["sequence"] or options["allow_empty_sequences"]:
@@ -315,6 +318,7 @@ def launch_gui() -> None:
             output_format,
             allow_empty_sequences=allow_empty_sequences.get(),
             automatic_renaming=automatic_renaming.get(),
+            preserve_spaces=False,
         )
         output_box.text.delete("1.0", "end")
         output_box.text.insert("1.0", output_data.getvalue())
@@ -335,6 +339,7 @@ def launch_gui() -> None:
                         outformat.get(),
                         allow_empty_sequences=allow_empty_sequences.get(),
                         automatic_renaming=automatic_renaming.get(),
+                        preserve_spaces=False,
                     )
                 # display the warnings generated during the conversion
                 for w in warns:
@@ -455,6 +460,7 @@ def main() -> None:
                     args.outformat,
                     allow_empty_sequences=args.allow_empty_sequences,
                     automatic_renaming=args.automatic_renaming,
+                    preserve_spaces=False,
                 )
 
                 # display the warnings generated during the conversion
