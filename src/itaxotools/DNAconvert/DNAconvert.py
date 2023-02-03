@@ -318,7 +318,7 @@ def launch_gui() -> None:
             output_format,
             allow_empty_sequences=allow_empty_sequences.get(),
             automatic_renaming=automatic_renaming.get(),
-            preserve_spaces=False,
+            preserve_spaces=preserve_spaces.get(),
         )
         output_box.text.delete("1.0", "end")
         output_box.text.insert("1.0", output_data.getvalue())
@@ -339,7 +339,7 @@ def launch_gui() -> None:
                         outformat.get(),
                         allow_empty_sequences=allow_empty_sequences.get(),
                         automatic_renaming=automatic_renaming.get(),
-                        preserve_spaces=False,
+                        preserve_spaces=preserve_spaces.get(),
                     )
                 # display the warnings generated during the conversion
                 for w in warns:
@@ -386,6 +386,12 @@ def launch_gui() -> None:
         text="Check to enable automatic renaming of sequences\n(to avoid duplicate sequence names in Phylip and Nexus files)",
     )
 
+    # checkbox to preserve spaces in sequences
+    preserve_spaces = tk.BooleanVar()
+    preserve_spaces_chk = ttk.Checkbutton(
+        middle_frame, text="Preserve spaces in sequences", variable=preserve_spaces
+    )
+
     # place input widget group
     infile_lbl.grid(column=0, row=0, sticky=tk.W)
     infile_entry.grid(column=0, row=1, sticky=tk.W)
@@ -408,6 +414,7 @@ def launch_gui() -> None:
     dar_frame.grid(column=0, row=3, sticky="w")
     automatic_renaming_chk.grid(column=0, row=0, sticky="n")
     dar_lbl.grid(column=1, row=0)
+    preserve_spaces_chk.grid(column=0, row=4, sticky="w")
 
     # place a separator above boxes
     ttk.Separator(root).grid(column=0, row=3, sticky="nsew", ipady=10)
