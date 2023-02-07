@@ -71,7 +71,7 @@ def convertDNA(
     Converts infile of format informat to outfile of format outformat with given options
 
     Possible options:
-        allow_empty_sequnces: if set, the records with empty sequences are also recorded in the outfile.
+        allow_empty_sequences: if set, the records with empty sequences are also recorded in the outfile.
            By default, records with empty sequences are discarded
         automatic_renaming: if set, enables automatic renaming of sequence names
         preserve_spaces: if set, the spaces in sequences are not removed

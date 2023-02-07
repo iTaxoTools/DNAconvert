@@ -24,7 +24,7 @@ setup(
     python_requires=">=3.8.6, <4",
     install_requires=["python-nexus", "appdirs", "dendropy"],
     extras_require={
-        "dev": ["pyinstaller"],
+        "dev": ["pyinstaller", "pytest"],
     },
     entry_points={
         "console_scripts": [
