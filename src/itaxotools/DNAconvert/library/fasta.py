@@ -251,15 +251,12 @@ class FastQFile:
         """FastQ writer method"""
 
         # check that all the required fields are present
-        if (
-            not {
-                "seqid",
-                "sequence",
-                "quality_score_identifier",
-                "quality_score",
-            }
-            <= set(fields)
-        ):
+        if not {
+            "seqid",
+            "sequence",
+            "quality_score_identifier",
+            "quality_score",
+        } <= set(fields):
             raise ValueError(
                 "FastQ requires the fields seqid, sequence, quality_score_identifier and quality_score"
             )
@@ -534,6 +531,10 @@ class MolDFastaFile:
                     else record["isolate"]
                 )
                 name = sanitize(name)
+            elif (
+                len(fields) == 3
+            ):  # the record only contains seqid, species and the sequence
+                name = sanitize(record["seqid"])
             else:
                 name = unicifier.unique(name_assembler.name(record))
             species = (
@@ -544,7 +545,10 @@ class MolDFastaFile:
                 else ""
             )
             species = sanitize(species)
-
+            if not species:
+                raise ValueError(
+                    'Conversion to MolD FASTA requires either a "species" or an "organism" field. Neither was found'
+                )
             print(">", name, "|", species, sep="", file=file)
             print(record["sequence"], file=file)
 
