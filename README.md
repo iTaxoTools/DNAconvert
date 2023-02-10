@@ -58,6 +58,7 @@ Specifying names of the output files:
 * `nexml`: DnaCharacterMatrix in NeXML format
 * `genbank`: Genbank flat file format
 * `mold_fasta`: FASTA format with sequence name matching requirements for the tool MolD
+* `ali_fasta`: Ali variant of the FASTA format
 
 ## Recognised extension
 If format is not provided, the program can infer it from the file extension
@@ -74,6 +75,7 @@ Currently recognised:
 * `.nex`: NEXUS format
 * `.xml`: NeXML format
 * `.gb`: Genbank flat file format
+* `.ali`: FASTA Ali format
 
 Files with extension `.gz` are uncompressed automatically
 
