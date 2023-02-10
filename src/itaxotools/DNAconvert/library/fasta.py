@@ -568,3 +568,54 @@ class MolDFastaFile:
                 yield Record(seqid=seqid, species=species, sequence="".join(chunk[1:]))
 
         return fields, record_generator
+
+
+class AliFile:
+    """Class for Ali files"""
+
+    @staticmethod
+    def write(file: TextIO, fields: List[str]) -> Generator:
+        """Ali writer method"""
+        # the standard NameAssembler
+        name_assembler = NameAssembler(fields)
+
+        # Ali needs two empty lines with a hashtag
+        print("#", file=file)
+        print("#", file=file)
+
+        # the writing loop
+        while True:
+            # receive a record
+            try:
+                record = yield
+            except GeneratorExit:
+                break
+
+            # print the unique name
+            print(">", name_assembler.name(record), sep="", file=file)
+
+            # print the sequence
+            print(record["sequence"], file=file)
+
+    @staticmethod
+    def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
+        """Ali reader method"""
+
+        # Ali always have the same fields
+        fields = ["seqid", "sequence"]
+
+        def record_generator() -> Iterator[Record]:
+            for chunk in split_file(file):
+                # 'seqid' is the first line without the initial character
+                # 'sequence' is the concatenation of all the other lines
+                seqid = chunk[0][1:]
+                sequence = "".join(chunk[1:])
+                seq_start_match = re.search(r"\S", sequence)
+                if seq_start_match is None:
+                    spaces_count = len(sequence)
+                else:
+                    spaces_count = seq_start_match.start()
+                sequence = "?" * spaces_count + sequence[spaces_count:]
+                yield Record(seqid=seqid, sequence=sequence)
+
+        return fields, record_generator
