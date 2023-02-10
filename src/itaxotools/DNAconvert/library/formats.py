@@ -32,6 +32,7 @@ formats: Dict[str, Type[Any]] = dict(
     nexml=nexml.NeXMLFile,
     genbank=genbank.GenbankFile,
     mold_fasta=fasta.MolDFastaFile,
+    ali_fasta=fasta.AliFile,
 )
 
 informats_gui = list(formats.keys())
@@ -61,4 +62,5 @@ extensions = {
     ".nex": nexus_format,
     ".gb": genbank.GenbankFile,
     ".xml": nexml.NeXMLFile,
+    ".ali": fasta.AliFile,
 }
