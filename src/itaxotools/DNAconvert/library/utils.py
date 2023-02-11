@@ -6,7 +6,7 @@ import warnings
 import unicodedata
 
 # read by lib.utils.Unicifier._unique_limit
-GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING = False
+GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING = True
 
 
 class Aggregator:

@@ -49,11 +49,7 @@ def parse_format(name: Optional[str], ext_pair: Tuple[str, str]) -> Optional[Typ
 
     try:
         # lookup the format name, or the two-part extension, if it doesn't exist
-        return (
-            formats.formats[name]
-            if name
-            else formats.extensions[d_ext.lower()]
-        )
+        return formats.formats[name] if name else formats.extensions[d_ext.lower()]
     except KeyError:
         # both the format name and the two-part extension are unknown
         try:
@@ -75,13 +71,12 @@ def convertDNA(
     Converts infile of format informat to outfile of format outformat with given options
 
     Possible options:
-        allow_empty_sequnces: if set, the records with empty sequences are also recorded in the outfile.
+        allow_empty_sequences: if set, the records with empty sequences are also recorded in the outfile.
            By default, records with empty sequences are discarded
-        disable_automatic_renaming: if set, disables automatic renaming of sequence names
+        automatic_renaming: if set, enables automatic renaming of sequence names
+        preserve_spaces: if set, the spaces in sequences are not removed
     """
-    utils.GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING = options[
-        "disable_automatic_renaming"
-    ]
+    utils.GLOBAL_OPTION_DISABLE_AUTOMATIC_RENAMING = not options["automatic_renaming"]
     # take a shortcut for convertion FastQ into FASTA
     if informat is fasta.FastQFile and outformat is fasta.Fastafile:
         fasta.FastQFile.to_fasta(infile, outfile)
@@ -98,6 +93,8 @@ def convertDNA(
     skipped = 0
     # iterate over the records in infile
     for record in records():
+        if not options["preserve_spaces"]:
+            record["sequence"] = record["sequence"].replace(" ", "")
         # when 'allow_empty_sequences' is set, the condition is always true and the record is passed to the writer
         # otherwise only the records with non-empty sequences are passed
         if record["sequence"] or options["allow_empty_sequences"]:
@@ -320,7 +317,8 @@ def launch_gui() -> None:
             input_format,
             output_format,
             allow_empty_sequences=allow_empty_sequences.get(),
-            disable_automatic_renaming=disable_automatic_renaming.get(),
+            automatic_renaming=automatic_renaming.get(),
+            preserve_spaces=preserve_spaces.get(),
         )
         output_box.text.delete("1.0", "end")
         output_box.text.insert("1.0", output_data.getvalue())
@@ -340,7 +338,8 @@ def launch_gui() -> None:
                         informat.get(),
                         outformat.get(),
                         allow_empty_sequences=allow_empty_sequences.get(),
-                        disable_automatic_renaming=disable_automatic_renaming.get(),
+                        automatic_renaming=automatic_renaming.get(),
+                        preserve_spaces=preserve_spaces.get(),
                     )
                 # display the warnings generated during the conversion
                 for w in warns:
@@ -378,15 +377,19 @@ def launch_gui() -> None:
         middle_frame, text="Allow empty sequences", variable=allow_empty_sequences
     )
 
-    # checkbox to disable automatic renaming
+    # checkbox to enable automatic renaming
     dar_frame = ttk.Frame(middle_frame)
-    disable_automatic_renaming = tk.BooleanVar()
-    disable_automatic_renaming_chk = ttk.Checkbutton(
-        dar_frame, variable=disable_automatic_renaming
-    )
+    automatic_renaming = tk.BooleanVar()
+    automatic_renaming_chk = ttk.Checkbutton(dar_frame, variable=automatic_renaming)
     dar_lbl = ttk.Label(
         dar_frame,
-        text="Check to disable automatic renaming\n(may result in duplicate sequence names\nin Phylip and Nexus files)",
+        text="Check to enable automatic renaming of sequences\n(to avoid duplicate sequence names in Phylip and Nexus files)",
+    )
+
+    # checkbox to preserve spaces in sequences
+    preserve_spaces = tk.BooleanVar()
+    preserve_spaces_chk = ttk.Checkbutton(
+        middle_frame, text="Preserve spaces in sequences", variable=preserve_spaces
     )
 
     # place input widget group
@@ -409,8 +412,9 @@ def launch_gui() -> None:
     convert_btn.grid(column=0, row=1)
     allow_es_chk.grid(column=0, row=2, sticky="w")
     dar_frame.grid(column=0, row=3, sticky="w")
-    disable_automatic_renaming_chk.grid(column=0, row=0, sticky="n")
+    automatic_renaming_chk.grid(column=0, row=0, sticky="n")
     dar_lbl.grid(column=1, row=0)
+    preserve_spaces_chk.grid(column=0, row=4, sticky="w")
 
     # place a separator above boxes
     ttk.Separator(root).grid(column=0, row=3, sticky="nsew", ipady=10)
@@ -436,9 +440,12 @@ def main() -> None:
         help="set this to keep the empty sequences in the output file",
     )
     parser.add_argument(
-        "--disable_automatic_renaming",
+        "--automatic_renaming",
         action="store_true",
-        help="disables automatic renaming, may result in duplicate sequence names in Phylip and Nexus files",
+        help="enables automatic renaming of sequences (to avoid duplicate sequence names in Phylip and Nexus files)",
+    )
+    parser.add_argument(
+        "--preserve_spaces", action="store_true", help="preserve spaces in sequences"
     )
     parser.add_argument("--informat", default="", help="format of the input file")
     parser.add_argument("--outformat", default="", help="format of the output file")
@@ -462,7 +469,8 @@ def main() -> None:
                     args.informat,
                     args.outformat,
                     allow_empty_sequences=args.allow_empty_sequences,
-                    disable_automatic_renaming=args.disable_automatic_renaming,
+                    automatic_renaming=args.automatic_renaming,
+                    preserve_spaces=args.preserve_spaces,
                 )
 
                 # display the warnings generated during the conversion
