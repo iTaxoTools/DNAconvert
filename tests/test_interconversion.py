@@ -18,6 +18,7 @@ format_names: Dict[str, str] = {
     "MolD_examplefile2_LophiotomaNICOI_iTaxoTools_0_1.fas": "mold_fasta",
     "ali_example_file_1.ali": "ali_fasta",
     "ali_example_file_2.ali": "ali_fasta",
+    "testbarcodes.gb": "genbank",
 }
 
 

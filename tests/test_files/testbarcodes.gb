@@ -1,0 +1,2892 @@
+LOCUS       MF918302                 658 bp    DNA     linear   INV 03-NOV-2022
+DEFINITION  Jugatala sp. BIOUG20439-D05 cytochrome oxidase subunit 1 (COI)
+            gene, partial cds; mitochondrial.
+ACCESSION   MF918302
+VERSION     MF918302.1
+DBLINK      BioProject: PRJNA472144
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Jugatala sp. BIOUG20439-D05
+  ORGANISM  Jugatala sp. BIOUG20439-D05
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Chelicerata; Arachnida;
+            Acari; Acariformes; Sarcoptiformes; Oribatida; Brachypylina;
+            Ceratozetoidea; Ceratozetidae; Jugatala.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   deWaard,J.R., Ratnasingham,S., Zakharov,E.V., Borisenko,A.V.,
+            Steinke,D., Telfer,A.C., Perez,K.H.J., Sones,J.E., Young,M.R.,
+            Levesque-Beaudin,V., Sobel,C.N., Abrahamyan,A., Bessonov,K.,
+            Blagoev,G., deWaard,S.L., Ho,C., Ivanova,N.V., Layton,K.K.S.,
+            Lu,L., Manjunath,R., McKeown,J.T.A., Milton,M.A., Miskie,R.,
+            Monkhouse,N., Naik,S., Nikolova,N., Pentinsaari,M., Prosser,S.W.J.,
+            Radulovici,A.E., Steinke,C., Warne,C.P. and Hebert,P.D.N.
+  TITLE     A reference library for Canadian invertebrates with 1.5 million
+            barcodes, voucher specimens, and DNA samples
+  JOURNAL   Sci Data 6 (1), 308 (2019)
+   PUBMED   31811161
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-SEP-2017) Collections, Centre for Biodiversity
+            Genomics, 50 Stone Road East, Guelph, Ontario N1G 2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Jugatala sp. BIOUG20439-D05"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="BIOUG20439-D05"
+                     /db_xref="BOLD:CNGCJ619-15.COI-5P"
+                     /db_xref="taxon:2242980"
+                     /country="Canada: British Columbia, Glacier National Park,
+                     Near Rogers Pass Compound"
+                     /lat_lon="51.301 N 117.522 W"
+                     /collection_date="30-Sep-2014"
+                     /collected_by="M.Beauchemin"
+                     /identified_by="Angela Telfer"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AYP43753.1"
+                     /translation="TLYFIFGAWAGLLGSALSGLIRLELGQPGSLMENDQIYNTIVTA
+                     HAFVMIFFMVMPVMIGGFGNWLVPMMIGAQDMAFPRMNNMSFWLLPPSLALLSSSAFA
+                     GVGAGTGWTVYPPLSGNLAHSGFSVDLAIFSLHLAGASSILGAINFITTIMNMRSSSM
+                     TLDSIPLFVWSVLITAVLLLLSLPVLAGAITMLLTDRNFNTSFFDPSGGGDPILYQHL
+                     F"
+ORIGIN
+        1 aactttgtat ttcattttcg gagcatgagc aggactacta ggttctgctc taagaggact
+       61 aatccgattg gagttaggac aaccgggttc ccttatagaa aacgatcaaa tttataacac
+      121 tattgtaacg gctcatgctt tcgtaataat cttttttatg gtgataccag ttataatcgg
+      181 aggatttgga aactggctag tccctataat aattggagct caggatatgg cttttccacg
+      241 aataaataat ataagatttt ggcttcttcc cccttccctg gctcttcttt cttcttccgc
+      301 ctttgctggg gtaggtgccg gcacggggtg aaccgtgtac ccgcccttgt ctggaaatct
+      361 agcccactca ggattttctg tagatttagc aatttttagt ctccatctgg ccggcgcttc
+      421 ttccatttta ggggctatta acttcattac cactatcata aacatacgct cttcttctat
+      481 gacgttagac tccatcccct tgtttgtttg atctgttcta atcaccgcgg tccttttact
+      541 tctctcttta cctgttttag ccggtgctat cactatgctc ttaacagacc gtaattttaa
+      601 tacctccttt tttgaccctt cgggtggcgg tgaccccatt ctataccaac accttttt
+//
+
+LOCUS       MF918295                 645 bp    DNA     linear   INV 03-NOV-2022
+DEFINITION  Sarcoptiformes sp. BIOUG22202-H05 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   MF918295
+VERSION     MF918295.1
+DBLINK      BioProject: PRJNA472144
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Sarcoptiformes sp. BIOUG22202-H05
+  ORGANISM  Sarcoptiformes sp. BIOUG22202-H05
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Chelicerata; Arachnida;
+            Acari; Acariformes; Sarcoptiformes.
+REFERENCE   1  (bases 1 to 645)
+  AUTHORS   deWaard,J.R., Ratnasingham,S., Zakharov,E.V., Borisenko,A.V.,
+            Steinke,D., Telfer,A.C., Perez,K.H.J., Sones,J.E., Young,M.R.,
+            Levesque-Beaudin,V., Sobel,C.N., Abrahamyan,A., Bessonov,K.,
+            Blagoev,G., deWaard,S.L., Ho,C., Ivanova,N.V., Layton,K.K.S.,
+            Lu,L., Manjunath,R., McKeown,J.T.A., Milton,M.A., Miskie,R.,
+            Monkhouse,N., Naik,S., Nikolova,N., Pentinsaari,M., Prosser,S.W.J.,
+            Radulovici,A.E., Steinke,C., Warne,C.P. and Hebert,P.D.N.
+  TITLE     A reference library for Canadian invertebrates with 1.5 million
+            barcodes, voucher specimens, and DNA samples
+  JOURNAL   Sci Data 6 (1), 308 (2019)
+   PUBMED   31811161
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 645)
+  AUTHORS   Dewaard,J.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-SEP-2017) Collections, Centre for Biodiversity
+            Genomics, 50 Stone Road East, Guelph, Ontario N1G 2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..645
+                     /organism="Sarcoptiformes sp. BIOUG22202-H05"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="BIOUG22202-H05"
+                     /db_xref="BOLD:SSGLC1433-15.COI-5P"
+                     /db_xref="taxon:2247581"
+                     /country="Canada: British Columbia, Glacier National Park,
+                     Meeting of the Waters Trail"
+                     /lat_lon="51.26 N 117.49 W"
+                     /collection_date="10-Aug-2014"
+                     /collected_by="BIObus 2014"
+                     /identified_by="Angela Telfer"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>645
+                     /gene="COI"
+     CDS             <1..>645
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AYP43746.1"
+                     /translation="IFGAWAGLLGSALSGLIRLELGQPGSLLENDQIYNTIVTAHAFV
+                     MIFFMVMPVMIGGFGNWLVPMMIGAQDMAFPRMNNMSFWLLPPALALLSSSAFAGMGA
+                     GTGWTVYPPLAGNLFHSGFSVDLAIFSLHLAGASSILGAINFITTILNMRSSSMTLDS
+                     IPLFVWSVLITAVLLLLSLPVLAGAITMLLTDRNFNTSFFDPSGGGDPILYQHLF"
+ORIGIN
+        1 atttttggag cttgagctgg tcttttaggt tctgcattaa gggggctgat ccggttagaa
+       61 ctaggacagc caggatcctt attagaaaac gatcaaattt acaacacaat tgtgacagct
+      121 catgctttcg tcataatctt ttttatagtc atgcctgtaa taatcggagg ctttggaaac
+      181 tggctggttc caatgataat tggggctcaa gatatggcct ttccccgaat aaacaatata
+      241 agattctggt tgctcccacc tgccttagct ttgctatcat cttcggcttt tgcaggaata
+      301 ggagctggaa ctgggtgaac ggtttacccc cctttggctg gaaatttgtt tcattccggc
+      361 ttctctgtgg acttagcaat tttcaggtta cacttagcag gtgcttcctc tatcctggga
+      421 gctatcaatt tcattaccac gattcttaat atacggtctt cttctataac cttagattca
+      481 atcccgttat ttgtctgatc tgttttaatt acagcagtac ttttacttct ttccctccca
+      541 gtacttgcag gagcaattac tatacttctc acagaccgga atttcaacac ttcatttttt
+      601 gatccctcag gaggaggaga tcctatctta taccaacatc tattc
+//
+
+LOCUS       HM400304                 652 bp    DNA     linear   VRT 18-APR-2019
+DEFINITION  Actinopterygii sp. DSLAR565-09 voucher BIOUG<CAN>:ADC09-023
+            cytochrome oxidase subunit 1 (COI) gene, partial cds;
+            mitochondrial.
+ACCESSION   HM400304
+VERSION     HM400304.1
+DBLINK      Project: 37833
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Actinopterygii sp. DSLAR565-09
+  ORGANISM  Actinopterygii sp. DSLAR565-09
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Actinopterygii.
+REFERENCE   1  (bases 1 to 652)
+  CONSRTM   International Barcode of Life (iBOL)
+  TITLE     iBOL Data Release
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 652)
+  CONSRTM   International Barcode of Life (iBOL)
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-JUN-2010) Biodiversity Institute of Ontario,
+            University of Guelph, 50 Stone Rd West, Guelph, Ontario N1G2W1,
+            Canada
+COMMENT     ##International Barcode of Life (iBOL)Data-START##
+            Barcode Index Number :: BOLD:AAD7564
+            Order Assignment     :: Lampridiformes
+            iBOL Working Group   :: iBOL:WG1.1
+            iBOL Release Status  :: Phase 2
+            ##International Barcode of Life (iBOL)Data-END##
+FEATURES             Location/Qualifiers
+     source          1..652
+                     /organism="Actinopterygii sp. DSLAR565-09"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="BIOUG<CAN>:ADC09-023"
+                     /db_xref="BOLD:DSLAR565-09.COI-5P"
+                     /db_xref="taxon:2548489"
+                     /country="South Africa"
+                     /collected_by="Allan Connell"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcaaccaaccacaaagacattggcac, rev_seq:
+                     caggaaacagctatgacacttcagggtgaccgaagaatcagaa"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcgactaatcataaagatatcggcac, rev_seq:
+                     caggaaacagctatgacacctcagggtgtccgaaraaycaraa"
+     gene            <1..>652
+                     /gene="COI"
+     CDS             <1..>652
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ADJ74063.1"
+                     /translation="LYLVFGAWAGMVGTALSLLIRAELSQPGALLGDDQIYNVIVTAH
+                     AFVMIFFMVMPIMIGGFGNWLIPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSGVE
+                     AGAGTGWTVYPPLAGNLAHAGASVDLTIFSLHLAGVSSILGAINFITTIINMKPPAIS
+                     QYQTPLFVWAVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPSGGGDPILYQHL"
+ORIGIN
+        1 cctttaccta gtcttcggtg cctgagctgg gatggtagga acagcactga gcctacttat
+       61 tcgtgctgaa ctgagtcaac ctggggccct tctaggggac gatcaaattt ataatgtaat
+      121 tgttacggct catgccttcg taataatttt cttcatagta ataccaatta taattggtgg
+      181 ttttggtaac tggcttatcc ccctaatgat tggtgcccct gatatagctt tccctcgaat
+      241 aaataatata agcttctgac ttctcccgcc ctcatttctg ctcctcctag cctcctcagg
+      301 agttgaagct ggggcaggga ctggttgaac agtgtatcca ccccttgcgg gtaatttagc
+      361 ccatgcggga gcttctgttg atttgactat cttctctctt cacttagcgg gtgtatcctc
+      421 tattcttggg gctatcaact tcattactac aattattaat atgaaaccac cagcgatctc
+      481 ccaataccaa acacctcttt ttgtttgagc agtattaatt actgctgtac ttcttcttct
+      541 atctcttcct gtacttgcag ctggaattac aatacttctt actgatcgaa atttaaatac
+      601 cactttcttt gacccctctg gcggaggaga ccctattctc taccaacacc tc
+//
+
+LOCUS       MF409566                 650 bp    DNA     linear   VRT 24-JAN-2018
+DEFINITION  Actinopterygii sp. R0201_361 cytochrome oxidase subunit 1 (COI)
+            gene, partial cds; mitochondrial.
+ACCESSION   MF409566
+VERSION     MF409566.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Actinopterygii sp. R0201_361
+  ORGANISM  Actinopterygii sp. R0201_361
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Actinopterygii.
+REFERENCE   1  (bases 1 to 650)
+  AUTHORS   Collet,A., Durand,J.D., Desmarais,E., Cerqueira,F., Cantinelli,T.,
+            Valade,P. and Ponton,D.
+  TITLE     DNA barcoding post-larvae can improve the knowledge about fish
+            biodiversity: an example from La Reunion, SW Indian Ocean
+  JOURNAL   Mitochondrial DNA A DNA Mapp Seq Anal, 1-14 (2018) In press
+   PUBMED   28984152
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   2  (bases 1 to 650)
+  AUTHORS   Ponton,D., Adeline,C. and Durand,J.-D.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (29-JUN-2017) UMR Entropie, IRD, c/o Hydro Reunion,
+            Station Marine, Port ouest, Magasin 10, le Port, La Reunion 97420,
+            Reunion
+FEATURES             Location/Qualifiers
+     source          1..650
+                     /organism="Actinopterygii sp. R0201_361"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="R0201_361"
+                     /db_xref="BOLD:COLOR460-15.COI-5P"
+                     /db_xref="taxon:2073012"
+                     /country="Reunion: Saint-Gilles"
+                     /collected_by="Adeline Collet"
+                     /identified_by="Adeline Collet"
+     gene            <1..>650
+                     /gene="COI"
+     CDS             <1..>650
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AUR43834.1"
+                     /translation="FGAWAGMVGTALSLLIRAELSQPGALLGDDQIYNVIVTAHAFVM
+                     IFFMVMPILIGGFGNWLIPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSGVEAGAG
+                     TGWTVYPPLSGNLAHAGASVDLTIFSLHLAGISSILGAINFITTIINMKPPAISQYQT
+                     PLFVWAVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHLFWF"
+ORIGIN
+        1 tttggtgctt gagctggtat ggtaggcaca gccttaagcc tactaatccg ggcagaacta
+       61 agtcagcccg gagctttatt aggggatgat cagatctaca acgttattgt aaccgctcat
+      121 gccttcgtta taattttctt tatagtaatg cctatcctaa ttggaggctt tgggaactga
+      181 cttattccat taatgatcgg cgcccctgat atagcattcc ctcgaataaa taatatgagt
+      241 ttttgacttc ttcccccctc tttccttctt ctactagcct cttctggtgt tgaagccgga
+      301 gcaggtacag gttgaacagt ataccctcct ctatcaggga atctcgccca tgctggagct
+      361 tctgttgatt taacaatctt ttccctccat ttagctggaa tttcttcaat tcttggggct
+      421 attaacttta ttactactat tattaatatg aaacctcctg ctatctccca atatcaaact
+      481 ccgttatttg tttgagcagt actaattact gcggttcttc ttcttctttc tcttcccgtt
+      541 ttagctgcag gaattactat gcttcttaca gatcgaaatc ttaatacaac cttctttgac
+      601 cctgcaggag gaggggaccc gatcctttac caacacctgt tctgattctt
+//
+
+LOCUS       KP112134                 642 bp    DNA     linear   ENV 06-NOV-2015
+DEFINITION  Actinopterygii environmental sample voucher HB1202083_04 cytochrome
+            oxidase subunit 1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   KP112134
+VERSION     KP112134.1
+KEYWORDS    ENV; BARCODE.
+SOURCE      mitochondrion Actinopterygii environmental sample
+  ORGANISM  Actinopterygii environmental sample
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Actinopterygii; environmental samples.
+REFERENCE   1  (bases 1 to 642)
+  AUTHORS   Lewis,L.A., Richardson,D.E., Zakharov,E.V. and Hanner,R.
+  TITLE     Integrating DNA barcoding of fish eggs into ichthyoplankton
+            monitoring programs
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 642)
+  AUTHORS   Lewis,L.A., Richardson,D.E., Zakharov,E.V. and Hanner,R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (06-NOV-2014) NOAA, Northeast Fisheries Science Center,
+            28 Tarzwell Drive, Narragansett, RI 02879, USA
+FEATURES             Location/Qualifiers
+     source          1..642
+                     /organism="Actinopterygii environmental sample"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolation_source="fish eggs"
+                     /specimen_voucher="HB1202083_04"
+                     /db_xref="BOLD:NIFEB216-12.COI-5P"
+                     /db_xref="taxon:1184603"
+                     /environmental_sample
+                     /country="USA: Northeast U.S. Continental Shelf"
+                     /lat_lon="41.388 N 66.563 W"
+                     /collection_date="12-Jun-2012"
+                     /collected_by="David Richardson"
+                     /identified_by="David E. Richardson"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcaaccaaccacaaagacattggcac, rev_seq:
+                     caggaaacagctatgacacttcagggtgaccgaagaatcagaa"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcgactaatcataaagatatcggcac, rev_seq:
+                     caggaaacagctatgacacctcagggtgtccgaaraaycaraa"
+     gene            <1..>642
+                     /gene="COI"
+     CDS             <1..>642
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AKJ25012.1"
+                     /translation="VFGAWAGMVGTALSLLIRAELSQPGALLGDDQIYNVIVTAHAFV
+                     MIFFMVMPLMIGGFGNWLIPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSGVEAGA
+                     GTGWTVYPPLASNLAHAGASVDLTIFSLHLAGVSSILGAINFITTIINMKPPAISQYQ
+                     TPLFVWSVLITAVLLLLSLPVLAAGITMLLTDRNLNTSFFDPAGGGDPILYQHL"
+ORIGIN
+        1 gtatttggtg cttgagccgg catagtcgga acagccctaa gcctgctcat ccgagcagaa
+       61 cttagtcaac caggcgcact cctgggtgac gaccaaattt ataacgtaat cgtcacggca
+      121 cacgccttcg taataatttt ctttatagta ataccactaa taattggagg ctttggaaac
+      181 tgactcatcc ccctaatgat cggagccccc gacatggcct ttccccgaat aaataacata
+      241 agcttctggc ttctccctcc atccttctta ctcctcctag catcttccgg agtagaggcc
+      301 ggggccggga caggttgaac agtgtatccc cctcttgcaa gcaatcttgc ccacgccggc
+      361 gccagcgtag acctcactat tttctccctc cacttagcag gcgtttcctc aattctggga
+      421 gcaattaatt tcatcactac tattatcaac atgaaacccc ctgcaatctc acagtaccaa
+      481 acacccctct ttgtctgatc cgtccttatt acagctgtac ttctcctgtt atccctgccc
+      541 gtcttagccg ccggcatcac aatactacta actgaccgaa acctcaacac ctccttcttt
+      601 gaccccgccg gagggggaga ccccattcta taccaacatt ta
+//
+
+LOCUS       HM389657                 652 bp    DNA     linear   VRT 01-NOV-2021
+DEFINITION  Thunnus atlanticus voucher MFLIV2227 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   HM389657
+VERSION     HM389657.1
+DBLINK      Project: 37833
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Thunnus atlanticus (blackfin tuna)
+  ORGANISM  Thunnus atlanticus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Actinopterygii; Neopterygii; Teleostei; Neoteleostei;
+            Acanthomorphata; Pelagiaria; Scombriformes; Scombridae; Thunnus.
+REFERENCE   1  (bases 1 to 652)
+  CONSRTM   International Barcode of Life (iBOL)
+  TITLE     iBOL Data Release
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 652)
+  CONSRTM   International Barcode of Life (iBOL)
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-JUN-2010) Biodiversity Institute of Ontario,
+            University of Guelph, 50 Stone Rd West, Guelph, Ontario N1G2W1,
+            Canada
+COMMENT     ##International Barcode of Life (iBOL)Data-START##
+            Barcode Index Number :: BOLD:AAA7352
+            Order Assignment     :: Perciformes
+            iBOL Working Group   :: iBOL:WG1.1
+            iBOL Release Status  :: Phase 2
+            ##International Barcode of Life (iBOL)Data-END##
+FEATURES             Location/Qualifiers
+     source          1..652
+                     /organism="Thunnus atlanticus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MFLIV2227"
+                     /db_xref="BOLD:MFLIV615-09.COI-5P"
+                     /db_xref="taxon:48168"
+                     /country="Mexico"
+                     /lat_lon="18.5975 N 87.6077 W"
+                     /collection_date="28-Mar-2006"
+                     /collected_by="Estrella Malca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcaaccaaccacaaagacattggcac, rev_seq:
+                     caggaaacagctatgacacttcagggtgaccgaagaatcagaa"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcgactaatcataaagatatcggcac, rev_seq:
+                     caggaaacagctatgacacctcagggtgtccgaaraaycaraa"
+     gene            <1..>652
+                     /gene="COI"
+     CDS             <1..>652
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ADJ35939.1"
+                     /translation="LYLVFGAWAGMVGTALSLLIRAELSQPGALLGDDQIYNVIVTAH
+                     AFVMIFFMVMPIMIGGFGNWLIPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSGVE
+                     AGAGTGWTVYPPLAGNLAHAGASVDLTIFSLHLAGVSSILGAINFITTIINMKPAAIS
+                     QYQTPLFVWAVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL"
+ORIGIN
+        1 cctttatcta gtatttggtg catgagctgg aatagttggc acggccttaa gcttgctcat
+       61 ccgagctgaa ctaagccaac caggtgccct tcttggggac gaccagatct acaatgtaat
+      121 cgttacggcc catgccttcg taatgatttt ctttatagta ataccaatta tgattggagg
+      181 atttggaaac tgacttattc ctctaatgat cggagccccc gacatggcat tcccacgaat
+      241 gaacaacatg agcttctgac tccttcctcc ctctttcctt ctgctcctag cttcttcagg
+      301 agttgaggct ggagccggaa ccggttgaac agtctaccct ccccttgccg gcaacctggc
+      361 ccacgcaggg gcatcagttg acctaactat tttctcactt cacttagcag gggtttcctc
+      421 aattcttggg gcaattaact tcatcacaac aattatcaat atgaaacctg cagctatttc
+      481 tcagtatcaa acaccactgt ttgtatgagc tgtactaatt acagctgttc ttctcctact
+      541 ttcccttcca gtccttgccg ctggtattac aatgctcctt acagaccgaa acctaaatac
+      601 aaccttcttc gaccctgcag gagggggaga cccaatcctt taccaacacc ta
+//
+
+LOCUS       HM389656                 652 bp    DNA     linear   VRT 01-NOV-2021
+DEFINITION  Katsuwonus pelamis voucher MFLIV2226 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   HM389656
+VERSION     HM389656.1
+DBLINK      Project: 37833
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Katsuwonus pelamis (skipjack tuna)
+  ORGANISM  Katsuwonus pelamis
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Actinopterygii; Neopterygii; Teleostei; Neoteleostei;
+            Acanthomorphata; Pelagiaria; Scombriformes; Scombridae; Katsuwonus.
+REFERENCE   1  (bases 1 to 652)
+  CONSRTM   International Barcode of Life (iBOL)
+  TITLE     iBOL Data Release
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 652)
+  CONSRTM   International Barcode of Life (iBOL)
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-JUN-2010) Biodiversity Institute of Ontario,
+            University of Guelph, 50 Stone Rd West, Guelph, Ontario N1G2W1,
+            Canada
+COMMENT     ##International Barcode of Life (iBOL)Data-START##
+            Barcode Index Number :: BOLD:AAA5421
+            Order Assignment     :: Perciformes
+            iBOL Working Group   :: iBOL:WG1.1
+            iBOL Release Status  :: Phase 2
+            ##International Barcode of Life (iBOL)Data-END##
+FEATURES             Location/Qualifiers
+     source          1..652
+                     /organism="Katsuwonus pelamis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MFLIV2226"
+                     /db_xref="BOLD:MFLIV614-09.COI-5P"
+                     /db_xref="taxon:8226"
+                     /country="Mexico"
+                     /lat_lon="18.5843 N 87.5124 W"
+                     /collection_date="28-Mar-2006"
+                     /collected_by="Ivan Castellanos & Uriel Ordonez"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcaaccaaccacaaagacattggcac, rev_seq:
+                     caggaaacagctatgacacttcagggtgaccgaagaatcagaa"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcgactaatcataaagatatcggcac, rev_seq:
+                     caggaaacagctatgacacctcagggtgtccgaaraaycaraa"
+     gene            <1..>652
+                     /gene="COI"
+     CDS             <1..>652
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ADJ35938.1"
+                     /translation="LYLVFGAWAGMVGTALSLLIRAELSQPGALLGDDQIYNVIVTAH
+                     AFVMIFFMVMPIMIGGFGNWLIPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSGVE
+                     AGAGTGWTVYPPLAGNLAHAGASVDLTIFSLHLAGVSSILGAINFITTIINMKPAAIS
+                     QYQTPLFVWAVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL"
+ORIGIN
+        1 cctttatcta gtattcggtg catgagctgg tatagttggc acggccttaa gcttgctcat
+       61 ccgagctgaa ctaagccaac caggtgccct tcttggggac gaccagatct acaatgtaat
+      121 cgttacggcc catgccttcg taatgatttt ctttatagta atgccaatta tgattggagg
+      181 gtttggaaac tgactcatcc ctctaatgat cggggcccca gacatggcat tccctcgaat
+      241 gaacaacatg agcttctgac ttcttcctcc atctttcctt ctactactag cttcttcagg
+      301 agttgaagct ggtgctggaa caggttgaac agtttaccct ccccttgccg gtaacctggc
+      361 tcacgccgga gcctctgttg acctaactat tttctccctt catcttgcag gtgtttcttc
+      421 aattcttgga gcaattaatt ttattacaac aattattaac atgaaacctg ccgctatctc
+      481 ccaataccaa actcctctgt tcgtatgagc cgtcctaatt acagctgtcc ttcttcttct
+      541 gtcacttcca gttcttgccg ctggcattac aatgcttctg acagaccgaa acctgaatac
+      601 aaccttcttc gaccctgcag gtggaggaga cccaattctt taccaacacc ta
+//
+
+LOCUS       HM389654                 652 bp    DNA     linear   VRT 01-NOV-2021
+DEFINITION  Katsuwonus pelamis voucher MFLIV2221 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   HM389654
+VERSION     HM389654.1
+DBLINK      Project: 37833
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Katsuwonus pelamis (skipjack tuna)
+  ORGANISM  Katsuwonus pelamis
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Actinopterygii; Neopterygii; Teleostei; Neoteleostei;
+            Acanthomorphata; Pelagiaria; Scombriformes; Scombridae; Katsuwonus.
+REFERENCE   1  (bases 1 to 652)
+  CONSRTM   International Barcode of Life (iBOL)
+  TITLE     iBOL Data Release
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 652)
+  CONSRTM   International Barcode of Life (iBOL)
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-JUN-2010) Biodiversity Institute of Ontario,
+            University of Guelph, 50 Stone Rd West, Guelph, Ontario N1G2W1,
+            Canada
+COMMENT     ##International Barcode of Life (iBOL)Data-START##
+            Barcode Index Number :: BOLD:AAA5421
+            Order Assignment     :: Perciformes
+            iBOL Working Group   :: iBOL:WG1.1
+            iBOL Release Status  :: Phase 2
+            ##International Barcode of Life (iBOL)Data-END##
+FEATURES             Location/Qualifiers
+     source          1..652
+                     /organism="Katsuwonus pelamis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="MFLIV2221"
+                     /db_xref="BOLD:MFLIV609-09.COI-5P"
+                     /db_xref="taxon:8226"
+                     /country="Mexico"
+                     /lat_lon="18.7152 N 87.445 W"
+                     /collection_date="27-Mar-2006"
+                     /collected_by="Ivan Castellanos & Uriel Ordonez"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcaaccaaccacaaagacattggcac, rev_seq:
+                     caggaaacagctatgacacttcagggtgaccgaagaatcagaa"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtcgactaatcataaagatatcggcac, rev_seq:
+                     caggaaacagctatgacacctcagggtgtccgaaraaycaraa"
+     gene            <1..>652
+                     /gene="COI"
+     CDS             <1..>652
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ADJ35936.1"
+                     /translation="LYLVFGAWAGMVGTALSLLIRAELSQPGALLGDDQIYNVIVTAH
+                     AFVMIFFMVMPIMIGGFGNWLIPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSGVE
+                     AGAGTGWTVYPPLAGNLAHAGASVDLTIFSLHLAGVSSILGAINFITTIINMKPAAIS
+                     QYQTPLFVWAVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL"
+ORIGIN
+        1 cctttatcta gtattcggtg catgagctgg tatagttggc acggccttaa gcttgctcat
+       61 ccgagctgaa ctaagccaac caggtgccct tcttggggac gaccagatct acaatgtaat
+      121 cgttacggcc catgccttcg taatgatttt ctttatagta atgccaatta tgattggagg
+      181 gtttggaaac tgactcatcc ctctaatgat cggggctcca gacatggcat tccctcgaat
+      241 gaacaacatg agcttctgac ttcttcctcc atctttcctt ctactactag cttcttcagg
+      301 agttgaagct ggtgctggaa caggttgaac agtttaccct ccccttgccg gtaacctggc
+      361 tcacgccgga gcatctgttg acctgactat tttctctcta catcttgcag gtgtttcttc
+      421 aattcttgga gcaattaatt ttattacaac aattattaac atgaaacctg ccgctatctc
+      481 ccaataccaa actcctctgt tcgtatgagc cgtcctaatt acagctgtcc ttcttcttct
+      541 gtcacttcca gttcttgccg ctggcattac aatgcttctg acagaccgaa acctgaatac
+      601 aaccttcttc gaccctgcag gtggaggaga cccaattctt taccaacacc ta
+//
+
+LOCUS       ON684277                1542 bp    DNA     linear   VRT 10-AUG-2022
+DEFINITION  Coilia nasus isolate ZSA3 COI (COI) gene, partial cds;
+            mitochondrial.
+ACCESSION   ON684277
+VERSION     ON684277.1
+KEYWORDS    .
+SOURCE      mitochondrion Coilia nasus (Japanese grenadier anchovy)
+  ORGANISM  Coilia nasus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Actinopterygii; Neopterygii; Teleostei; Clupei; Clupeiformes;
+            Clupeoidei; Engraulidae; Coilinae; Coilia.
+REFERENCE   1  (bases 1 to 1542)
+  AUTHORS   Yang,L. and Liu,Y.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-JUN-2022) Marine Science and Technology College,
+            Zhejiang Ocean University, No. 1 Haidanan Road, Zhoushan, Zhejiang
+            316022, China
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1542
+                     /organism="Coilia nasus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="ZSA3"
+                     /db_xref="taxon:365059"
+     gene            1..>1542
+                     /gene="COI"
+     CDS             1..>1542
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="COI"
+                     /protein_id="UUL86459.1"
+                     /translation="MAITRWFFSTNHKDIGTLYLVFGAWAGMVGTALSLLIRAELSQP
+                     GALLGDDQIYNVIVTAHAFVMIFFMVMPVMIGGFGNWLVPLMLGAPDMAFPRMNNMSF
+                     WLLPPSFLLLLASSGVEAGAGTGWTVYPPLAGNLAHAGASVDLTIFSLHLAGISSILG
+                     AINFITTIINMKPPAISQYQTPLFVWAVLITAVLLLLSLPVLAAGITMLLTDRNLNTT
+                     FFDPAGGGDPILYQHLFWFFGHPEVYILILPGFGIISHIVAYYAGKKEPFGYMGMVWA
+                     MMAIGLLGFIVWAHHMFTVGMDVDTRAYFTSATMIIAIPTGVKVFSWLATLHGGVIKW
+                     ETPMLWALGFIFLFTVGGLTGIVLANSSLDIVLHDTYYVVAHFHYVLSMGAVFAIVAG
+                     FVHWFPLFTGYTLHSTWTKIHFGIMFVGVNLTFFPQHFLGLAGMPRRYSDYPDAYTLW
+                     NTVSSIGSLISLVAVIMFLFIIWEAFAAKREVASVELTITNVEWLHGCPPPYHTYEEP
+                     AFVQVK"
+ORIGIN
+        1 gtggcaatca cacgttgatt cttttcaact aatcataaag acattggtac cctttattta
+       61 gtattcggtg cctgagcagg aatagtagga acagcattaa gcctcttaat tcgagcagaa
+      121 ctcagccaac cgggggccct cttaggagac gaccagatct acaacgtcat tgttaccgcc
+      181 cacgcattcg taataatttt ctttatagtt ataccggtca taatcggagg tttcggaaat
+      241 tgactagtcc ctctaatact tggagcaccc gacatggcat tcccccgaat aaacaatata
+      301 agcttttgac tcctgccccc ctcatttctt cttcttttag cctcatctgg ggtagaagca
+      361 ggagcaggaa caggatgaac agtctacccg cccttggcag gaaacctagc tcacgcgggg
+      421 gcttcggtag acctaacaat cttttcactt cacctggccg gaatctcatc catcctaggg
+      481 gctatcaact ttatcacaac aatcattaac ataaaaccgc ctgcaatttc acaataccaa
+      541 acacccttat ttgtctgagc cgtattaatt acagcagtac ttttacttct atccctccca
+      601 gttttagctg ccggaatcac aatgctcctt acagaccgaa acctaaacac tacttttttc
+      661 gaccctgcag gaggaggtga ccccattctc tatcaacact tattctgatt cttcggacac
+      721 ccagaagtat atattttaat tctcccagga ttcggaatta tttcccacat cgtagcctat
+      781 tatgcaggga aaaaagaacc tttcggctac ataggaatag tgtgagctat aatggccatc
+      841 ggactcctag gctttatcgt ttgagcccac cacatattta cagtaggaat ggacgttgac
+      901 acccgagctt actttacatc cgcaacaata attatcgcca tcccaacggg cgttaaagta
+      961 tttagctgac tcgccacttt acacggcggc gtcattaaat gagaaacacc catactgtga
+     1021 gcattaggat tcattttcct atttacagta ggaggactaa cgggaattgt tctagccaac
+     1081 tcatcacttg acatcgttct ccatgacaca tactatgtag tagcacactt ccactacgtt
+     1141 ctgtctatag gcgctgtgtt tgctatcgta gcaggatttg tgcactgatt tcccctattt
+     1201 actggatata ctctacatag cacttgaaca aaaattcact tcggaattat atttgttgga
+     1261 gttaatttaa ctttcttccc tcaacacttc ctaggattag caggaatacc tcgacgatat
+     1321 tctgactacc cggacgcata tactctttga aacacggtat cttcaattgg gtcactaatc
+     1381 tcccttgtag cagttattat attcttattt attatttgag aagcatttgc tgccaaacga
+     1441 gaagtagcat cagtagaact cactattaca aatgtagagt gactccacgg atgccctccc
+     1501 ccctaccaca cttatgaaga gccggctttt gtgcaagtaa aa
+//
+
+LOCUS       ON684276                1542 bp    DNA     linear   VRT 10-AUG-2022
+DEFINITION  Coilia nasus isolate ZSA1 COI (COI) gene, partial cds;
+            mitochondrial.
+ACCESSION   ON684276
+VERSION     ON684276.1
+KEYWORDS    .
+SOURCE      mitochondrion Coilia nasus (Japanese grenadier anchovy)
+  ORGANISM  Coilia nasus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Actinopterygii; Neopterygii; Teleostei; Clupei; Clupeiformes;
+            Clupeoidei; Engraulidae; Coilinae; Coilia.
+REFERENCE   1  (bases 1 to 1542)
+  AUTHORS   Yang,L. and Liu,Y.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-JUN-2022) Marine Science and Technology College,
+            Zhejiang Ocean University, No. 1 Haidanan Road, Zhoushan, Zhejiang
+            316022, China
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1542
+                     /organism="Coilia nasus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="ZSA1"
+                     /db_xref="taxon:365059"
+     gene            1..>1542
+                     /gene="COI"
+     CDS             1..>1542
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="COI"
+                     /protein_id="UUL86458.1"
+                     /translation="MAITRWFFSTNHKDIGTLYLVFGAWAGMVGTALSLLIRAELSQP
+                     GALLGDDQIYNVIVTAHAFVMIFFMVMPVMIGGFGNWLVPLMLGAPDMAFPRMNNMSF
+                     WLLPPSFLLLLASSGVEAGAGTGWTVYPPLAGNLAHAGASVDLTIFSLHLAGISSILG
+                     AINFITTIINMKPPAISQYQTPLFVWAVLITAVLLLLSLPVLAAGITMLLTDRNLNTT
+                     FFDPAGGGDPILYQHLFWFFGHPEVYILILPGFGIISHIVAYYAGKKEPFGYMGMVWA
+                     MMAIGLLGFIVWAHHMFTVGMDVDTRAYFTSATMIIAIPTGVKVFSWLATLHGGVIKW
+                     ETPMLWALGFIFLFTVGGLTGIVLANSSLDIVLHDTYYVVAHFHYVLSMGAVFAIVAG
+                     FVHWFPLFTGYTLHSTWTKIHFGIMFVGVNLTFFPQHFLGLAGMPRRYSDYPDAYTLW
+                     NTVSSIGSLISLVAVIMFLFIIWEAFAAKREVASVELTITNVEWLHGCPPPYHTYEEP
+                     AFVQVK"
+ORIGIN
+        1 gtggcaatca cacgttgatt cttttcaact aatcataaag acattggtac cctttattta
+       61 gtattcggtg cctgagcagg aatagtagga acagcattaa gcctcttaat tcgagcagaa
+      121 ctcagccaac cgggggccct cttaggagac gaccagatct acaacgtcat tgttaccgcc
+      181 cacgcattcg taataatttt ctttatagtt ataccggtca taatcggagg tttcggaaat
+      241 tgactagtcc ctctaatact tggagcaccc gacatggcat tcccccgaat aaacaatata
+      301 agcttttgac tcctgccccc ctcatttctt cttcttttag cctcatctgg ggtagaagca
+      361 ggagcaggaa caggatgaac agtctacccg cccttggcag gaaacctagc tcacgcgggg
+      421 gcttcggtag acctaacaat cttttcactt cacctggccg gaatctcatc catcctaggg
+      481 gctatcaact ttatcacaac aatcattaac ataaaaccgc ctgcaatttc acaataccaa
+      541 acacccttat ttgtctgagc cgtattaatt acagcagtac ttttacttct atccctccca
+      601 gttttagctg ccggaatcac aatgctcctt acagaccgaa acctaaacac tacttttttc
+      661 gaccctgcag gaggaggtga ccccattctc tatcaacact tattctgatt cttcggacac
+      721 ccagaagtat atattttaat tctcccagga ttcggaatta tttcccacat cgtagcctat
+      781 tatgcaggga aaaaagaacc tttcggctac ataggaatag tgtgagctat aatggccatc
+      841 ggactcctag gctttatcgt ttgagcccac cacatattta cagtaggaat ggacgttgac
+      901 acccgagctt actttacatc cgcaacaata attatcgcca tcccaacggg cgttaaagta
+      961 tttagctgac tcgccacttt acacggcggc gtcattaaat gagaaacacc catactgtga
+     1021 gcattaggat tcattttcct atttacagta ggaggactaa cgggaattgt tctagccaac
+     1081 tcatcacttg acatcgttct ccatgacaca tactatgtag tagcacactt ccactacgtt
+     1141 ctgtctatag gcgctgtgtt tgctatcgta gcaggatttg tgcactgatt tcccctattt
+     1201 actggatata ctctacatag cacttgaaca aaaattcact tcggaattat atttgttgga
+     1261 gttaatttaa ctttcttccc tcaacacttc ctaggattag caggaatacc tcgacgatat
+     1321 tctgactacc cggacgcata tactctttga aacacggtat cttcaattgg gtcactaatc
+     1381 tcccttgtag cagttattat attcttattt attatttgag aagcatttgc tgccaaacga
+     1441 gaagtagcat cagtagaact cactattaca aatgtagagt gactccacgg atgccctccc
+     1501 ccctaccaca cttatgaaga gccggctttt gtgcaagtaa aa
+//
+
+LOCUS       ON684274                1542 bp    DNA     linear   VRT 10-AUG-2022
+DEFINITION  Coilia nasus isolate ZS6 COI (COI) gene, partial cds;
+            mitochondrial.
+ACCESSION   ON684274
+VERSION     ON684274.1
+KEYWORDS    .
+SOURCE      mitochondrion Coilia nasus (Japanese grenadier anchovy)
+  ORGANISM  Coilia nasus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Actinopterygii; Neopterygii; Teleostei; Clupei; Clupeiformes;
+            Clupeoidei; Engraulidae; Coilinae; Coilia.
+REFERENCE   1  (bases 1 to 1542)
+  AUTHORS   Yang,L. and Liu,Y.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (05-JUN-2022) Marine Science and Technology College,
+            Zhejiang Ocean University, No. 1 Haidanan Road, Zhoushan, Zhejiang
+            316022, China
+COMMENT     ##Assembly-Data-START##
+            Sequencing Technology :: Sanger dideoxy sequencing
+            ##Assembly-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1542
+                     /organism="Coilia nasus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="ZS6"
+                     /db_xref="taxon:365059"
+     gene            1..>1542
+                     /gene="COI"
+     CDS             1..>1542
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="COI"
+                     /protein_id="UUL86456.1"
+                     /translation="MAITRWFFSTNHKDIGTLYLVFGAWAGMVGTALSLLIRAELSQP
+                     GALLGDDQIYNVIVTAHAFVMIFFMVMPVMIGGFGNWLVPLMLGAPDMAFPRMNNMSF
+                     WLLPPSFLLLLASSGVEAGAGTGWTVYPPLAGNLAHAGASVDLTIFSLHLAGISSILG
+                     AINFITTIINMKPPAISQYQTPLFVWAVLITAVLLLLSLPVLAAGITMLLTDRNLNTT
+                     FFDPAGGGDPILYQHLFWFFGHPEVYILILPGFGIISHIVAYYAGKKEPFGYMGMVWA
+                     MMAIGLLGFIVWAHHMFTVGMDVDTRAYFTSATMIIAIPTGVKVFSWLATLHGGVIKW
+                     ETPMLWALGFIFLFTVGGLTGIVLANSSLDIVLHDTYYVVAHFHYVLSMGAVFAIVAG
+                     FVHWFPLFTGYTLHSTWTKIHFGIMFVGVNLTFFPQHFLGLAGMPRRYSDYPDAYTLW
+                     NTVSSIGSLISLVAVIMFLFIIWEAFAAKREVASVELTITNVEWLHGCPPPYHTYEEP
+                     AFVQVK"
+ORIGIN
+        1 gtggcaatca cacgttgatt cttttcaact aatcataaag acattggtac cctttattta
+       61 gtattcggtg cctgagcagg aatagtagga acagcattaa gcctcttaat tcgagcagaa
+      121 ctcagccaac cgggggccct cttaggagac gaccagatct acaacgtcat tgttactgcc
+      181 cacgcattcg taataatttt ctttatagtt ataccggtca taatcggagg tttcggaaat
+      241 tgactagttc ctctaatact tggagcaccc gacatggcat tcccccgaat aaacaatata
+      301 agcttttgac tcctgccccc ctcatttctt cttcttttag cctcatctgg ggtagaagca
+      361 ggagcaggaa caggatgaac agtctacccg cccttggcag gaaacctagc tcacgcgggg
+      421 gcttcggtag acctaacaat cttttcactt cacctggccg gaatctcatc catcctaggg
+      481 gctatcaact ttatcacaac aatcattaac ataaaaccgc ctgcaatttc acaataccaa
+      541 acacccttat ttgtctgagc cgtattaatt acagcagtac ttttacttct atccctccca
+      601 gttttagctg ccggaatcac aatgctcctt acagaccgaa acctaaacac tacttttttc
+      661 gaccctgcag gaggaggtga ccccattctc tatcaacact tattctgatt cttcggacac
+      721 ccagaagtat atattttaat tctcccagga ttcggaatta tctcccacat cgtagcctat
+      781 tatgcaggga aaaaagaacc tttcggctac ataggaatag tatgagctat aatggccatc
+      841 ggactcctag gctttatcgt ttgagcccac cacatattta cagtaggaat ggacgttgac
+      901 acccgagctt actttacatc cgcaacaata attatcgcca tcccaacggg cgttaaagta
+      961 tttagctgac tcgccacttt acacggcggc gtcattaaat gagaaacacc catactgtga
+     1021 gcattaggat tcattttcct atttacagta ggaggactaa cgggaattgt tctagccaac
+     1081 tcatcacttg acatcgttct ccatgacaca tactatgtag tagcacactt ccactacgtt
+     1141 ctgtctatag gcgctgtatt tgctatcgta gcaggatttg tgcactgatt tcccctattt
+     1201 actggatata ctctacatag cacttgaaca aaaattcact tcggaattat atttgttgga
+     1261 gttaatttaa ctttcttccc tcaacacttc ctaggattag caggaatacc tcgacgatat
+     1321 tctgactacc cggacgcata tactctttga aacacggtat cttcaattgg gtcactaatc
+     1381 tcccttgtag cagttattat attcttattt attatttgag aagcatttgc tgccaaacga
+     1441 gaagtagcat cagtagaact cactattaca aatgtagagt gactccacgg atgccctccc
+     1501 ccctaccaca cttatgaaga gccggctttt gtgcaagtaa aa
+//
+
+LOCUS       MW490567                 658 bp    DNA     linear   INV 24-MAR-2021
+DEFINITION  Ischnura elegans voucher GBOL 20186 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   MW490567
+VERSION     MW490567.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Ischnura elegans
+  ORGANISM  Ischnura elegans
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Palaeoptera; Odonata; Zygoptera; Coenagrionidae;
+            Ischnura.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   Geiger,M.F., Koblmuller,S., Assandri,G., Chovanec,A., Ekrem,T.,
+            Fischer,I., Galimberti,A., Grabowski,M., Haring,E., Hausmann,A.,
+            Hendrich,L., Koch,S., Mamos,T., Rothe,U., Rulik,B., Rewicz,T.,
+            Sittenthaler,M., Stur,E., Tonczyk,G., Zangl,L. and Moriniere,J.
+  TITLE     Coverage and quality of DNA barcode references for Central and
+            Northern European Odonata
+  JOURNAL   PeerJ (2021) In press
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Geiger,M.F.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (12-JAN-2021) Ichthyology, Zoologisches Forschungsmuseum
+            A. Koenig, Adenauerallee 160, Bonn, NRW 53113, Germany
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Ischnura elegans"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="GBOL 20186"
+                     /db_xref="BOLD:GBODO063-18.COI-5P"
+                     /db_xref="taxon:197161"
+                     /country="Germany: Bavaria, Oberbayern, Erding, Flughafen
+                     Muenchen, Vorflutgraben Nord"
+                     /lat_lon="48.3537 N 11.775 E"
+                     /collection_date="04-Jul-2018"
+                     /collected_by="Stefan Koch"
+                     /identified_by="Stefan Koch"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="QTC32536.1"
+                     /translation="TLYLMFGAWAGMVGTALSMLIRVEXGQPGSLIGDDQIYNVVVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRLNNMSFWLLPPSLTLLLASSLV
+                     ESGAGTGWTVYPPLAGVIAHAGASVDLTIFSLHLAGVSSILGAINFITTTINMKSPGM
+                     NMDQLPLFVWAVVITAVLLLLSLPVLAGAITMLLTDRNINTSFFDPAGGGXPILYQHL
+                     F"
+ORIGIN
+        1 aaccctatat ttgatgtttg gagcatgagc aggaatagta gggactgctt taagaatatt
+       61 aattcgagtt gaantagggc aacctggatc tctaattgga gatgaccaaa tttataatgt
+      121 agtagtaacc gcacacgctt ttgtcataat tttttttata gtaatgccta tcataattgg
+      181 tggatttgga aattgattgg tgccattaat attaggagca ccagatatag ctttcccccg
+      241 attaaataat ataagatttt gacttttacc tccctcgtta actttacttt tagcaagaag
+      301 tttagtagag agaggggcag gaactggatg aacagtatat ccaccactag caggagtaat
+      361 tgctcacgct ggagcatccg ttgatttaac gattttttca ttacacttgg caggggtgtc
+      421 ctcaatttta ggagcaatta attttattac aactacaatc aatataaagt cacctggaat
+      481 aaacatagat caattgcctc tatttgtttg agctgtagta attaccgcag tactactttt
+      541 attatcatta ccagtactag ccggtgctat tactatacta ctgacagacc gtaatatcaa
+      601 tacatcattc tttgatcctg cagggggagg anatcctatt ttatatcaac atttattt
+//
+
+LOCUS       MW490562                 658 bp    DNA     linear   INV 24-MAR-2021
+DEFINITION  Coenagrion puella voucher GBOL 20302 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   MW490562
+VERSION     MW490562.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Coenagrion puella
+  ORGANISM  Coenagrion puella
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Palaeoptera; Odonata; Zygoptera; Coenagrionidae;
+            Coenagrion.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   Geiger,M.F., Koblmuller,S., Assandri,G., Chovanec,A., Ekrem,T.,
+            Fischer,I., Galimberti,A., Grabowski,M., Haring,E., Hausmann,A.,
+            Hendrich,L., Koch,S., Mamos,T., Rothe,U., Rulik,B., Rewicz,T.,
+            Sittenthaler,M., Stur,E., Tonczyk,G., Zangl,L. and Moriniere,J.
+  TITLE     Coverage and quality of DNA barcode references for Central and
+            Northern European Odonata
+  JOURNAL   PeerJ (2021) In press
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Geiger,M.F.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (12-JAN-2021) Ichthyology, Zoologisches Forschungsmuseum
+            A. Koenig, Adenauerallee 160, Bonn, NRW 53113, Germany
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Coenagrion puella"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="GBOL 20302"
+                     /db_xref="BOLD:GBODO179-18.COI-5P"
+                     /db_xref="taxon:116143"
+                     /country="Germany: Bavaria, Oberbayern, Weilheim-Schongau,
+                     Seeshaupt"
+                     /lat_lon="47.8252 N 11.3012 E"
+                     /collection_date="27-Jun-2018"
+                     /collected_by="Stefan Koch"
+                     /identified_by="Stefan Koch"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="QTC32531.1"
+                     /translation="TLYLMFGAWAGMVGTALSMLIRVELGQPGSLIGDDQIYNVVVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRLNNMSFWLLPPSLTLLLASSLV
+                     ESGAGTGWTVYPPLAGAIAHAGGSVDLTIFSLHLAGVSSILGAINFITTTINMKSPGM
+                     KMDQMPLFVWAVVITAVLLLLSLPVLAGAITMLLTDRNINTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 taccttatac ttaatatttg gtgcatgagc aggaatagta ggtacagcac taagtatatt
+       61 aattcgagtt gaactaggac agccaggatc acttattggc gatgatcaaa tttataatgt
+      121 agtagtaact gcccacgctt tcgtaataat tttctttata gtaataccta ttatgattgg
+      181 aggatttggt aattgactag tacccttaat attaggagca ccagatatag ctttcccacg
+      241 acttaataat ataagattct gactactacc cccatcatta acattgcttt tggcaagcag
+      301 tttagtagag agaggagccg gaacaggatg aactgtatac cctccattag caggagccat
+      361 tgctcatgca gggggttcag tagatttaac tattttttca ttacacttag cgggagtatc
+      421 ctcaatttta ggagctatta acttcattac aacaactatt aatataaaat caccgggaat
+      481 aaagatggat caaatacctt tatttgtctg agccgtagta attacagcag tattactatt
+      541 attatcacta ccagtgttag caggtgccat tacaatatta cttacagacc gtaatatcaa
+      601 cacatcattt tttgaccctg cagggggagg agatcctatt ttatatcaac atttgttc
+//
+
+LOCUS       MW490558                 318 bp    DNA     linear   INV 24-MAR-2021
+DEFINITION  Leucorrhinia pectoralis voucher GBOL 20149 cytochrome oxidase
+            subunit 1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   MW490558
+VERSION     MW490558.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Leucorrhinia pectoralis
+  ORGANISM  Leucorrhinia pectoralis
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Palaeoptera; Odonata; Epiprocta; Anisoptera;
+            Libellulidae; Leucorrhinia.
+REFERENCE   1  (bases 1 to 318)
+  AUTHORS   Geiger,M.F., Koblmuller,S., Assandri,G., Chovanec,A., Ekrem,T.,
+            Fischer,I., Galimberti,A., Grabowski,M., Haring,E., Hausmann,A.,
+            Hendrich,L., Koch,S., Mamos,T., Rothe,U., Rulik,B., Rewicz,T.,
+            Sittenthaler,M., Stur,E., Tonczyk,G., Zangl,L. and Moriniere,J.
+  TITLE     Coverage and quality of DNA barcode references for Central and
+            Northern European Odonata
+  JOURNAL   PeerJ (2021) In press
+REFERENCE   2  (bases 1 to 318)
+  AUTHORS   Geiger,M.F.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (12-JAN-2021) Ichthyology, Zoologisches Forschungsmuseum
+            A. Koenig, Adenauerallee 160, Bonn, NRW 53113, Germany
+FEATURES             Location/Qualifiers
+     source          1..318
+                     /organism="Leucorrhinia pectoralis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="GBOL 20149"
+                     /db_xref="BOLD:GBODO026-18.COI-5P"
+                     /db_xref="taxon:197166"
+                     /country="Germany: Bavaria, Oberbayern, Wolfratshausen,
+                     Egling"
+                     /lat_lon="47.9229 N 11.5085 E"
+                     /collection_date="27-Jul-2018"
+                     /collected_by="Stefan Koch"
+                     /identified_by="Stefan Koch"
+     gene            <1..>318
+                     /gene="COI"
+     CDS             <1..>318
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="QTC32527.1"
+                     /translation="PPLAGAIAHAGASVDLTIFSLHLAGVSSILGAINFITTVINMKS
+                     PGMKMDQMPLFVWAVVITAVLLLLSLPVLAGAITMLLTDRNINTSFFDPAGGGXPILY
+                     QHLF"
+ORIGIN
+        1 cccccattgg ctggagctat tgcccatgct ggagcatctg tagatttaac tattttctca
+       61 ctacatcttg ctggagtatc atcaatttta ggagcaatta attttatcac tacagtaatt
+      121 aatatgaagt ctcctggtat aaaaatagat caaataccat tatttgtatg agcagtagta
+      181 attactgcag ttttactctt attatcctta cccgttctgg ctggggctat cactatactt
+      241 ttaactgatc gaaatattaa tacatcattt tttgaccccg caggaggtgg anatcctatt
+      301 ctatatcaac atttattt
+//
+
+LOCUS       MW490546                 309 bp    DNA     linear   INV 24-MAR-2021
+DEFINITION  Libellula quadrimaculata voucher GBOL 20134 cytochrome oxidase
+            subunit 1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   MW490546
+VERSION     MW490546.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Libellula quadrimaculata
+  ORGANISM  Libellula quadrimaculata
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Palaeoptera; Odonata; Epiprocta; Anisoptera;
+            Libellulidae; Libellula.
+REFERENCE   1  (bases 1 to 309)
+  AUTHORS   Geiger,M.F., Koblmuller,S., Assandri,G., Chovanec,A., Ekrem,T.,
+            Fischer,I., Galimberti,A., Grabowski,M., Haring,E., Hausmann,A.,
+            Hendrich,L., Koch,S., Mamos,T., Rothe,U., Rulik,B., Rewicz,T.,
+            Sittenthaler,M., Stur,E., Tonczyk,G., Zangl,L. and Moriniere,J.
+  TITLE     Coverage and quality of DNA barcode references for Central and
+            Northern European Odonata
+  JOURNAL   PeerJ (2021) In press
+REFERENCE   2  (bases 1 to 309)
+  AUTHORS   Geiger,M.F.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (12-JAN-2021) Ichthyology, Zoologisches Forschungsmuseum
+            A. Koenig, Adenauerallee 160, Bonn, NRW 53113, Germany
+FEATURES             Location/Qualifiers
+     source          1..309
+                     /organism="Libellula quadrimaculata"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="GBOL 20134"
+                     /db_xref="BOLD:GBODO011-18.COI-5P"
+                     /db_xref="taxon:70395"
+                     /country="Germany: Bavaria, Oberbayern, Weilheim-Schongau,
+                     Seeshaupt"
+                     /lat_lon="47.8252 N 11.3012 E"
+                     /collection_date="27-Jul-2018"
+                     /collected_by="Stefan Koch"
+                     /identified_by="Stefan Koch"
+     gene            <1..>309
+                     /gene="COI"
+     CDS             <1..>309
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="QTC32515.1"
+                     /translation="AGAIAHAGASVDLTIFSLHLAGVSSILGAINFITTVINMKSPGM
+                     KMDQMPLFVWAVVITAVLLLLSLPVLAGAITMLLTDRNINTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 gcaggagcaa ttgctcatgc aggtgcatca gtagatttaa caattttttc cttacacctg
+       61 gcaggtgtat catcaattct tggtgcaatt aattttatca ctacagtaat taatataaag
+      121 tcacctggta taaaaataga tcaaatacca ttatttgtat gagcagtagt aattactgct
+      181 gtacttttac tcttatcttt acccgtttta gcaggtgcta ttactatact attaacagat
+      241 cgaaatatta atacatcatt tttcgaccct gcagggggag gtgatcctat tctatatcag
+      301 cacttattt
+//
+
+LOCUS       MW490526                 315 bp    DNA     linear   INV 24-MAR-2021
+DEFINITION  Cordulia aenea voucher GBOL 20267 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   MW490526
+VERSION     MW490526.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Cordulia aenea (downy emerald)
+  ORGANISM  Cordulia aenea
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Palaeoptera; Odonata; Epiprocta; Anisoptera;
+            Corduliidae; Cordulia.
+REFERENCE   1  (bases 1 to 315)
+  AUTHORS   Geiger,M.F., Koblmuller,S., Assandri,G., Chovanec,A., Ekrem,T.,
+            Fischer,I., Galimberti,A., Grabowski,M., Haring,E., Hausmann,A.,
+            Hendrich,L., Koch,S., Mamos,T., Rothe,U., Rulik,B., Rewicz,T.,
+            Sittenthaler,M., Stur,E., Tonczyk,G., Zangl,L. and Moriniere,J.
+  TITLE     Coverage and quality of DNA barcode references for Central and
+            Northern European Odonata
+  JOURNAL   PeerJ (2021) In press
+REFERENCE   2  (bases 1 to 315)
+  AUTHORS   Geiger,M.F.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (12-JAN-2021) Ichthyology, Zoologisches Forschungsmuseum
+            A. Koenig, Adenauerallee 160, Bonn, NRW 53113, Germany
+FEATURES             Location/Qualifiers
+     source          1..315
+                     /organism="Cordulia aenea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="GBOL 20267"
+                     /db_xref="BOLD:GBODO144-18.COI-5P"
+                     /db_xref="taxon:197156"
+                     /country="Germany: Bavaria, Oberbayern, Unterallgaeu,
+                     Tuerkheim, Kiesgrube"
+                     /lat_lon="48.0616 N 10.6428 E"
+                     /collection_date="12-May-2018"
+                     /collected_by="Stefan Koch"
+                     /identified_by="Stefan Koch"
+     gene            <1..>315
+                     /gene="COI"
+     CDS             <1..>315
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="QTC32495.1"
+                     /translation="PLAGAIAHAGASVDLTIFSLHLAGVSSILGAINFITTVINMKSP
+                     GMKLDQMPLFVWAVVITAVLLLLSLPVLAGAITMLLTDRNINTSFFDPAGGGDPILYQ
+                     HLF"
+ORIGIN
+        1 cctcttgcag gagctattgc tcacgcagga gcatcagtag acctaaccat tttctcttta
+       61 cacctcgcag gtgtatcatc cattcttgga gcaatcaatt ttattacaac tgtgatcaat
+      121 ataaaatctc ctgggataaa actagatcaa ataccactat ttgtatgggc tgtagtaatt
+      181 acagcagtat tactcctact ctccctacca gttttagctg gagctattac catattatta
+      241 acagaccgaa atattaatac ctctttcttc gatcctgcag gaggaggaga tccaatttta
+      301 tatcaacatt tattc
+//
+
+LOCUS       MW490524                 658 bp    DNA     linear   INV 24-MAR-2021
+DEFINITION  Coenagrion puella voucher GBOL 20160 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   MW490524
+VERSION     MW490524.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Coenagrion puella
+  ORGANISM  Coenagrion puella
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Palaeoptera; Odonata; Zygoptera; Coenagrionidae;
+            Coenagrion.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   Geiger,M.F., Koblmuller,S., Assandri,G., Chovanec,A., Ekrem,T.,
+            Fischer,I., Galimberti,A., Grabowski,M., Haring,E., Hausmann,A.,
+            Hendrich,L., Koch,S., Mamos,T., Rothe,U., Rulik,B., Rewicz,T.,
+            Sittenthaler,M., Stur,E., Tonczyk,G., Zangl,L. and Moriniere,J.
+  TITLE     Coverage and quality of DNA barcode references for Central and
+            Northern European Odonata
+  JOURNAL   PeerJ (2021) In press
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Geiger,M.F.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (12-JAN-2021) Ichthyology, Zoologisches Forschungsmuseum
+            A. Koenig, Adenauerallee 160, Bonn, NRW 53113, Germany
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Coenagrion puella"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="GBOL 20160"
+                     /db_xref="BOLD:GBODO037-18.COI-5P"
+                     /db_xref="taxon:116143"
+                     /country="Germany: Bavaria, Oberbayern, Penzberg,
+                     Eitzenberger Weiher"
+                     /lat_lon="47.7561 N 11.3698 E"
+                     /collection_date="27-Jun-2018"
+                     /collected_by="Stefan Koch"
+                     /identified_by="Stefan Koch"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="QTC32493.1"
+                     /translation="TLYLMFGAWAGMVGTALSMLIRVELGQPGSLIGDDQIYNVVVTA
+                     HAXVMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRLNNMSFWLLPPSLTLLLASSLV
+                     ESGAGTGWTVYPPLAGAIAHAGGSVDLTIFSLHLAGVSSILGAINFITTTINMKSPGM
+                     KMDQMPLFVWAVVITAVLLLLSLPVLAGAITMLLTDRNINTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 taccttatac ttaatatttg gtgcatgagc aggaatagta ggtacagcac taagtatatt
+       61 aattcgagtt gaactaggac agccaggatc acttattggc gatgatcaaa tttataatgt
+      121 agtagtaact gcccacgctt tngtaataat tttctttata gtaataccta ttatgattgg
+      181 aggatttggt aattgactag tacccttaat attaggagca ccagatatag ctttcccacg
+      241 acttaataat ataagattct gactactacc cccatcatta acattgcttt tggcaagcag
+      301 tttagtagag agaggagccg gaacaggatg aactgtatac cctccattag caggagccat
+      361 tgctcatgca gggggttcag tagatttaac tattttttca ttacacttag cgggagtatc
+      421 ctcaatttta ggagctatta acttcattac aacaactatt aatataaaat caccgggaat
+      481 aaagatggat caaatacctt tatttgtctg agccgtagta attacagcag tattactatt
+      541 attatcacta ccagtgttag caggtgccat tacaatatta cttacagacc gtaatatcaa
+      601 cacatcattt tttgaccctg cagggggagg agatcctatt ttatatcaac atttgttc
+//
+
+LOCUS       JF442812                 657 bp    DNA     linear   MAM 25-JUL-2016
+DEFINITION  Eptesicus serotinus voucher ZMMU AI 3-09 cytochrome oxidase subunit
+            1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   JF442812
+VERSION     JF442812.1
+DBLINK      BioProject: PRJNA37833
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Eptesicus serotinus (Common serotine)
+  ORGANISM  Eptesicus serotinus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Chiroptera; Microchiroptera;
+            Vespertilionidae; Eptesicus.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Kruskop,S.V., Borisenko,A.V., Ivanova,N.V., Lim,B.K. and Eger,J.L.
+  TITLE     DNA barcodes highlight patterns of phylogeographic diversity in
+            northeastern Palaearctic bats
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Kruskop,S.V., Borisenko,A.V., Ivanova,N.V., Lim,B.K. and Eger,J.L.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-MAR-2011) Biodiversity Institute of Ontario,
+            University of Guelph, 50 Stone Road East, Guelph, Ontario N1G2W1,
+            Canada
+COMMENT     ##International Barcode of Life (iBOL)Data-START##
+            Barcode Index Number :: BOLD:AAC2865
+            Order Assignment     :: Chiroptera
+            iBOL Working Group   :: iBOL:WG1.1
+            iBOL Release Status  :: Phase 2
+            ##International Barcode of Life (iBOL)Data-END##
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Eptesicus serotinus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ZMMU AI 3-09"
+                     /db_xref="BOLD:SKBPA585-10.COI-5P"
+                     /db_xref="taxon:59452"
+                     /country="Russia: Bryansk Region, Surazh District,
+                     Lyalichi populated place"
+                     /lat_lon="53.00 N 32.548 E"
+                     /collected_by="Ilija Artiushin"
+                     /identified_by="Sergei V. Kruskop"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaaagacattgg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccaaagaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaargayatygg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccraaraayca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtattcaaccaatcataaagatattgg, rev_seq:
+                     caggaaacagctatgactaaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaacca<i>aa<i>ga<i>at<i>gg,
+                     rev_seq:
+                     caggaaacagctatgactagacttctgggtg<i>cc<i>aa<i>aa<i>ca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ADZ94841.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGALLGDDQIYNVIVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSMV
+                     EAGAGTGWTVYPPLAGNLAHAGASVDLTIFSLHLAGVSSILGAINFITTIINMKPPAL
+                     SQYQTPLFVWSVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 accctttacc ttctatttgg agcctgagcc ggaatggtag gcacggccct tagcttgcta
+       61 attcgtgccg aattgggcca accaggggct ctgctaggag atgaccagat ttataatgta
+      121 attgttactg ctcatgcctt tgtgataatt ttcttcatag ttatgcctat tataattggg
+      181 ggctttggaa attgattagt gcctttaata atcggagctc ctgatatagc attcccacga
+      241 atgaacaata taagcttctg actccttcct ccctctttcc tacttcttct agcatcatct
+      301 atggtagagg ccggggctgg cactggttgg acagtctacc cccctttggc aggaaacctt
+      361 gcccacgcag gggcctctgt ggatctgact attttctcat tacacttagc aggtgtgtct
+      421 tcaatcctag gagcaattaa ctttattaca acaattatta atataaaacc tcccgctctt
+      481 tctcaatatc aaacaccgct gttcgtgtga tctgtcctaa ttacagccgt ccttcttctg
+      541 ctatctctcc ctgtactggc tgctggtatt acaatactat taacagatcg aaacttaaat
+      601 acaacctttt ttgatccagc tggcggaggg gacccaatcc tataccaaca cttattt
+//
+
+LOCUS       GU112856                 657 bp    DNA     linear   MAM 24-JUL-2016
+DEFINITION  Philander frenatus voucher LPC1127 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   GU112856
+VERSION     GU112856.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Philander frenatus (Southeastern four-eyed oppossum)
+  ORGANISM  Philander frenatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Metatheria; Didelphimorphia; Didelphidae; Philander.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Agrizzi,J., Loss,A.C., Farro,A.C., Costa,L.P. and Leite,Y.L.R.
+  TITLE     Molecular Diagnosis of Atlantic Forest Opossums (Mammalia,
+            Didelphimorphia, Didelphidae) Using Mitochondrial DNA Sequences
+  JOURNAL   Open Zool J (2011) In press
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Agrizzi,J., Loss,A.C., Farro,A.C., Costa,L.P. and Leite,Y.L.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-OCT-2009) Ciencias Biologicas, Universidade Federal
+            do Espirito Santo, Depto. Biologia, Av. Marechal Campos 1468
+            Maruipe, Vitoria, ES 29043-900, Brazil
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Philander frenatus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="LPC1127"
+                     /db_xref="BOLD:BATFM064-09.COI-5P"
+                     /db_xref="taxon:225405"
+                     /country="Brazil: Espirito Santo, Cariacica, Reserva
+                     Biologica de Duas Bocas, Alto Alegre"
+                     /lat_lon="20.28 S 40.42 W"
+                     /collection_date="18-Sep-2007"
+                     /collected_by="Leonora Pires Costa"
+                     /identified_by="Leonora Pires Costa"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ACZ55713.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGTLIGDDQIYNVIVTA
+                     HAFIMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSTI
+                     EAGAGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGISSILGAINFITTIINMKPPAM
+                     SQYQTPLFVWSVMITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 acactgtatc tactatttgg tgcctgagca ggcatagtcg gtaccgccct aagtcttctc
+       61 atccgagcag aactaggtca accaggaact ttaattggtg atgatcagat ttacaatgtg
+      121 attgttaccg cccatgcttt tatcataatt ttttttatag taataccaat tataattggg
+      181 ggttttggta actgactcgt tccacttata atcggagctc ctgatatagc attcccacga
+      241 ataaacaata taagcttctg actactccct ccatcattct tactactatt agcgtcttcc
+      301 accattgaag caggagctgg aacaggctga acagtatacc caccactcgc tggcaattta
+      361 gcccatgcag gcgcttcagt tgatctagcc atcttttccc ttcatttagc aggtatttct
+      421 tctattctag gggctattaa tttcattact actattatca acataaaacc ccctgcaata
+      481 tcacaatatc aaacccctct atttgtctga tcagtgataa tcacagcagt attactcctc
+      541 ctatctcttc cagtgttagc agcaggaatc actatattac tgacagaccg taatttaaat
+      601 accaccttct ttgatcctgc tggaggggga gatcctattc tatatcaaca cctattt
+//
+
+LOCUS       GU112820                 657 bp    DNA     linear   MAM 24-JUL-2016
+DEFINITION  Metachirus nudicaudatus voucher YL82 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   GU112820
+VERSION     GU112820.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Metachirus nudicaudatus (brown four-eyed opossum)
+  ORGANISM  Metachirus nudicaudatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Metatheria; Didelphimorphia; Didelphidae; Metachirus.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Agrizzi,J., Loss,A.C., Farro,A.C., Costa,L.P. and Leite,Y.L.R.
+  TITLE     Molecular Diagnosis of Atlantic Forest Opossums (Mammalia,
+            Didelphimorphia, Didelphidae) Using Mitochondrial DNA Sequences
+  JOURNAL   Open Zool J (2011) In press
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Agrizzi,J., Loss,A.C., Farro,A.C., Costa,L.P. and Leite,Y.L.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-OCT-2009) Ciencias Biologicas, Universidade Federal
+            do Espirito Santo, Depto. Biologia, Av. Marechal Campos 1468
+            Maruipe, Vitoria, ES 29043-900, Brazil
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Metachirus nudicaudatus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="YL82"
+                     /db_xref="BOLD:BATFM366-09.COI-5P"
+                     /db_xref="taxon:42725"
+                     /country="Brazil: Minas Gerais, Marliria, Parque Estadual
+                     do Rio Doce"
+                     /lat_lon="19.71 S 42.65 W"
+                     /collection_date="19-Jul-1996"
+                     /collected_by="Yuri Leite"
+                     /identified_by="Yuri L. R. Leite"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ACZ55677.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGTLIGDDQIYNVIVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSTV
+                     EAGAGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGISSILGAINFITTIINMKPPAM
+                     TQYQTPLFVWSVMITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 acactttatt tactatttgg tgcatgagcg ggtatagttg gaactgccct aagccttctt
+       61 attcgagcag aactaggcca accaggaacc ttaattggtg atgaccaaat ttataatgtt
+      121 attgtcacag ctcatgcttt cgtaataatc ttctttatag ttatacctat tataattggt
+      181 gggtttggta attgacttgt tccattaata attggagcac ctgatatagc atttccacga
+      241 ataaataata taagcttttg acttcttcca ccatcattcc tccttctttt agcatcttct
+      301 actgtagaag ctggagcagg taccggatga actgtctatc ctccattagc aggaaacctt
+      361 gcccatgcag gtgcttccgt cgatctagcc atcttttcac ttcacctagc aggaatttcc
+      421 tcaattttag gagctattaa tttcattact actattatta acataaaacc acctgcaata
+      481 actcaatatc aaactcccct ttttgtatga tcagtaataa ttacagcagt attattacta
+      541 ctctcacttc cagttctagc tgccggaatc actatattat taacggatcg taacttaaat
+      601 acaacctttt ttgatccagc cggaggaggt gaccctattt tatatcaaca cctattt
+//
+
+LOCUS       JF442857                 421 bp    DNA     linear   MAM 30-JAN-2012
+DEFINITION  Myotis aurascens voucher ROM 112956 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   JF442857
+VERSION     JF442857.1
+KEYWORDS    .
+SOURCE      mitochondrion Myotis aurascens
+  ORGANISM  Myotis aurascens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Chiroptera; Microchiroptera;
+            Vespertilionidae; Myotis.
+REFERENCE   1  (bases 1 to 421)
+  AUTHORS   Kruskop,S.V., Borisenko,A.V., Ivanova,N.V., Lim,B.K. and Eger,J.L.
+  TITLE     DNA barcodes highlight patterns of phylogeographic diversity in
+            northeastern Palaearctic bats
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 421)
+  AUTHORS   Kruskop,S.V., Borisenko,A.V., Ivanova,N.V., Lim,B.K. and Eger,J.L.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-MAR-2011) Biodiversity Institute of Ontario,
+            University of Guelph, 50 Stone Road East, Guelph, Ontario N1G2W1,
+            Canada
+FEATURES             Location/Qualifiers
+     source          1..421
+                     /organism="Myotis aurascens"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ROM 112956"
+                     /db_xref="BOLD:BM418-04.COI-5P"
+                     /db_xref="taxon:302711"
+                     /country="China: Heilongjiang Sheng"
+                     /lat_lon="49.10 N 125.25 E"
+                     /collection_date="02-Jun-2001"
+                     /collected_by="Burton K. Lim"
+                     /identified_by="Judith L. Eger"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaaagacattgg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccaaagaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaargayatygg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccraaraayca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtattcaaccaatcataaagatattgg, rev_seq:
+                     caggaaacagctatgactaaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaacca<i>aa<i>ga<i>at<i>gg,
+                     rev_seq:
+                     caggaaacagctatgactagacttctgggtg<i>cc<i>aa<i>aa<i>ca"
+     gene            <1..>421
+                     /gene="COI"
+     CDS             <1..>421
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ADZ94886.1"
+                     /translation="RMNNMSFWLLPPSFLLLLASSMVEAGAGTGWTVYPPLAGNFAHA
+                     GASVDLAIFSLHLAGVSSILGAINFITTIINMKPPALSQYQTPLFVWSVLITAVLLLL
+                     SLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHLF"
+ORIGIN
+        1 ccgaataaat aatataagtt tctgactact tcctccatct tttttattac tattggcctc
+       61 atctatagtt gaggcaggag caggcactgg ttgaacagtt tatccccctc tagcagggaa
+      121 ttttgctcac gcaggagctt ccgttgacct tgctatcttt tccctacact tagcaggtgt
+      181 atcttcaatt ctgggagcaa ttaactttat tactactatt attaatataa aacctcctgc
+      241 actttctcaa tatcagacac cattgtttgt ttgatctgtt ttaattacag ccgtactgct
+      301 tcttctttct cttccagttc tggctgccgg aattacaata ttattaacag accgaaattt
+      361 aaatactact tttttcgacc ctgctggagg aggggatcca atcctatatc aacacctatt
+      421 t
+//
+
+LOCUS       JF442937                 657 bp    DNA     linear   MAM 30-JAN-2012
+DEFINITION  Myotis daubentonii voucher ROM 118530 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   JF442937
+VERSION     JF442937.1
+KEYWORDS    .
+SOURCE      mitochondrion Myotis daubentonii (Daubenton's bat)
+  ORGANISM  Myotis daubentonii
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Chiroptera; Microchiroptera;
+            Vespertilionidae; Myotis.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Kruskop,S.V., Borisenko,A.V., Ivanova,N.V., Lim,B.K. and Eger,J.L.
+  TITLE     DNA barcodes highlight patterns of phylogeographic diversity in
+            northeastern Palaearctic bats
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Kruskop,S.V., Borisenko,A.V., Ivanova,N.V., Lim,B.K. and Eger,J.L.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-MAR-2011) Biodiversity Institute of Ontario,
+            University of Guelph, 50 Stone Road East, Guelph, Ontario N1G2W1,
+            Canada
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Myotis daubentonii"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ROM 118530"
+                     /db_xref="BOLD:ABCMA747-07.COI-5P"
+                     /db_xref="taxon:98922"
+                     /country="China: Guizhou, Libo, Shuipu Village, Yuping
+                     Town"
+                     /lat_lon="25.483 N 107.882 E"
+                     /collection_date="31-Mar-2007"
+                     /collected_by="Lim, Bk: Eger, Jl"
+                     /identified_by="Burton Lim"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaaagacattgg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccaaagaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaargayatygg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccraaraayca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtattcaaccaatcataaagatattgg, rev_seq:
+                     caggaaacagctatgactaaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaacca<i>aa<i>ga<i>at<i>gg,
+                     rev_seq:
+                     caggaaacagctatgactagacttctgggtg<i>cc<i>aa<i>aa<i>ca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ADZ94966.1"
+                     /translation="TLYLLFGAWAGMAGTALSLLIRAELGQPGALLGDDQIYNVIVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSMV
+                     EAGAGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGVSSILGAINFITTIINMKPPAL
+                     SQYQTPLFVWSVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 accttgtacc tgttatttgg tgcttgagct ggtatagcag gcactgccct aagtttactt
+       61 attcgcgcag aattaggcca gccaggggcc ttattaggag atgatcagat ctacaatgta
+      121 atcgttactg cccatgcttt tgtaataatt ttcttcatag ttatacctat tataatcgga
+      181 ggcttcggaa attgattagt gcctttaata attggagccc ctgatatagc tttccctcga
+      241 atgaataata tgagtttctg acttcttcct ccctcttttt tattactgct agcttcatcc
+      301 atggttgaag caggagccgg taccggttgg acagtctatc cacccttagc aggaaatctt
+      361 gcccacgcag gagcttctgt tgatcttgct atcttttctc tgcatctggc aggtgtatct
+      421 tcaatcttgg gggccattaa ctttattact accattatta atataaaacc acctgctctc
+      481 tctcaatatc aaacaccact gtttgtctga tccgtcctaa ttacagctgt attacttctt
+      541 ctttctcttc ccgttttagc tgctggaatt acaatattat taacagatcg aaatttaaat
+      601 actacctttt ttgaccctgc tgggggagga gatccaattc tgtatcaaca cctattt
+//
+
+LOCUS       JF452845                 657 bp    DNA     linear   MAM 25-JUL-2016
+DEFINITION  Artibeus lituratus voucher ROM 103380 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   JF452845
+VERSION     JF452845.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Artibeus lituratus (great fruit-eating bat)
+  ORGANISM  Artibeus lituratus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Chiroptera; Microchiroptera;
+            Phyllostomidae; Stenodermatinae; Artibeus.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Clare,E.L., Lim,B.K., Fenton,M.B. and Hebert,P.D.
+  TITLE     Neotropical bats: estimating species diversity with DNA barcodes
+  JOURNAL   PLoS ONE 6 (7), E22648 (2011)
+   PUBMED   21818359
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Clare,E.L., Lim,B.K., Eger,J.L. and Engstrom,M.D.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (02-MAR-2011) Integrative Biology, University of Guelph,
+            50 Stone Rd. E., Guelph, Ontario N1G2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Artibeus lituratus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ROM:103380"
+                     /db_xref="BOLD:ABGYB625-06.COI-5P"
+                     /db_xref="taxon:27634"
+                     /country="Guyana: Upper Demerara-Berbice, Tropenbos, 20 Km
+                     Sse Of Mabura Hill"
+                     /lat_lon="5.15 N 58.70 W"
+                     /collection_date="06-Aug-1994"
+                     /collected_by="Engstrom, MD, Lim, BK, Dowler, RC, Boyd, A,
+                     Maxwell, TC"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaaagacattgg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccaaagaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaargayatygg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccraaraayca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtattcaaccaatcataaagatattgg, rev_seq:
+                     caggaaacagctatgactaaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaacca<i>aa<i>ga<i>at<i>gg,
+                     rev_seq:
+                     caggaaacagctatgactagacttctgggtg<i>cc<i>aa<i>aa<i>ca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AEA87369.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGALLGDDQIYNVIVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSTV
+                     EAGVGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGVSSILGAINFITTIINMKPPAL
+                     SQYQTPLFVWSVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 actttatacc tattatttgg tgcttgagca ggtatggtag gtactgcact aagtctcctt
+       61 attcgtgcag aacttggcca acctggggcc ctattaggtg atgatcaaat ctataacgta
+      121 atcgtaacag ctcatgcctt cgtaataatt ttctttatag taatgcctat tataattggg
+      181 ggattcggta attgattagt accactaata attggcgcac ccgatatagc attcccacga
+      241 ataaacaata taagcttctg acttctccca ccttccttcc tacttttact tgcttcctct
+      301 acagttgaag ctggcgttgg aacaggttga accgtatatc caccactagc cggaaatcta
+      361 gcacatgctg gagcttcagt tgacctagct attttctctc ttcacctagc cggagtttcg
+      421 tcaatccttg gagctattaa ttttattact acaattatta atataaaacc acctgccctc
+      481 tctcaatatc aaacaccctt atttgtctga tccgttttaa tcactgccgt cctattactc
+      541 ctgtctcttc ctgttttagc agcaggtatt actatactcc taacagaccg aaaccttaat
+      601 actacattct ttgacccagc tggaggagga gaccccattt tatatcaaca cttattc
+//
+
+LOCUS       JF452842                 657 bp    DNA     linear   MAM 25-JUL-2016
+DEFINITION  Artibeus lituratus voucher ROM 103367 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   JF452842
+VERSION     JF452842.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Artibeus lituratus (great fruit-eating bat)
+  ORGANISM  Artibeus lituratus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Chiroptera; Microchiroptera;
+            Phyllostomidae; Stenodermatinae; Artibeus.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Clare,E.L., Lim,B.K., Fenton,M.B. and Hebert,P.D.
+  TITLE     Neotropical bats: estimating species diversity with DNA barcodes
+  JOURNAL   PLoS ONE 6 (7), E22648 (2011)
+   PUBMED   21818359
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Clare,E.L., Lim,B.K., Eger,J.L. and Engstrom,M.D.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (02-MAR-2011) Integrative Biology, University of Guelph,
+            50 Stone Rd. E., Guelph, Ontario N1G2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Artibeus lituratus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ROM:103367"
+                     /db_xref="BOLD:ABGYB615-06.COI-5P"
+                     /db_xref="taxon:27634"
+                     /country="Guyana: Upper Demerara-Berbice, Tropenbos, 20 Km
+                     Sse Of Mabura Hill"
+                     /lat_lon="5.15 N 58.70 W"
+                     /collection_date="05-Aug-1994"
+                     /collected_by="Engstrom, MD, Lim, BK, Dowler, RC, Boyd, A,
+                     Maxwell, TC"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaaagacattgg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccaaagaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaargayatygg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccraaraayca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtattcaaccaatcataaagatattgg, rev_seq:
+                     caggaaacagctatgactaaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaacca<i>aa<i>ga<i>at<i>gg,
+                     rev_seq:
+                     caggaaacagctatgactagacttctgggtg<i>cc<i>aa<i>aa<i>ca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AEA87366.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGALLGDDQIYNVIVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSTV
+                     EAGVGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGVSSILGAINFITTIINMKPPAL
+                     SQYQTPLFVWSVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 actttatacc tattatttgg tgcttgagca ggtatggtag gtactgcact aagtctcctt
+       61 attcgtgcag aacttggcca acctggggcc ctattaggtg atgatcaaat ctataacgta
+      121 atcgtaacag ctcatgcctt cgtaataatt ttctttatag taatgcctat tataattggg
+      181 ggattcggta attgattagt accactaata attggcgcac ccgatatagc attcccacga
+      241 ataaacaata taagcttctg acttctcccg ccttccttcc tactcttact tgcttcctct
+      301 acagttgaag ctggcgttgg aacaggttga accgtatacc caccactagc cggaaatcta
+      361 gcacatgctg gagcttcagt tgacctagct attttctctc ttcacctagc cggagtttcg
+      421 tcaatccttg gagctattaa ttttattact acaattatta atataaaacc acctgccctc
+      481 tctcaatatc aaacaccctt atttgtctga tccgttttaa tcactgccgt cctattactc
+      541 ctgtctcttc ctgttttagc agcaggtatt actatactcc taacagaccg aaaccttaat
+      601 actacattct ttgacccagc tggaggagga gaccccattt tatatcaaca cttattc
+//
+
+LOCUS       JF454878                 657 bp    DNA     linear   MAM 25-JUL-2016
+DEFINITION  Lophostoma silvicola voucher ROM 112051 cytochrome oxidase subunit
+            1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   JF454878
+VERSION     JF454878.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Lophostoma silvicolum (D'Orbigny's round-eared bat)
+  ORGANISM  Lophostoma silvicolum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Chiroptera; Microchiroptera;
+            Phyllostomidae; Phyllostominae; Lophostoma.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Clare,E.L., Lim,B.K., Fenton,M.B. and Hebert,P.D.
+  TITLE     Neotropical bats: estimating species diversity with DNA barcodes
+  JOURNAL   PLoS ONE 6 (7), E22648 (2011)
+   PUBMED   21818359
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Clare,E.L., Lim,B.K., Eger,J.L. and Engstrom,M.D.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (02-MAR-2011) Integrative Biology, University of Guelph,
+            50 Stone Rd. E., Guelph, Ontario N1G2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Lophostoma silvicolum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ROM:112051"
+                     /db_xref="BOLD:ABGYE574-06.COI-5P"
+                     /db_xref="taxon:263451"
+                     /country="Guyana: Potaro-Siparuni, Iwokrama Field Station,
+                     Iwokrama Forest"
+                     /lat_lon="4.67 N 58.68 W"
+                     /collection_date="11-Nov-1999"
+                     /collected_by="Lim, BK, King, WR, et al"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaaagacattgg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccaaagaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaargayatygg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccraaraayca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtattcaaccaatcataaagatattgg, rev_seq:
+                     caggaaacagctatgactaaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaacca<i>aa<i>ga<i>at<i>gg,
+                     rev_seq:
+                     caggaaacagctatgactagacttctgggtg<i>cc<i>aa<i>aa<i>ca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AEA89402.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGALLGDDQIYNVVVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSTV
+                     EAGVGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGVSSILGAINFITTIINMKPPAL
+                     SQYQTPLFVWSVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 accctatacc tcctattcgg cgcttgagcg ggcatagtag gaaccgcact aagcctcctt
+       61 attcgtgctg aactcgggca acccggagct ctactaggcg atgaccagat ttacaacgtt
+      121 gtagtaacag cccatgcctt cgtaataatt ttctttatag ttatacccat cataattgga
+      181 ggattcggca attgactagt tcccctgata attggtgccc ccgacatagc cttccctcgt
+      241 ataaataaca taagcttctg acttctacct ccttcctttc tactactcct tgcttcttct
+      301 acagtagaag ctggagttgg tacgggctga acagtttacc ctcccctagc aggcaatcta
+      361 gcacatgccg gagcttccgt tgacttagca atcttctccc ttcacttagc tggagtctcc
+      421 tccattctag gggctattaa ctttattact acaattatta atataaaacc ccccgcccta
+      481 tcccaatatc aaacgcccct attcgtttga tcagtcctaa tcacagctgt cttactactc
+      541 ttatcccttc ctgtcttagc agcaggtatc actatgctac taacagatcg aaacctcaac
+      601 actacattct ttgaccccgc tggaggagga gaccctatcc tgtaccaaca cttgttt
+//
+
+LOCUS       JF454879                 656 bp    DNA     linear   MAM 25-JUL-2016
+DEFINITION  Lophostoma silvicola voucher ROM 111656 cytochrome oxidase subunit
+            1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   JF454879
+VERSION     JF454879.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Lophostoma silvicolum (D'Orbigny's round-eared bat)
+  ORGANISM  Lophostoma silvicolum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Chiroptera; Microchiroptera;
+            Phyllostomidae; Phyllostominae; Lophostoma.
+REFERENCE   1  (bases 1 to 656)
+  AUTHORS   Clare,E.L., Lim,B.K., Fenton,M.B. and Hebert,P.D.
+  TITLE     Neotropical bats: estimating species diversity with DNA barcodes
+  JOURNAL   PLoS ONE 6 (7), E22648 (2011)
+   PUBMED   21818359
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 656)
+  AUTHORS   Clare,E.L., Lim,B.K., Eger,J.L. and Engstrom,M.D.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (02-MAR-2011) Integrative Biology, University of Guelph,
+            50 Stone Rd. E., Guelph, Ontario N1G2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..656
+                     /organism="Lophostoma silvicolum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ROM:111656"
+                     /db_xref="BOLD:ABGYE209-06.COI-5P"
+                     /db_xref="taxon:263451"
+                     /country="Guyana: Potaro-Siparuni, Kabukalli Landing,
+                     Iwokrama Forest"
+                     /lat_lon="4.28 N 58.52 W"
+                     /collection_date="17-Oct-1999"
+                     /collected_by="Lim, BK, King, WR, et al"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaaagacattgg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccaaagaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaargayatygg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccraaraayca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtattcaaccaatcataaagatattgg, rev_seq:
+                     caggaaacagctatgactaaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaacca<i>aa<i>ga<i>at<i>gg,
+                     rev_seq:
+                     caggaaacagctatgactagacttctgggtg<i>cc<i>aa<i>aa<i>ca"
+     gene            <1..>656
+                     /gene="COI"
+     CDS             <1..>656
+                     /gene="COI"
+                     /codon_start=3
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AEA89403.1"
+                     /translation="LYLLFGAWAGMVGTALSLLIRAELGQPGALLGDDQIYNVVVTAH
+                     AFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSTVE
+                     AGVGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGVSSILGAINFITTIINMKPPALS
+                     QYQTPLFVWSVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHLF
+                     "
+ORIGIN
+        1 ccctatacct cctattcggc gcttgagcgg gcatagtagg aaccgcacta agcctcctta
+       61 ttcgtgctga actcgggcaa cccggagctc tactaggcga tgaccagatt tacaacgttg
+      121 tagtaacagc ccatgccttc gtaataattt tctttatagt tatacccatc ataattggag
+      181 gattcggcaa ttgactagtt cccctgataa ttggtgcccc cgacatagcc ttccctcgta
+      241 taaataacat aagcttctga cttctacctc cttcctttct actactcctt gcttcttcta
+      301 cagtagaagc cggggttggt acgggctgaa cagtttaccc tcccctagca ggcaatctag
+      361 cacatgccgg agcttccgtt gacttagcaa tcttctccct tcacttagct ggagtctcct
+      421 ccattctagg ggctattaac tttattacta caattattaa tataaaaccc cccgccctat
+      481 cccaatatca aacgccccta ttcgtttgat cagttctaat cacagctgtc ttactactct
+      541 tatcccttcc tgtcttagca gcaggtatca ctatgctact aacagatcga aacctcaaca
+      601 ccacattctt tgaccccgct ggaggagggg accctatcct gtaccaacac ttgttt
+//
+
+LOCUS       JF454873                 657 bp    DNA     linear   MAM 25-JUL-2016
+DEFINITION  Lophostoma silvicola voucher ROM 109300 cytochrome oxidase subunit
+            1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   JF454873
+VERSION     JF454873.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Lophostoma silvicolum (D'Orbigny's round-eared bat)
+  ORGANISM  Lophostoma silvicolum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Chiroptera; Microchiroptera;
+            Phyllostomidae; Phyllostominae; Lophostoma.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Clare,E.L., Lim,B.K., Fenton,M.B. and Hebert,P.D.
+  TITLE     Neotropical bats: estimating species diversity with DNA barcodes
+  JOURNAL   PLoS ONE 6 (7), E22648 (2011)
+   PUBMED   21818359
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Clare,E.L., Lim,B.K., Eger,J.L. and Engstrom,M.D.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (02-MAR-2011) Integrative Biology, University of Guelph,
+            50 Stone Rd. E., Guelph, Ontario N1G2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Lophostoma silvicolum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ROM:109300"
+                     /db_xref="BOLD:ABGYE016-06.COI-5P"
+                     /db_xref="taxon:263451"
+                     /country="Guyana: Potaro-Siparuni, Pakatau Falls, Siparuni
+                     River, Iwokrama Reserve"
+                     /lat_lon="4.75 N 59.02 W"
+                     /collection_date="19-Nov-1997"
+                     /collected_by="Lim, BK, Scully, WMR, Arjoon, JD,
+                     Jafferally, DM"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaaagacattgg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccaaagaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaargayatygg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccraaraayca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtattcaaccaatcataaagatattgg, rev_seq:
+                     caggaaacagctatgactaaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaacca<i>aa<i>ga<i>at<i>gg,
+                     rev_seq:
+                     caggaaacagctatgactagacttctgggtg<i>cc<i>aa<i>aa<i>ca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AEA89397.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGALLGDDQIYNVVVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSTV
+                     EAGVGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGVSSILGAINFITTIINMKPPAL
+                     SQYQTPLFVWSVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 accctatacc tcctattcgg cgcttgagcg ggcatagtag gaaccgcact aagcctcctt
+       61 attcgtgctg aactcgggca acccggagct ctactaggcg atgaccagat ttacaacgtt
+      121 gtagtaacag cccatgcctt cgtaataatt ttctttatag ttatacccat cataattgga
+      181 ggattcggca attgactagt tcccctgata attggtgccc ccgacatagc cttccctcgt
+      241 ataaataaca taagcttctg acttctacct ccttcctttc tactactcct tgcttcttct
+      301 acagtagaag ctggagttgg tacgggctga acagtttacc ctcccctagc aggcaatcta
+      361 gcacatgccg gagcttccgt tgacttagca atcttctccc ttcacttagc tggagtctcc
+      421 tccattctag gggctattaa ctttattact acaattatta atataaaacc ccccgcccta
+      481 tcccaatatc aaacgcccct attcgtttga tcagtcctaa tcacagctgt cttactactc
+      541 ttatcccttc ctgtcttagc agcaggtatc actatgctac taacagatcg aaacctcaac
+      601 actacattct ttgaccccgc tggaggagga gaccctatcc tgtaccaaca cttgttt
+//
+
+LOCUS       JF442812                 657 bp    DNA     linear   MAM 25-JUL-2016
+DEFINITION  Eptesicus serotinus voucher ZMMU AI 3-09 cytochrome oxidase subunit
+            1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   JF442812
+VERSION     JF442812.1
+DBLINK      BioProject: PRJNA37833
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Eptesicus serotinus (Common serotine)
+  ORGANISM  Eptesicus serotinus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Laurasiatheria; Chiroptera; Microchiroptera;
+            Vespertilionidae; Eptesicus.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Kruskop,S.V., Borisenko,A.V., Ivanova,N.V., Lim,B.K. and Eger,J.L.
+  TITLE     DNA barcodes highlight patterns of phylogeographic diversity in
+            northeastern Palaearctic bats
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Kruskop,S.V., Borisenko,A.V., Ivanova,N.V., Lim,B.K. and Eger,J.L.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-MAR-2011) Biodiversity Institute of Ontario,
+            University of Guelph, 50 Stone Road East, Guelph, Ontario N1G2W1,
+            Canada
+COMMENT     ##International Barcode of Life (iBOL)Data-START##
+            Barcode Index Number :: BOLD:AAC2865
+            Order Assignment     :: Chiroptera
+            iBOL Working Group   :: iBOL:WG1.1
+            iBOL Release Status  :: Phase 2
+            ##International Barcode of Life (iBOL)Data-END##
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Eptesicus serotinus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ZMMU AI 3-09"
+                     /db_xref="BOLD:SKBPA585-10.COI-5P"
+                     /db_xref="taxon:59452"
+                     /country="Russia: Bryansk Region, Surazh District,
+                     Lyalichi populated place"
+                     /lat_lon="53.00 N 32.548 E"
+                     /collected_by="Ilija Artiushin"
+                     /identified_by="Sergei V. Kruskop"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaaagacattgg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccaaagaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaaccacaargayatygg, rev_seq:
+                     caggaaacagctatgactagacttctgggtggccraaraayca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagtattcaaccaatcataaagatattgg, rev_seq:
+                     caggaaacagctatgactaaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq:
+                     tgtaaaacgacggccagttctcaaccaacca<i>aa<i>ga<i>at<i>gg,
+                     rev_seq:
+                     caggaaacagctatgactagacttctgggtg<i>cc<i>aa<i>aa<i>ca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ADZ94841.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGALLGDDQIYNVIVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSMV
+                     EAGAGTGWTVYPPLAGNLAHAGASVDLTIFSLHLAGVSSILGAINFITTIINMKPPAL
+                     SQYQTPLFVWSVLITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 accctttacc ttctatttgg agcctgagcc ggaatggtag gcacggccct tagcttgcta
+       61 attcgtgccg aattgggcca accaggggct ctgctaggag atgaccagat ttataatgta
+      121 attgttactg ctcatgcctt tgtgataatt ttcttcatag ttatgcctat tataattggg
+      181 ggctttggaa attgattagt gcctttaata atcggagctc ctgatatagc attcccacga
+      241 atgaacaata taagcttctg actccttcct ccctctttcc tacttcttct agcatcatct
+      301 atggtagagg ccggggctgg cactggttgg acagtctacc cccctttggc aggaaacctt
+      361 gcccacgcag gggcctctgt ggatctgact attttctcat tacacttagc aggtgtgtct
+      421 tcaatcctag gagcaattaa ctttattaca acaattatta atataaaacc tcccgctctt
+      481 tctcaatatc aaacaccgct gttcgtgtga tctgtcctaa ttacagccgt ccttcttctg
+      541 ctatctctcc ctgtactggc tgctggtatt acaatactat taacagatcg aaacttaaat
+      601 acaacctttt ttgatccagc tggcggaggg gacccaatcc tataccaaca cttattt
+//
+
+LOCUS       GU112856                 657 bp    DNA     linear   MAM 24-JUL-2016
+DEFINITION  Philander frenatus voucher LPC1127 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   GU112856
+VERSION     GU112856.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Philander frenatus (Southeastern four-eyed oppossum)
+  ORGANISM  Philander frenatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Metatheria; Didelphimorphia; Didelphidae; Philander.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Agrizzi,J., Loss,A.C., Farro,A.C., Costa,L.P. and Leite,Y.L.R.
+  TITLE     Molecular Diagnosis of Atlantic Forest Opossums (Mammalia,
+            Didelphimorphia, Didelphidae) Using Mitochondrial DNA Sequences
+  JOURNAL   Open Zool J (2011) In press
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Agrizzi,J., Loss,A.C., Farro,A.C., Costa,L.P. and Leite,Y.L.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-OCT-2009) Ciencias Biologicas, Universidade Federal
+            do Espirito Santo, Depto. Biologia, Av. Marechal Campos 1468
+            Maruipe, Vitoria, ES 29043-900, Brazil
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Philander frenatus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="LPC1127"
+                     /db_xref="BOLD:BATFM064-09.COI-5P"
+                     /db_xref="taxon:225405"
+                     /country="Brazil: Espirito Santo, Cariacica, Reserva
+                     Biologica de Duas Bocas, Alto Alegre"
+                     /lat_lon="20.28 S 40.42 W"
+                     /collection_date="18-Sep-2007"
+                     /collected_by="Leonora Pires Costa"
+                     /identified_by="Leonora Pires Costa"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ACZ55713.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGTLIGDDQIYNVIVTA
+                     HAFIMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSTI
+                     EAGAGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGISSILGAINFITTIINMKPPAM
+                     SQYQTPLFVWSVMITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 acactgtatc tactatttgg tgcctgagca ggcatagtcg gtaccgccct aagtcttctc
+       61 atccgagcag aactaggtca accaggaact ttaattggtg atgatcagat ttacaatgtg
+      121 attgttaccg cccatgcttt tatcataatt ttttttatag taataccaat tataattggg
+      181 ggttttggta actgactcgt tccacttata atcggagctc ctgatatagc attcccacga
+      241 ataaacaata taagcttctg actactccct ccatcattct tactactatt agcgtcttcc
+      301 accattgaag caggagctgg aacaggctga acagtatacc caccactcgc tggcaattta
+      361 gcccatgcag gcgcttcagt tgatctagcc atcttttccc ttcatttagc aggtatttct
+      421 tctattctag gggctattaa tttcattact actattatca acataaaacc ccctgcaata
+      481 tcacaatatc aaacccctct atttgtctga tcagtgataa tcacagcagt attactcctc
+      541 ctatctcttc cagtgttagc agcaggaatc actatattac tgacagaccg taatttaaat
+      601 accaccttct ttgatcctgc tggaggggga gatcctattc tatatcaaca cctattt
+//
+
+LOCUS       GU112820                 657 bp    DNA     linear   MAM 24-JUL-2016
+DEFINITION  Metachirus nudicaudatus voucher YL82 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   GU112820
+VERSION     GU112820.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Metachirus nudicaudatus (brown four-eyed opossum)
+  ORGANISM  Metachirus nudicaudatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Metatheria; Didelphimorphia; Didelphidae; Metachirus.
+REFERENCE   1  (bases 1 to 657)
+  AUTHORS   Agrizzi,J., Loss,A.C., Farro,A.C., Costa,L.P. and Leite,Y.L.R.
+  TITLE     Molecular Diagnosis of Atlantic Forest Opossums (Mammalia,
+            Didelphimorphia, Didelphidae) Using Mitochondrial DNA Sequences
+  JOURNAL   Open Zool J (2011) In press
+REFERENCE   2  (bases 1 to 657)
+  AUTHORS   Agrizzi,J., Loss,A.C., Farro,A.C., Costa,L.P. and Leite,Y.L.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (19-OCT-2009) Ciencias Biologicas, Universidade Federal
+            do Espirito Santo, Depto. Biologia, Av. Marechal Campos 1468
+            Maruipe, Vitoria, ES 29043-900, Brazil
+FEATURES             Location/Qualifiers
+     source          1..657
+                     /organism="Metachirus nudicaudatus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="YL82"
+                     /db_xref="BOLD:BATFM366-09.COI-5P"
+                     /db_xref="taxon:42725"
+                     /country="Brazil: Minas Gerais, Marliria, Parque Estadual
+                     do Rio Doce"
+                     /lat_lon="19.71 S 42.65 W"
+                     /collection_date="19-Jul-1996"
+                     /collected_by="Yuri Leite"
+                     /identified_by="Yuri L. R. Leite"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>657
+                     /gene="COI"
+     CDS             <1..>657
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="ACZ55677.1"
+                     /translation="TLYLLFGAWAGMVGTALSLLIRAELGQPGTLIGDDQIYNVIVTA
+                     HAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSTV
+                     EAGAGTGWTVYPPLAGNLAHAGASVDLAIFSLHLAGISSILGAINFITTIINMKPPAM
+                     TQYQTPLFVWSVMITAVLLLLSLPVLAAGITMLLTDRNLNTTFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 acactttatt tactatttgg tgcatgagcg ggtatagttg gaactgccct aagccttctt
+       61 attcgagcag aactaggcca accaggaacc ttaattggtg atgaccaaat ttataatgtt
+      121 attgtcacag ctcatgcttt cgtaataatc ttctttatag ttatacctat tataattggt
+      181 gggtttggta attgacttgt tccattaata attggagcac ctgatatagc atttccacga
+      241 ataaataata taagcttttg acttcttcca ccatcattcc tccttctttt agcatcttct
+      301 actgtagaag ctggagcagg taccggatga actgtctatc ctccattagc aggaaacctt
+      361 gcccatgcag gtgcttccgt cgatctagcc atcttttcac ttcacctagc aggaatttcc
+      421 tcaattttag gagctattaa tttcattact actattatta acataaaacc acctgcaata
+      481 actcaatatc aaactcccct ttttgtatga tcagtaataa ttacagcagt attattacta
+      541 ctctcacttc cagttctagc tgccggaatc actatattat taacggatcg taacttaaat
+      601 acaacctttt ttgatccagc cggaggaggt gaccctattt tatatcaaca cctattt
+//
+
+LOCUS       MG378565                 658 bp    DNA     linear   INV 11-JAN-2023
+DEFINITION  Valenzuela piceus voucher BIOUG01239-F09 cytochrome oxidase subunit
+            1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   MG378565
+VERSION     MG378565.1
+DBLINK      BioProject: PRJNA472144
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Valenzuela piceus
+  ORGANISM  Valenzuela piceus
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Paraneoptera; Psocodea; Psocoptera;
+            Psocomorpha; Caeciliusetae; Caeciliusidae; Valenzuela.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   deWaard,J.R., Ratnasingham,S., Zakharov,E.V., Borisenko,A.V.,
+            Steinke,D., Telfer,A.C., Perez,K.H.J., Sones,J.E., Young,M.R.,
+            Levesque-Beaudin,V., Sobel,C.N., Abrahamyan,A., Bessonov,K.,
+            Blagoev,G., deWaard,S.L., Ho,C., Ivanova,N.V., Layton,K.K.S.,
+            Lu,L., Manjunath,R., McKeown,J.T.A., Milton,M.A., Miskie,R.,
+            Monkhouse,N., Naik,S., Nikolova,N., Pentinsaari,M., Prosser,S.W.J.,
+            Radulovici,A.E., Steinke,C., Warne,C.P. and Hebert,P.D.N.
+  TITLE     A reference library for Canadian invertebrates with 1.5 million
+            barcodes, voucher specimens, and DNA samples
+  JOURNAL   Sci Data 6 (1), 308 (2019)
+   PUBMED   31811161
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     BIOUG Archive GGBN Data Release
+  JOURNAL   Unpublished
+REFERENCE   3  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-NOV-2017) Collections, Centre for Biodiversity
+            Genomics, 50 Stone Road East, Guelph, Ontario N1G 2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Valenzuela piceus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="BIOUG01239-F09"
+                     /db_xref="BOLD:ASAMT114-12.COI-5P"
+                     /db_xref="taxon:1771417"
+                     /country="Canada: Ontario, Guelph, 25 Division St."
+                     /lat_lon="43.554 N 80.264 W"
+                     /collection_date="14-Jun-2010"
+                     /collected_by="Alex Smith"
+                     /identified_by="Gergin A. Blagoev"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AVP17645.1"
+                     /translation="TLYFIFGIWAGMIGTSLSVLIRLELGQPGLFLEDDQTYNVIVTA
+                     HAFIMIFFMIMPIMIGGFGNWLVPLMLGAPDMAFPRLNNMSFWFLPPSLTLLLSSSLV
+                     NTGAGTGWTIYPPLSSAIAHTGASVDMAIFSLHLAGISSILGAVNFITTIINMRSTSL
+                     SLERMPLFVWSVFITAILLLLSLPVLAGAITMLLTDRNINTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 aactttgtat ttcatcttcg gaatttgagc cggtataatt ggcacaagat taagagtcct
+       61 aattcgatta gaattaggcc aacctggatt atttttagaa gatgaccaaa catataacgt
+      121 tattgtaaca gcccacgctt ttattataat tttttttata attataccaa ttataattgg
+      181 ggggtttgga aattgattag ttccattaat attaggagcc cctgatatag cttttccacg
+      241 cctaaataat ataagatttt gattcttacc accttctcta actcttcttc tatcaagaag
+      301 attagtaaat actggtgcag gaactggatg aactatttac ccccctcttt ctagggctat
+      361 tgcccatacc ggagcttctg tcgatatggc tatcttctca ctccatttag caggtattag
+      421 atcaatccta ggagctgtaa attttattac cacaattatt aatatacgat ctactagttt
+      481 gtcattagaa cgaatacctc tatttgtatg atctgtattt attaccgcta ttttgttact
+      541 tttatcactc ccagttttag cgggagcaat cacaatatta ttaacagatc gtaatattaa
+      601 tacctccttt ttcgaccccg ctggaggagg ggaccctatt ctttatcaac atttattt
+//
+
+LOCUS       MG378401                 658 bp    DNA     linear   INV 11-JAN-2023
+DEFINITION  Peripsocus subfasciatus voucher BIOUG01239-F12 cytochrome oxidase
+            subunit 1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   MG378401
+VERSION     MG378401.1
+DBLINK      BioProject: PRJNA472144
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Peripsocus subfasciatus
+  ORGANISM  Peripsocus subfasciatus
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Paraneoptera; Psocodea; Psocoptera;
+            Psocomorpha; Homilopsocidea; Peripsocoidea; Peripsocidae;
+            Peripsocus.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   deWaard,J.R., Ratnasingham,S., Zakharov,E.V., Borisenko,A.V.,
+            Steinke,D., Telfer,A.C., Perez,K.H.J., Sones,J.E., Young,M.R.,
+            Levesque-Beaudin,V., Sobel,C.N., Abrahamyan,A., Bessonov,K.,
+            Blagoev,G., deWaard,S.L., Ho,C., Ivanova,N.V., Layton,K.K.S.,
+            Lu,L., Manjunath,R., McKeown,J.T.A., Milton,M.A., Miskie,R.,
+            Monkhouse,N., Naik,S., Nikolova,N., Pentinsaari,M., Prosser,S.W.J.,
+            Radulovici,A.E., Steinke,C., Warne,C.P. and Hebert,P.D.N.
+  TITLE     A reference library for Canadian invertebrates with 1.5 million
+            barcodes, voucher specimens, and DNA samples
+  JOURNAL   Sci Data 6 (1), 308 (2019)
+   PUBMED   31811161
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     BIOUG Archive GGBN Data Release
+  JOURNAL   Unpublished
+REFERENCE   3  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-NOV-2017) Collections, Centre for Biodiversity
+            Genomics, 50 Stone Road East, Guelph, Ontario N1G 2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Peripsocus subfasciatus"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="BIOUG01239-F12"
+                     /db_xref="BOLD:ASAMT117-12.COI-5P"
+                     /db_xref="taxon:239249"
+                     /country="Canada: Ontario, Guelph, 25 Division St."
+                     /lat_lon="43.554 N 80.264 W"
+                     /collection_date="25-Jun-2010"
+                     /collected_by="Alex Smith"
+                     /identified_by="Gergin A. Blagoev"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AVP17481.1"
+                     /translation="TLYFIFGIWAGMLGTSLSILIRLELGQPGLFLEDDQTYNVIVTA
+                     HAFIMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPSLTLLLSSSLV
+                     NTGAGTGWTVYPPLSSVIAHTGASVDLAIFSLHLAGVSSILGAVNFITTIINMRSNGL
+                     TFERMPLFVWSVFITAILLLLSLPVLAGAITMLLTDRNLNTAFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 aacattatat ttcatttttg gaatttgagc tggtatactt gggactagtt taagaatctt
+       61 aattcgactt gagttaggcc aaccaggttt atttttagaa gatgaccaaa catataatgt
+      121 tatcgttacc gctcacgctt ttattataat tttttttata gtaataccaa ttataattgg
+      181 aggatttgga aattgactag tacctcttat attaggagcc cctgatatag catttccacg
+      241 tataaataat ataagtttct ggttattacc tccttctctt actcttttgc tgtcaagaag
+      301 ccttgttaat accggggcag gtacaggatg aactgtttac cctcctcttt caagagttat
+      361 cgcccacact ggtgcctctg ttgatttagc tattttttct ctccaccttg caggtgttag
+      421 atcaattcta ggagctgtaa attttattac aactattatc aatatacgtt caaatggatt
+      481 aacttttgaa cgtatacctt tatttgtatg atctgtattt attactgcaa ttctactact
+      541 cctatcactc ccagtcttag caggggccat cacaatactt ttaacagatc gtaatttaaa
+      601 taccgctttc tttgatcctg caggaggagg ggaccctatc ctataccaac atttattt
+//
+
+LOCUS       MG378176                 658 bp    DNA     linear   INV 11-JAN-2023
+DEFINITION  Caenis latipennis voucher BIOUG21865-A03 cytochrome oxidase subunit
+            1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   MG378176
+VERSION     MG378176.1
+DBLINK      BioProject: PRJNA472144
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Caenis latipennis
+  ORGANISM  Caenis latipennis
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Palaeoptera; Ephemeroptera; Pannota; Caenidae; Caenis.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   deWaard,J.R., Ratnasingham,S., Zakharov,E.V., Borisenko,A.V.,
+            Steinke,D., Telfer,A.C., Perez,K.H.J., Sones,J.E., Young,M.R.,
+            Levesque-Beaudin,V., Sobel,C.N., Abrahamyan,A., Bessonov,K.,
+            Blagoev,G., deWaard,S.L., Ho,C., Ivanova,N.V., Layton,K.K.S.,
+            Lu,L., Manjunath,R., McKeown,J.T.A., Milton,M.A., Miskie,R.,
+            Monkhouse,N., Naik,S., Nikolova,N., Pentinsaari,M., Prosser,S.W.J.,
+            Radulovici,A.E., Steinke,C., Warne,C.P. and Hebert,P.D.N.
+  TITLE     A reference library for Canadian invertebrates with 1.5 million
+            barcodes, voucher specimens, and DNA samples
+  JOURNAL   Sci Data 6 (1), 308 (2019)
+   PUBMED   31811161
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     BIOUG Archive GGBN Data Release
+  JOURNAL   Unpublished
+REFERENCE   3  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-NOV-2017) Collections, Centre for Biodiversity
+            Genomics, 50 Stone Road East, Guelph, Ontario N1G 2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Caenis latipennis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="BIOUG21865-A03"
+                     /db_xref="BOLD:BBAQU050-15.COI-5P"
+                     /db_xref="taxon:248217"
+                     /country="Canada: Ontario, Guelph, Eramosa River, Gordon
+                     St. Near Boathouse"
+                     /lat_lon="43.539 N 80.242 W"
+                     /collection_date="07-May-2015"
+                     /collected_by="BIObus 2015"
+                     /identified_by="Kate Perez"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AVP17256.1"
+                     /translation="TLYFIFGVWSGMVGTSLSLLIRAELGHPGSLIGDDQIYNVIVTA
+                     HAFIMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPALTLLLTSSLV
+                     EAGAGTGWTVYPPLAAGIAHAGASVDLAIFSLHLAGISSILGAVNFITTTINMRSSGM
+                     TMDRIPLFVWSVVITAVLLLLSLPVLAGAITMLLTDRNLNTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 aacattatat tttatttttg gggtatgatc cggtatagta ggaacctctt taagtctatt
+       61 aatccgagca gaattagggc atccgggctc actaattgga gatgatcaaa tttataatgt
+      121 tattgtaact gcccacgctt tcattatgat tttctttata gtaataccaa ttatgattgg
+      181 ggggtttgga aattggttgg tccctttaat actgggggct ccagatatgg cctttccccg
+      241 tataaataac ataagctttt gattattgcc acctgcacta acccttcttt taactagaag
+      301 actagtagaa gcaggagccg gtacaggttg aacagtgtac cctcctttag cagcaggaat
+      361 cgctcatgct ggggcatcag tagatttagc catcttctca ttacatttag caggtatttc
+      421 ttcaatttta ggggctgtta attttatcac cactactatc aatatgcgtt caagaggaat
+      481 aacaatagac cggattcctt tatttgtttg gtctgtagtt attaccgcag ttctacttct
+      541 attatctcta ccggttctag ctggtgctat taccatacta ttaacagacc gtaacttaaa
+      601 tacctctttc tttgacccgg ccggtggtgg tgaccctatt ttataccaac atttattc
+//
+
+LOCUS       MG377717                 658 bp    DNA     linear   INV 11-JAN-2023
+DEFINITION  Baetis rusticans voucher BIOUG22411-E07 cytochrome oxidase subunit
+            1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   MG377717
+VERSION     MG377717.1
+DBLINK      BioProject: PRJNA472144
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Baetis rusticans
+  ORGANISM  Baetis rusticans
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Palaeoptera; Ephemeroptera; Pisciforma; Baetidae;
+            Baetis.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   deWaard,J.R., Ratnasingham,S., Zakharov,E.V., Borisenko,A.V.,
+            Steinke,D., Telfer,A.C., Perez,K.H.J., Sones,J.E., Young,M.R.,
+            Levesque-Beaudin,V., Sobel,C.N., Abrahamyan,A., Bessonov,K.,
+            Blagoev,G., deWaard,S.L., Ho,C., Ivanova,N.V., Layton,K.K.S.,
+            Lu,L., Manjunath,R., McKeown,J.T.A., Milton,M.A., Miskie,R.,
+            Monkhouse,N., Naik,S., Nikolova,N., Pentinsaari,M., Prosser,S.W.J.,
+            Radulovici,A.E., Steinke,C., Warne,C.P. and Hebert,P.D.N.
+  TITLE     A reference library for Canadian invertebrates with 1.5 million
+            barcodes, voucher specimens, and DNA samples
+  JOURNAL   Sci Data 6 (1), 308 (2019)
+   PUBMED   31811161
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     BIOUG Archive GGBN Data Release
+  JOURNAL   Unpublished
+REFERENCE   3  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-NOV-2017) Collections, Centre for Biodiversity
+            Genomics, 50 Stone Road East, Guelph, Ontario N1G 2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Baetis rusticans"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="BIOUG22411-E07"
+                     /db_xref="BOLD:BBGEN084-15.COI-5P"
+                     /db_xref="taxon:603499"
+                     /country="Canada: Ontario, Guelph, Eramosa River, Gordon
+                     St. Near Speed River Bridge"
+                     /lat_lon="43.539 N 80.242 W"
+                     /collection_date="04-Jun-2015"
+                     /collected_by="BIObus 2015"
+                     /identified_by="Kate Perez"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AVP16797.1"
+                     /translation="TLYFIFGAWSGMVGTSLSLLIRAELGNPGSLIGDDQIYNVIVTA
+                     HAFIMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPSLTLLVSSSIV
+                     DVGAGTGWTVYPPLAANIAHGGSSVDFAIFSLHLAGVSSILGAVNFITTVVNMRSPGM
+                     TLDRMPLFVWSVVITAVLLLLSLPVLAGAITMLLTDRNLNTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 tacattgtac tttatttttg gtgcctgatc cggtatggtt ggtacgtccc taagactatt
+       61 gattcgggca gaactaggaa accctggttc attaattggt gatgatcaaa tttacaacgt
+      121 aattgttact gcccatgctt tcatcataat tttttttata gtaatgccta ttataattgg
+      181 tgggttcggt aactgattag ttcctttgat gctaggtgcc ccggacatgg cttttcctcg
+      241 tataaataat ataagttttt gacttttacc accttcacta acattacttg tttctagaag
+      301 aattgtagat gttggtgctg gaacaggatg gactgtttat cccccattag cggccaacat
+      361 tgcgcacggt ggctcttcag ttgatttcgc tattttttcc cttcacttag ccggtgtctc
+      421 gtcgatttta ggtgcagtaa attttattac aacagtggtt aatatacgaa gccctgggat
+      481 aacactagac cgcatacctc tatttgtatg atcagtggtt attacagctg tcttattact
+      541 actctcatta cctgttctgg ctggggctat taccatattg ttaactgacc gaaatttgaa
+      601 tacttcattc ttcgacccag cgggtggagg tgaccctatc ctatatcaac atttgttt
+//
+
+LOCUS       MG377341                 658 bp    DNA     linear   INV 11-JAN-2023
+DEFINITION  Valenzuela sp. BIOUG02071-A04 cytochrome oxidase subunit 1 (COI)
+            gene, partial cds; mitochondrial.
+ACCESSION   MG377341
+VERSION     MG377341.1
+DBLINK      BioProject: PRJNA472144
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Valenzuela sp. BIOUG02071-A04
+  ORGANISM  Valenzuela sp. BIOUG02071-A04
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Paraneoptera; Psocodea; Psocoptera;
+            Psocomorpha; Caeciliusetae; Caeciliusidae; Valenzuela.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   deWaard,J.R., Ratnasingham,S., Zakharov,E.V., Borisenko,A.V.,
+            Steinke,D., Telfer,A.C., Perez,K.H.J., Sones,J.E., Young,M.R.,
+            Levesque-Beaudin,V., Sobel,C.N., Abrahamyan,A., Bessonov,K.,
+            Blagoev,G., deWaard,S.L., Ho,C., Ivanova,N.V., Layton,K.K.S.,
+            Lu,L., Manjunath,R., McKeown,J.T.A., Milton,M.A., Miskie,R.,
+            Monkhouse,N., Naik,S., Nikolova,N., Pentinsaari,M., Prosser,S.W.J.,
+            Radulovici,A.E., Steinke,C., Warne,C.P. and Hebert,P.D.N.
+  TITLE     A reference library for Canadian invertebrates with 1.5 million
+            barcodes, voucher specimens, and DNA samples
+  JOURNAL   Sci Data 6 (1), 308 (2019)
+   PUBMED   31811161
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     BIOUG Archive GGBN Data Release
+  JOURNAL   Unpublished
+REFERENCE   3  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-NOV-2017) Collections, Centre for Biodiversity
+            Genomics, 50 Stone Road East, Guelph, Ontario N1G 2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Valenzuela sp. BIOUG02071-A04"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="BIOUG02071-A04"
+                     /db_xref="BOLD:ASAMT089-12.COI-5P"
+                     /db_xref="taxon:2092822"
+                     /country="Canada: Ontario, Guelph, 25 Division Street"
+                     /lat_lon="43.554 N 80.264 W"
+                     /collection_date="18-Aug-2010"
+                     /collected_by="Alex Smith"
+                     /identified_by="Gergin A. Blagoev"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AVP16421.1"
+                     /translation="TLYFLFGIWAGMVGTSLSILIRIELGQPGLFLEDDQTYNVIVTA
+                     HAFIMIFFMIMPIMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWFLPPSLTLLISSSLV
+                     NTGAGTGWTVYPPLSSAIAHTGASVDLAIFSLHLAGVSSILGAVNFITTIINMRSSSM
+                     TFERLPLFVWSVFITAILLLLSLPVLAGAITMLLTDRNINTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 aacattatat tttttattcg gaatttgggc aggaatggta ggtacgagac tgagaatctt
+       61 gattcgtatt gaattgggtc aaccaggttt atttttagag gatgaccaaa catacaatgt
+      121 cattgttaca gcccacgcat ttattataat tttttttata attataccaa ttataattgg
+      181 aggtttcgga aattgacttg tcccacttat gcttggtgcc ccagatatgg ctttcccccg
+      241 tataaataac ataagatttt gatttttacc cccttcatta acacttttaa tttcgagaag
+      301 tttagtaaac acaggagccg gaacaggatg aacagtctat cctcctcttt ctagtgctat
+      361 tgcccatact ggggcttcag tagacttagc tatcttttcc cttcatctag ccggtgtaag
+      421 atcaatttta ggcgctgtaa atttcatcac aacaattatt aatatacgat caagaagaat
+      481 aacatttgaa cgattgcctt tatttgtttg atctgttttt attacagcaa tccttcttct
+      541 tttatcttta ccagttttag ctggggctat taccatatta ttaactgatc gaaatattaa
+      601 tacatcattt tttgacccgg cagggggagg tgacccaatt ttataccaac acttattt
+//
+
+LOCUS       MG376908                 658 bp    DNA     linear   INV 11-JAN-2023
+DEFINITION  Ectopsocus meridionalis voucher BIOUG02071-A05 cytochrome oxidase
+            subunit 1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   MG376908
+VERSION     MG376908.1
+DBLINK      BioProject: PRJNA472144
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Ectopsocus meridionalis
+  ORGANISM  Ectopsocus meridionalis
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Paraneoptera; Psocodea; Psocoptera;
+            Psocomorpha; Homilopsocidea; Lachesilloidea; Ectopsocidae;
+            Ectopsocus.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   deWaard,J.R., Ratnasingham,S., Zakharov,E.V., Borisenko,A.V.,
+            Steinke,D., Telfer,A.C., Perez,K.H.J., Sones,J.E., Young,M.R.,
+            Levesque-Beaudin,V., Sobel,C.N., Abrahamyan,A., Bessonov,K.,
+            Blagoev,G., deWaard,S.L., Ho,C., Ivanova,N.V., Layton,K.K.S.,
+            Lu,L., Manjunath,R., McKeown,J.T.A., Milton,M.A., Miskie,R.,
+            Monkhouse,N., Naik,S., Nikolova,N., Pentinsaari,M., Prosser,S.W.J.,
+            Radulovici,A.E., Steinke,C., Warne,C.P. and Hebert,P.D.N.
+  TITLE     A reference library for Canadian invertebrates with 1.5 million
+            barcodes, voucher specimens, and DNA samples
+  JOURNAL   Sci Data 6 (1), 308 (2019)
+   PUBMED   31811161
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     BIOUG Archive GGBN Data Release
+  JOURNAL   Unpublished
+REFERENCE   3  (bases 1 to 658)
+  AUTHORS   Dewaard,J.R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-NOV-2017) Collections, Centre for Biodiversity
+            Genomics, 50 Stone Road East, Guelph, Ontario N1G 2W1, Canada
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Ectopsocus meridionalis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="BIOUG02071-A05"
+                     /db_xref="BOLD:ASAMT090-12.COI-5P"
+                     /db_xref="taxon:239223"
+                     /country="Canada: Ontario, Guelph, 25 Division Street"
+                     /lat_lon="43.554 N 80.264 W"
+                     /collection_date="18-Aug-2010"
+                     /collected_by="Alex Smith"
+                     /identified_by="Jayme E. Sones"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: ggtcaacaaatcataaagatattgg, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AVP15988.1"
+                     /translation="TLYFLFGIWSGMVGTSLSVLIRLELGQPGLFLEDDQTYNVIVTA
+                     HAFIMIFFMIMPIMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPSLSLLLSSSLV
+                     NTGAGTGWTVYPPLSSVIAHTGASVDLAIFSLHLAGVSSILGAVNFITTIINMRSNGL
+                     TLERMPLFVWSVFITAILLLLSLPVLAGAITMLLTDRNLNTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 aactttatac tttttatttg gaatttggtc tggaatagta ggaactagct taagtgttct
+       61 aattcgacta gaattaggtc aaccaggatt atttttagaa gatgaccaaa cctataatgt
+      121 tattgtaaca gcacacgctt ttattataat tttttttata attataccta ttataattgg
+      181 aggatttgga aattggttag ttcctcttat attaggagca ccagatatag cttttcctcg
+      241 aataaataat ataagatttt gacttcttcc tccatcctta tctcttctac tttcaagtag
+      301 tttagttaat actggtgcag gtacaggatg aactgtttat cctcccctat caagtgttat
+      361 tgcccataca ggggcatctg ttgatttagc tattttttca cttcatttag ctggtgttag
+      421 ttcaatttta ggtgctgtaa attttattac aacaattatt aatatacgat caaacggttt
+      481 aactttagaa cgcatacctt tatttgtttg atctgtattt attacagcaa ttttattatt
+      541 attatctctt ccagtattag ccggagccat tacaatactt cttactgacc gaaacttaaa
+      601 tacatctttt tttgatcctg cgggaggggg agaccctatt ttatatcaac atttattc
+//
+
+LOCUS       KJ424336                 654 bp    DNA     linear   INV 28-JUL-2015
+DEFINITION  Chironomus kiiensis isolate LIA_CK_03 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   KJ424336
+VERSION     KJ424336.1
+KEYWORDS    .
+SOURCE      mitochondrion Chironomus kiiensis
+  ORGANISM  Chironomus kiiensis
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Endopterygota; Diptera; Nematocera;
+            Chironomoidea; Chironomidae; Chironominae; Chironomus.
+REFERENCE   1  (bases 1 to 654)
+  AUTHORS   Amora,G., Hamada,N., Fusari,L.M. and Andrade-Souza,V.
+  TITLE     An Asiatic Chironomid in Brazil: morphology, DNA barcode and
+            bionomics
+  JOURNAL   Zookeys 514, 129-144 (2015)
+   PUBMED   26261436
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 654)
+  AUTHORS   Amora,G., Hamada,N., Fusari,L.M. and Andrade-Souza,V.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-FEB-2014) Coordenacao de Biodiversidade, Instituto
+            Nacional de Pesquisas Da Amazonia, Av. Andre Araujo, 2936.
+            Petropolis, Manaus, Amazonas 69067-375, Brasil
+FEATURES             Location/Qualifiers
+     source          1..654
+                     /organism="Chironomus kiiensis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="LIA_CK_03"
+                     /db_xref="taxon:84408"
+                     /country="Brazil"
+                     /lat_lon="3.11 S 59.98 W"
+                     /collection_date="05-Jan-2011"
+                     /collected_by="G. Amora"
+                     /identified_by="G. Amora"
+     gene            <1..>654
+                     /gene="COI"
+     CDS             <1..>654
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AIC74454.1"
+                     /translation="TLYIIFGAWSGMVGTSLSMLIRAELGRPGTFIGDDQIYNVVVTA
+                     HAFIMIFFMVMPILIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPSLTLLLSSSFV
+                     ENGAGTGWTVYPPLSAAIAHSGASVDLAIFSLHLAGVSSILGSVNFITTVINMRANGI
+                     TLDRMPLFVWSVVITTVLLLLSLPVLAGAITMLLTDRNLNTSFFDPAGGGDPILYQHL
+                     "
+ORIGIN
+        1 acattataca ttatttttgg tgcatgatct ggtatagtag ggacatctct aagaatgctt
+       61 attcgagcag aattaggacg acctggaact tttattggtg acgaccaaat ttataatgtt
+      121 gttgttactg cccacgcatt tattataatt tttttcatag ttatgccaat tttaattggt
+      181 ggattcggaa attgacttgt acctcttata ttaggggctc cagatatagc tttcccacga
+      241 ataaataata taagtttttg attacttcct ccttcattaa ctctccttct ttcaagttca
+      301 tttgtagaaa atggagcagg aacaggatga actgtttatc ctcccttatc cgcagctatt
+      361 gcgcacagag gggcttcggt agacctagct attttttctc ttcatttagc cggagtatca
+      421 tcaattcttg ggtcagtaaa ttttattact acagtaatta atatacgagc aaatggaatt
+      481 actttagatc gaataccttt atttgtatga tctgttgtca ttactactgt tcttctttta
+      541 ctgtctcttc cagttttagc aggagcaatt acaatattat taacagatcg aaatttaaat
+      601 acatcttttt ttgacccagc tggaggaggg gatccaattc tttatcaaca ctta
+//
+
+LOCUS       KJ424334                 654 bp    DNA     linear   INV 28-JUL-2015
+DEFINITION  Chironomus kiiensis isolate LIA_CK_01 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   KJ424334
+VERSION     KJ424334.1
+KEYWORDS    .
+SOURCE      mitochondrion Chironomus kiiensis
+  ORGANISM  Chironomus kiiensis
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Endopterygota; Diptera; Nematocera;
+            Chironomoidea; Chironomidae; Chironominae; Chironomus.
+REFERENCE   1  (bases 1 to 654)
+  AUTHORS   Amora,G., Hamada,N., Fusari,L.M. and Andrade-Souza,V.
+  TITLE     An Asiatic Chironomid in Brazil: morphology, DNA barcode and
+            bionomics
+  JOURNAL   Zookeys 514, 129-144 (2015)
+   PUBMED   26261436
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 654)
+  AUTHORS   Amora,G., Hamada,N., Fusari,L.M. and Andrade-Souza,V.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (07-FEB-2014) Coordenacao de Biodiversidade, Instituto
+            Nacional de Pesquisas Da Amazonia, Av. Andre Araujo, 2936.
+            Petropolis, Manaus, Amazonas 69067-375, Brasil
+FEATURES             Location/Qualifiers
+     source          1..654
+                     /organism="Chironomus kiiensis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /isolate="LIA_CK_01"
+                     /db_xref="taxon:84408"
+                     /country="Brazil"
+                     /lat_lon="3.11 S 59.98 W"
+                     /collection_date="05-Jan-2011"
+                     /collected_by="G. Amora"
+                     /identified_by="G. Amora"
+                     /PCR_primers="fwd_name: LCO1490, fwd_seq:
+                     ggtcaacaaatcataaagatattgg, rev_name: HC02198, rev_seq:
+                     taaacttcagggtgaccaaaaaatca"
+     gene            <1..>654
+                     /gene="COI"
+     CDS             <1..>654
+                     /gene="COI"
+                     /codon_start=1
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AIC74452.1"
+                     /translation="TLYIIFGAWSGMVGTSLSMLIRAELGRPGTFIGDDQIYNVVVTA
+                     HAFIMIFFMVMPILIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPSLTLLLSSSFV
+                     ENGAGTGWTVYPPLSAAIAHSGASVDLAIFSLHLAGVSSILGSVNFITTVINMRANGI
+                     TLDRMPLFVWSVVITTVLLLLSLPVLAGAITMLLTDRNLNTSFFDPAGGGDPILYQHL
+                     "
+ORIGIN
+        1 acattataca ttatttttgg tgcatgatct ggtatagtag ggacatctct aagaatgctt
+       61 attcgagcag aattaggacg acctggaact tttattggtg acgaccaaat ttataatgtt
+      121 gttgttactg cccacgcatt tattataatt tttttcatag ttatgccaat tttaattggt
+      181 ggattcggaa attgacttgt acctcttata ttaggggctc cagatatagc tttcccacga
+      241 ataaataata taagtttttg attacttcct ccttcattaa ctctccttct ttcaagttca
+      301 tttgtagaaa atggagcagg aacaggatga actgtttatc ctcccttatc cgcagctatt
+      361 gcgcacagag gggcttcggt agacctagct attttttctc ttcatttagc cggagtatca
+      421 tcaattcttg ggtcagtaaa ttttattact acagtaatta atatacgagc aaatggaatt
+      481 actttagatc gaataccttt atttgtatga tctgttgtca ttactactgt tcttctttta
+      541 ctgtctcttc cagttttagc aggagcaatt acaatattat taacagatcg aaatttaaat
+      601 acatcttttt ttgacccagc tggaggaggg gatccaattc tttatcaaca ctta
+//
+
+LOCUS       KJ013178                 658 bp    DNA     linear   INV 20-DEC-2014
+DEFINITION  Digama pandaensis voucher ZWIER DNA 0946 cytochrome oxidase subunit
+            1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   KJ013178
+VERSION     KJ013178.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Digama pandaensis
+  ORGANISM  Digama pandaensis
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Endopterygota; Lepidoptera; Glossata;
+            Ditrysia; Noctuoidea; Erebidae; Aganainae; Digama.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   Zwier,J. and Rougerie,R.
+  TITLE     A DNA barcode library for the Aganainae (Lepidoptera: Erebidae,
+            Aganainae)
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Zwier,J. and Rougerie,R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-DEC-2013) Zoologie Forestiere, INRA Orleans, 2163
+            Avenue de la Pomme de Pin, Orleans, Loiret 45075, France
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Digama pandaensis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ZWIER DNA 0946"
+                     /db_xref="BOLD:JZAGA805-12.COI-5P"
+                     /db_xref="taxon:1464567"
+                     /country="Kenya: Sirata Surawa"
+                     /lat_lon="1.56559 N 36.4321 E"
+                     /collection_date="07-May-2010"
+                     /collected_by="Cave & Newton-Chance"
+                     /identified_by="Jaap H. H. Zwier"
+                     /PCR_primers="fwd_seq: gctttcccacgaataaataata, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     gttcawccwgtwccwgcyccattttc"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AHK09897.1"
+                     /translation="TLYFLFGIWAGMVGTSLSLLIRAELGNPGSLIGDDQIYNTIVTA
+                     HAFIMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPSLTLLISSSIV
+                     ENGAGTGWTVYPPLSSNIAHGGSSVDLAIFSLHLAGISSILGAINFITTIINMRLNNL
+                     SFDQMPLFVWAVGITAFLLLLSLPVLAGAITMLLTDRNLNTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 aacattatat tttttatttg gtatttgagc aggtatagta ggaacttctt taagtttact
+       61 aattcgagct gaattaggta acccaggatc attaattgga gatgatcaaa tttataatac
+      121 tattgttaca gctcatgctt ttattataat tttttttata gttatgccta ttataattgg
+      181 aggatttggt aattgactag tacctcttat attaggagcc cccgacatag cttttcctcg
+      241 aataaataat ataagttttt gattattacc tccatcttta actcttttaa tttcaagaag
+      301 aattgtagaa aatggagcag gaactggatg aacagtttac cccccactct catctaatat
+      361 tgctcatgga ggtagatcag ttgatctagc tattttttct ttacatttag ccggtatttc
+      421 ttcaatttta ggagctatta attttattac aacaattatt aatatacgat taaataattt
+      481 atcatttgat caaatacctt tatttgtatg agctgtaggt attacagcat ttttattact
+      541 tctttcatta ccagttttag ctggagctat tacaatatta ctaacagatc gaaatttaaa
+      601 tacatcattt tttgatcctg ctggaggagg agaccctatt ttatatcaac atttattt
+//
+
+LOCUS       KJ013169                 658 bp    DNA     linear   INV 20-DEC-2014
+DEFINITION  Asota kinabaluensis voucher ZWIER DNA 0991 cytochrome oxidase
+            subunit 1 (COI) gene, partial cds; mitochondrial.
+ACCESSION   KJ013169
+VERSION     KJ013169.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Asota kinabaluensis
+  ORGANISM  Asota kinabaluensis
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Endopterygota; Lepidoptera; Glossata;
+            Ditrysia; Noctuoidea; Erebidae; Aganainae; Asota.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   Zwier,J. and Rougerie,R.
+  TITLE     A DNA barcode library for the Aganainae (Lepidoptera: Erebidae,
+            Aganainae)
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Zwier,J. and Rougerie,R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-DEC-2013) Zoologie Forestiere, INRA Orleans, 2163
+            Avenue de la Pomme de Pin, Orleans, Loiret 45075, France
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Asota kinabaluensis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ZWIER DNA 0991"
+                     /db_xref="BOLD:JZAGA850-12.COI-5P"
+                     /db_xref="taxon:1285511"
+                     /country="Malaysia: Sabah, Borneo, Ranau mts."
+                     /lat_lon="5.9439 N 116.667 E"
+                     /collection_date="13-Mar-2005"
+                     /collected_by="Martini"
+                     /identified_by="Jaap H. H. Zwier"
+                     /PCR_primers="fwd_seq: gctttcccacgaataaataata, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     gttcawccwgtwccwgcyccattttc"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AHK09888.1"
+                     /translation="TLYFIFGIWAGMVGTSLSLLIRAELGNPGSLIGDDQIYNTIVTA
+                     HAFIMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPSLTLLISSSIV
+                     ENGAGTGWTVYPPLSSNIAHSGSSVDLAIFSLHLAGISSILGAINFITTIINMRLNSL
+                     SFDQMPLFVWAVGITAFLLLLSLPVLAGAITMLLTDRNLNTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 aacattatat tttatttttg gaatttgagc aggaatagta ggaacatctt taagattatt
+       61 aattcgagct gaattaggta atcctggatc tttaattgga gatgatcaaa tttataatac
+      121 tattgttaca gctcatgctt ttattataat tttttttata gttataccta ttataattgg
+      181 aggatttggt aattgattag tacctcttat attaggagct cctgatatgg cctttcctcg
+      241 aataaataat ataagttttt gacttctacc cccatcatta actttattaa tttcaagaag
+      301 aattgttgaa aatggagcag gaacaggatg aacagtttac cccccacttt catctaatat
+      361 tgctcataga ggaagatcag ttgatttagc tattttttct cttcatttag ctggtatttc
+      421 ttctatttta ggtgctatta attttattac tacaattatt aatatacgat taaatagttt
+      481 atcatttgat caaatacctt tatttgtttg agctgttgga attacagcat tcttattact
+      541 tttatcttta ccagttttag ccggagctat tactatactt cttactgatc gaaatttaaa
+      601 tacatctttt tttgaccccg caggaggagg agatccaatt ctatatcaac atttattt
+//
+
+LOCUS       KJ013170                 658 bp    DNA     linear   INV 20-DEC-2014
+DEFINITION  Neochera inops voucher ZWIER DNA 0904 cytochrome oxidase subunit 1
+            (COI) gene, partial cds; mitochondrial.
+ACCESSION   KJ013170
+VERSION     KJ013170.1
+KEYWORDS    BARCODE.
+SOURCE      mitochondrion Neochera inops
+  ORGANISM  Neochera inops
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Endopterygota; Lepidoptera; Glossata;
+            Ditrysia; Noctuoidea; Erebidae; Aganainae; Neochera.
+REFERENCE   1  (bases 1 to 658)
+  AUTHORS   Zwier,J. and Rougerie,R.
+  TITLE     A DNA barcode library for the Aganainae (Lepidoptera: Erebidae,
+            Aganainae)
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 658)
+  AUTHORS   Zwier,J. and Rougerie,R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (20-DEC-2013) Zoologie Forestiere, INRA Orleans, 2163
+            Avenue de la Pomme de Pin, Orleans, Loiret 45075, France
+FEATURES             Location/Qualifiers
+     source          1..658
+                     /organism="Neochera inops"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /specimen_voucher="ZWIER DNA 0904"
+                     /db_xref="BOLD:JZAGA763-12.COI-5P"
+                     /db_xref="taxon:1126721"
+                     /country="Laos: Nang Phoa"
+                     /lat_lon="20.49 N 102.335 E"
+                     /collection_date="05-Aug-2009"
+                     /collected_by="Lux"
+                     /identified_by="Jaap H. H. Zwier"
+                     /PCR_primers="fwd_seq: gctttcccacgaataaataata, rev_seq:
+                     taaacttctggatgtccaaaaaatca"
+                     /PCR_primers="fwd_seq: attcaaccaatcataaagatattgg, rev_seq:
+                     gttcawccwgtwccwgcyccattttc"
+     gene            <1..>658
+                     /gene="COI"
+     CDS             <1..>658
+                     /gene="COI"
+                     /codon_start=2
+                     /transl_table=5
+                     /product="cytochrome oxidase subunit 1"
+                     /protein_id="AHK09889.1"
+                     /translation="TLYFIFGIWAGMVGTSLSLLIRAELGNPGSLIGDDQIYNTIVTA
+                     HAFIMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPSLTLLISSSIV
+                     ENGAGTGWTVYPPLSSNIAHGGSSVDLAIFSLHLAGISSILGAINFITTIINMRLNNL
+                     SFDQMPLFVWAVGITAFLLLLSLPVLAGAITMLLTDRNLNTSFFDPAGGGDPILYQHL
+                     F"
+ORIGIN
+        1 aacattatat tttatttttg gaatttgagc aggaatagta ggaacttctt taagattatt
+       61 aattcgagct gaattaggta atccaggatc tttaattggt gatgatcaaa tttataatac
+      121 tattgttaca gctcatgctt ttattataat ttttttcata gtaataccta ttataattgg
+      181 agggtttgga aattgattag tccctcttat attaggtgcc cctgatatag ctttcccccg
+      241 aataaataat ataagttttt gacttctgcc cccatcatta actttattaa tttcaagaag
+      301 aattgtagaa aatggagcag gaacaggatg aacagtttac cccccactct catctaatat
+      361 tgcccatgga ggaagatcag ttgatttagc tattttttct cttcatttag ctggtatttc
+      421 atcaatttta ggagctatta attttattac cactattatt aatatacgat taaataattt
+      481 atcatttgat caaatacctt tatttgtatg agctgtaggt attacagcat ttttattact
+      541 tctttcatta ccagttttag caggagctat tactatatta ttaacagatc gaaatttaaa
+      601 tacatctttt tttgatccag ctggaggtgg agatcctatt ttatatcaac atttattt
+//
+
