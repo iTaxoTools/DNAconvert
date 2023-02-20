@@ -1,6 +1,7 @@
 from .record import *
 from typing import List, Optional, Tuple, Iterator, TextIO, Dict, Callable, Any
 import re
+import warnings
 
 
 def logical_lines(file: TextIO) -> Iterator[str]:
@@ -28,7 +29,7 @@ def logical_lines(file: TextIO) -> Iterator[str]:
         # check if it's a continuation
         if line[0:12].isspace():
             # if yes, add to the current logical line
-            current = current + ' ' + line.strip()
+            current = current + " " + line.strip()
         else:
             # else, yield the current logical line and begin a new one
             yield current
@@ -99,10 +100,10 @@ def collect_features(lines: Iterator[str]) -> Dict[str, str]:
     # save the first "/product" feature and iterate until the "ORIGIN" line
     while not line.startswith("ORIGIN"):
         # only search for "/product" if it's not already found
-        if not 'product' in features.keys():
+        if not "product" in features.keys():
             m = re.search(r'/product="([^"]*)"', line)
             if m:
-                features.setdefault('product', m.group(1))
+                features.setdefault("product", m.group(1))
         try:
             line = next(lines)
         except StopIteration:
@@ -128,59 +129,184 @@ def read_sequence(lines: Iterator[str]) -> str:
         # collect all the sequence parts, ignore the numbers
         for word in line.split():
             if not word.isdigit():
-                if word.endswith(r'//'):
+                if word.endswith(r"//"):
                     sequence = sequence + word[:-2]
                     return sequence
                 sequence = sequence + word
-        if line.startswith(r'//'):
+        if line.startswith(r"//"):
             return sequence
 
 
 # field that need to be present in every record
 gb_required_fields = ["accession", "authors", "title", "journal"]
 # optional fields
-gb_optional_fields = ['organism', 'mol_type', 'altitude', 'bio_material', 'cell_line', 'cell_type', 'chromosome', 'citation', 'clone', 'clone_lib', 'collected_by', 'collection_date', 'country', 'cultivar', 'culture_collection', 'db_xref', 'dev_stage', 'ecotype', 'environmental_samplefocus', 'germlinehaplogroup', 'haplotype', 'host', 'identified_by', 'isolate',
-                      'isolation_source', 'lab_host', 'lat_lon', 'macronuclearmap', 'mating_type', 'metagenome_source', 'note', 'organelle', 'PCR_primersplasmid', 'pop_variant', 'product', 'proviralrearrangedsegment', 'serotype', 'serovar', 'sex', 'specimen_voucher', 'strain', 'sub_clone', 'submitter_seqid', 'sub_species', 'sub_strain', 'tissue_lib', 'tissue_type', 'transgenictype_material', 'variety']
+gb_optional_fields = [
+    "organism",
+    "mol_type",
+    "altitude",
+    "bio_material",
+    "cell_line",
+    "cell_type",
+    "chromosome",
+    "citation",
+    "clone",
+    "clone_lib",
+    "collected_by",
+    "collection_date",
+    "country",
+    "cultivar",
+    "culture_collection",
+    "db_xref",
+    "dev_stage",
+    "ecotype",
+    "environmental_samplefocus",
+    "germlinehaplogroup",
+    "haplotype",
+    "host",
+    "identified_by",
+    "isolate",
+    "isolation_source",
+    "lab_host",
+    "lat_lon",
+    "macronuclearmap",
+    "mating_type",
+    "metagenome_source",
+    "note",
+    "organelle",
+    "PCR_primersplasmid",
+    "pop_variant",
+    "product",
+    "proviralrearrangedsegment",
+    "serotype",
+    "serovar",
+    "sex",
+    "specimen_voucher",
+    "strain",
+    "sub_clone",
+    "submitter_seqid",
+    "sub_species",
+    "sub_strain",
+    "tissue_lib",
+    "tissue_type",
+    "transgenictype_material",
+    "variety",
+]
 # fields in the required order
-gb_fields = ["seqid", "organism", "accession", "specimen_voucher", "strain", "isolate", "country", "sequence", "authors", "title", "journal", 'mol_type', 'altitude', 'bio_material', 'cell_line', 'cell_type', 'chromosome', 'citation', 'clone', 'clone_lib', 'collected_by', 'collection_date', 'cultivar', 'culture_collection', 'db_xref', 'dev_stage', 'ecotype', 'environmental_samplefocus', 'germlinehaplogroup',
-             'haplotype', 'host', 'identified_by', 'isolation_source', 'lab_host', 'lat_lon', 'macronuclearmap', 'mating_type', 'metagenome_source', 'note', 'organelle', 'PCR_primersplasmid', 'pop_variant', 'product', 'proviralrearrangedsegment', 'serotype', 'serovar', 'sex', 'sub_clone', 'submitter_seqid', 'sub_species', 'sub_strain', 'tissue_lib', 'tissue_type', 'transgenictype_material', 'variety']
+gb_fields = [
+    "seqid",
+    "organism",
+    "accession",
+    "specimen_voucher",
+    "strain",
+    "isolate",
+    "country",
+    "sequence",
+    "authors",
+    "title",
+    "journal",
+    "mol_type",
+    "altitude",
+    "bio_material",
+    "cell_line",
+    "cell_type",
+    "chromosome",
+    "citation",
+    "clone",
+    "clone_lib",
+    "collected_by",
+    "collection_date",
+    "cultivar",
+    "culture_collection",
+    "db_xref",
+    "dev_stage",
+    "ecotype",
+    "environmental_samplefocus",
+    "germlinehaplogroup",
+    "haplotype",
+    "host",
+    "identified_by",
+    "isolation_source",
+    "lab_host",
+    "lat_lon",
+    "macronuclearmap",
+    "mating_type",
+    "metagenome_source",
+    "note",
+    "organelle",
+    "PCR_primersplasmid",
+    "pop_variant",
+    "product",
+    "proviralrearrangedsegment",
+    "serotype",
+    "serovar",
+    "sex",
+    "sub_clone",
+    "submitter_seqid",
+    "sub_species",
+    "sub_strain",
+    "tissue_lib",
+    "tissue_type",
+    "transgenictype_material",
+    "variety",
+]
 
 
 class GenbankFile:
-    """clase for the Genbank flatfile"""
+    """class for the Genbank flatfile"""
 
-    @ staticmethod
+    @staticmethod
+    def _identify_record(
+        metadata: Dict[str, str], features: Dict[str, str], sequence: str
+    ) -> Tuple[str, str]:
+        for field in gb_required_fields:
+            if field in metadata:
+                return field, metadata[field]
+        for field in gb_optional_fields:
+            if field in features:
+                return field, features[field]
+        return "sequence", sequence[:20]
+
+    @staticmethod
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
         """Genbank flatfile reader method"""
+
         def record_generator() -> Iterator[Record]:
             # prepare the iterator over the logical lines
             lines = logical_lines(file)
             while True:
                 # collect the major attributes of a record
                 metadata = collect_metadata(lines)
-                if not metadata:
+                if metadata is None:
                     # EOF
                     break
                 else:
                     # read the features and the sequence
                     features = collect_features(lines)
                     sequence = read_sequence(lines)
-                    # initialize the record
-                    record = Record(
-                        seqid=metadata["definition"], sequence=sequence)
-                    # write the fields of the record
-                    for field in gb_required_fields:
-                        record[field] = metadata[field]
+                    try:
+                        # initialize the record
+                        record = Record(seqid=metadata["definition"], sequence=sequence)
+                        # write the fields of the record
+                        for field in gb_required_fields:
+                            record[field] = metadata[field]
+                    except KeyError as e:
+                        key, val = GenbankFile._identify_record(
+                            metadata, features, sequence
+                        )
+                        warnings.warn(
+                            f'The record with {key} "{val}" is missing {e.args[0]}. Skipping'
+                        )
+                        continue
                     for field in gb_optional_fields:
                         try:
                             record[field] = features[field]
                         except KeyError:
                             record[field] = ""
                     yield record
+
         return gb_fields, record_generator
 
-    @ staticmethod
+    @staticmethod
     def write(_: Any) -> None:
         """Genbank flatfile cannot be written"""
-        raise ValueError(
-            "Conversion to the Genbank flat file format is not supported")
+        raise ValueError("Conversion to the Genbank flat file format is not supported")
