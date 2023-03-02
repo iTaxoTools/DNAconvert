@@ -82,9 +82,10 @@ def collect_metadata(lines: Iterator[str]) -> Optional[Dict[str, str]]:
     return metadata
 
 
-def collect_features(lines: Iterator[str]) -> Dict[str, str]:
+def collect_features(lines: Iterator[str]) -> Optional[Dict[str, str]]:
     """
     Returns the dictionary of "source" features with the first "/product" feature.
+    Returns `None` if EOF is reached
 
     Precondition: beginning of 'lines' is immediately after the "FEATURES" line
     Postcondition: beginning of 'lines' is immediately after the "ORIGIN" line
@@ -92,7 +93,10 @@ def collect_features(lines: Iterator[str]) -> Dict[str, str]:
     # iterate until the "source" line
     line = find_line(lines, "source")
     if not line:
-        raise ValueError("The Genbank file is missing a FEATURES field")
+        warnings.warn(
+            "A record in the Genbank file is missing a FEATURES field. Further parsing is impossible."
+        )
+        return None
     # collect the features from the logical line
     features: Dict[str, str] = {}
     for match in re.finditer(r'/([^=]*)="([^"]*)"', line):
@@ -107,14 +111,15 @@ def collect_features(lines: Iterator[str]) -> Dict[str, str]:
         try:
             line = next(lines)
         except StopIteration:
-            raise ValueError("The Genbank file is missing a sequence")
+            return None
     return features
 
 
-def read_sequence(lines: Iterator[str]) -> str:
+def read_sequence(lines: Iterator[str]) -> Optional[str]:
     """
     Returns the sequence from the current record
     sequence = ""
+    Returns `None` if EOF is reached
 
     Precondition: beginning of 'lines' is immediately after the "ORIGIN" line
     Postcondition: beginning of 'lines' is immediately after the record
@@ -125,7 +130,7 @@ def read_sequence(lines: Iterator[str]) -> str:
         try:
             line = next(lines)
         except StopIteration:
-            raise ValueError("The Genbank file has an incomplete sequence")
+            return None
         # collect all the sequence parts, ignore the numbers
         for word in line.split():
             if not word.isdigit():
@@ -279,30 +284,41 @@ class GenbankFile:
                 if metadata is None:
                     # EOF
                     break
-                else:
-                    # read the features and the sequence
-                    features = collect_features(lines)
-                    sequence = read_sequence(lines)
+                # read the features and the sequence
+                features = collect_features(lines)
+                if features is None:
+                    # EOF
+                    break
+                sequence = read_sequence(lines)
+                if sequence is None:
+                    # EOF
+                    break
+                # initialize the record
+                try:
+                    seqid = metadata["definition"]
+                except KeyError:
+                    key, val = GenbankFile._identify_record(
+                        metadata, features, sequence
+                    )
+                    warnings.warn(
+                        f'The record with {key} "{val}" is missing the definition.'
+                        "A seqid cannot be obtained. "
+                        "Skipping"
+                    )
+                    continue
+                record = Record(seqid=seqid, sequence=sequence)
+                # write the fields of the record
+                for field in gb_required_fields:
                     try:
-                        # initialize the record
-                        record = Record(seqid=metadata["definition"], sequence=sequence)
-                        # write the fields of the record
-                        for field in gb_required_fields:
-                            record[field] = metadata[field]
-                    except KeyError as e:
-                        key, val = GenbankFile._identify_record(
-                            metadata, features, sequence
-                        )
-                        warnings.warn(
-                            f'The record with {key} "{val}" is missing {e.args[0]}. Skipping'
-                        )
-                        continue
-                    for field in gb_optional_fields:
-                        try:
-                            record[field] = features[field]
-                        except KeyError:
-                            record[field] = ""
-                    yield record
+                        record[field] = metadata[field]
+                    except KeyError:
+                        record[field] = ""
+                for field in gb_optional_fields:
+                    try:
+                        record[field] = features[field]
+                    except KeyError:
+                        record[field] = ""
+                yield record
 
         return gb_fields, record_generator
 
