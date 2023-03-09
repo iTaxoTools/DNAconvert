@@ -34,7 +34,7 @@ def parse_format(name: Optional[str], ext_pair: Tuple[str, str]) -> Optional[Typ
     """
     Lookups the format class based on the format name or the extensions.
 
-    Only checks the extensions, if the name is None.
+    Only checks the extensions, if the name is None or "".
     Two-part extension has the priority
 
     Examples:
@@ -234,13 +234,20 @@ def launch_gui() -> None:
     outfile_entry = ttk.Entry(mainframe, textvariable=outfile_name)
 
     # create format comboboxes
+    INFER_FORMAT = "Inferred from extension"
     informat = tk.StringVar()
+    informat.set(INFER_FORMAT)
     outformat = tk.StringVar()
+    outformat.set(INFER_FORMAT)
     informatBox = ttk.Combobox(
-        mainframe, textvariable=informat, values=formats.informats_gui
+        mainframe,
+        textvariable=informat,
+        values=([INFER_FORMAT] + formats.informats_gui),
     )
     outformatBox = ttk.Combobox(
-        mainframe, textvariable=outformat, values=formats.outformats_gui
+        mainframe,
+        textvariable=outformat,
+        values=([INFER_FORMAT] + formats.outformats_gui),
     )
 
     # create input boxes for small conversions
@@ -303,7 +310,7 @@ def launch_gui() -> None:
             outfile_name.set(newpath)
 
     def small_convert() -> None:
-        if not (informat.get() and outformat.get()):
+        if informat.get() == INFER_FORMAT or outformat.get() == INFER_FORMAT:
             raise ValueError("For small conversions both format need to be specified")
         input_data = io.StringIO(input_box.text.get("1.0", "end"))
         output_data = io.StringIO()
@@ -332,11 +339,17 @@ def launch_gui() -> None:
                 if not infile_name.get():
                     small_convert()
                 else:
+                    informat_arg = (
+                        "" if informat.get() == INFER_FORMAT else informat.get()
+                    )
+                    outformat_arg = (
+                        "" if outformat.get() == INFER_FORMAT else outformat.get()
+                    )
                     convert_wrapper(
                         infile_name.get(),
                         outfile_name.get(),
-                        informat.get(),
-                        outformat.get(),
+                        informat_arg,
+                        outformat_arg,
                         allow_empty_sequences=allow_empty_sequences.get(),
                         automatic_renaming=automatic_renaming.get(),
                         preserve_spaces=preserve_spaces.get(),

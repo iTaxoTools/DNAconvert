@@ -506,9 +506,8 @@ class MolDFastaFile:
         """MolD writer method"""
 
         # assemble the name from fields if 'specimen_voucher' or 'isolate' is missing
-        # in this case, also put a limit on number of characters
         name_assembler = NameAssembler(fields, abbreviate_species=True)
-        unicifier = Unicifier(10)
+        unicifier = Unicifier()
 
         # the writing loop
         while True:
@@ -531,12 +530,14 @@ class MolDFastaFile:
                     else record["isolate"]
                 )
                 name = sanitize(name)
-            elif (
-                len(fields) == 3
-            ):  # the record only contains seqid, species and the sequence
-                name = sanitize(record["seqid"])
             else:
-                name = unicifier.unique(name_assembler.name(record))
+                try:
+                    name = sanitize(record["seqid"])
+                except KeyError:
+                    name = unicifier.unique(name_assembler.name(record))
+                    warnings.warn(
+                        f'A record has no sequence identifier. Using "{name}" as a sequence identifier'
+                    )
             species = (
                 record["species"]
                 if "species" in fields
