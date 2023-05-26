@@ -75,6 +75,39 @@ class Fastafile:
         return fields, record_generator
 
 
+class FastafileNoGaps:
+    """Class for standard FASTA files without gaps"""
+
+    @staticmethod
+    def write(file: TextIO, fields: List[str]) -> Generator:
+        """FASTA no gaps writer method"""
+        # the standard NameAssembler
+        name_assembler = NameAssembler(fields)
+
+        # the writing loop
+        while True:
+            # receive a record
+            try:
+                record = yield
+            except GeneratorExit:
+                break
+
+            # print the unique name
+            print(">", name_assembler.name(record), sep="", file=file)
+
+            # remove gaps from the sequence
+            record["sequence"] = record["sequence"].replace("-", "")
+
+            # print the sequence
+            print(record["sequence"], file=file)
+
+    @staticmethod
+    def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
+        """FASTA no gaps reader method"""
+
+        raise ValueError("fasta_nogaps is an invalid input format. Use fasta instead.")
+
+
 class UnicifierSN(Unicifier):
     """
     Unicifier specialized to generate species names for Hapview
@@ -278,7 +311,8 @@ class NameAssemblerGB(NameAssembler):
     """
     A specialization of NameAssembler of Genbank FASTA.
 
-    It gives the higher priority to copying the seqid. Otherwise it is assembled from the organism and specimen_voucher field"""
+    It gives the higher priority to copying the seqid. Otherwise it is assembled from the organism and specimen_voucher field
+    """
 
     def __init__(self, fields: List[str]):
         if "seqid" in fields:
