@@ -33,6 +33,7 @@ formats: Dict[str, Type[Any]] = dict(
     tab=tabfile.Tabfile,
     tab_noheaders=tabfile.NoHeaderTab,
     fasta=fasta.Fastafile,
+    fasta_nogaps=fasta.FastafileNoGaps,
     relaxed_phylip=phylip.RelPhylipFile,
     fasta_hapview=fasta.HapviewFastafile,
     phylip=phylip.PhylipFile,
@@ -49,6 +50,7 @@ informats_gui = list(formats.keys())
 informats_gui.remove(
     "fasta_hapview"
 )  # this line can be removed if fasta_hapview is checked to work correctly
+informats_gui.remove("fasta_nogaps")
 
 outformats_gui = list(formats.keys())
 outformats_gui.remove(
