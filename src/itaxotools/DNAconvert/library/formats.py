@@ -18,11 +18,22 @@ else:
         "The value of 'nexus_parser' in 'config.json' should be either 'python-nexus' or 'internal'"
     )
 
+# To add a new format
+# add format_name=format_class to `formats`
+#
+# for output-only formats
+# informats_gui.remove(format_name)
+#
+# for input-only formats
+# outformats_gui.remove(format_name)
+
+
 # formats' names dictionary
 formats: Dict[str, Type[Any]] = dict(
     tab=tabfile.Tabfile,
     tab_noheaders=tabfile.NoHeaderTab,
     fasta=fasta.Fastafile,
+    fasta_nogaps=fasta.FastafileNoGaps,
     relaxed_phylip=phylip.RelPhylipFile,
     fasta_hapview=fasta.HapviewFastafile,
     phylip=phylip.PhylipFile,
@@ -36,10 +47,15 @@ formats: Dict[str, Type[Any]] = dict(
 )
 
 informats_gui = list(formats.keys())
-informats_gui.remove("fasta_hapview")
+informats_gui.remove(
+    "fasta_hapview"
+)  # this line can be removed if fasta_hapview is checked to work correctly
+informats_gui.remove("fasta_nogaps")
 
 outformats_gui = list(formats.keys())
-outformats_gui.remove("fasta_hapview")
+outformats_gui.remove(
+    "fasta_hapview"
+)  # this line can be removed if fasta_hapview is checked to work correctly
 outformats_gui.remove("genbank")
 
 # extensions' dictionary

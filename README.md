@@ -49,6 +49,7 @@ Specifying names of the output files:
 * `tab`: [Internal tab format][1]
 * `tab_noheaders`: [Internal tab format][1] without headers
 * `fasta`: FASTA format
+* `fasta_nogaps`: Output-only FASTA format with gaps removed
 * `relaxed_phylip`: relaxed Phylip format
 * `fasta_hapview`: FASTA format for Haplotype Viewer
 * `phylip`: Phylip format
