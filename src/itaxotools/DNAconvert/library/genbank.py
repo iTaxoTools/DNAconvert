@@ -186,6 +186,7 @@ gb_optional_fields = [
     "serovar",
     "sex",
     "specimen_voucher",
+    "type_material",
     "strain",
     "sub_clone",
     "submitter_seqid",
@@ -195,6 +196,7 @@ gb_optional_fields = [
     "tissue_type",
     "transgenictype_material",
     "variety",
+    "locus",
 ]
 # fields in the required order
 gb_fields = [
@@ -202,6 +204,7 @@ gb_fields = [
     "organism",
     "accession",
     "specimen_voucher",
+    "type_material",
     "strain",
     "isolate",
     "country",
@@ -209,6 +212,7 @@ gb_fields = [
     "authors",
     "title",
     "journal",
+    "locus",
     "mol_type",
     "altitude",
     "bio_material",
