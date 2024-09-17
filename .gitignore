@@ -10,6 +10,8 @@ build/
 dist/
 *.whl
 
+.DS_Store
+
 Pipfile
 Pipfile.lock
 
