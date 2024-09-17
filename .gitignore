@@ -1,6 +1,7 @@
 __pycache__
 testfiles/
 references/
+.pytest_cache/
 .vim/
 venv/
 pyrightconfig.json
