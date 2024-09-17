@@ -1,15 +1,29 @@
 # DNAconvert
+
+[![GitHub - Tests](https://img.shields.io/github/actions/workflow/status/iTaxoTools/DNAconvert/test.yml?label=tests)](
+    https://github.com/iTaxoTools/DNAconvert/actions/workflows/test.yml)
+[![GitHub - Windows](https://img.shields.io/github/actions/workflow/status/iTaxoTools/DNAconvert/windows.yml?label=windows)](
+    https://github.com/iTaxoTools/DNAconvert/actions/workflows/windows.yml)
+[![GitHub - macOS](https://img.shields.io/github/actions/workflow/status/iTaxoTools/DNAconvert/macos.yml?label=macos)](
+    https://github.com/iTaxoTools/DNAconvert/actions/workflows/macos.yml)
+
 Convert between different file formats containing genetic information.
 
 ## Installation
-Install the latest version directly using pip (requires Python 3.8 or later):
+Install the latest version directly using pip (requires Python 3.8.6 or later):
 ```
 pip install git+https://github.com/iTaxoTools/DNAconvert.git#egg=DNAconvert
 ```
 
 ## Executables
-Download and run the standalone executables without installing Python.</br>
-[See the latest release here.](https://github.com/iTaxoTools/DNAconvert/releases/latest)
+Download and run the standalone executables without installing Python.
+
+[![Release](https://img.shields.io/badge/release-1.1.0-red?style=for-the-badge)](
+    https://github.com/iTaxoTools/DNAconvert/releases/v1.1.0)
+[![Windows](https://img.shields.io/badge/Windows-blue.svg?style=for-the-badge&logo=windows)](
+    https://github.com/iTaxoTools/DNAconvert/releases/download/v1.1.0/DNAconvert-1.1.0-windows-x64.exe)
+[![MacOS](https://img.shields.io/badge/macOS-slategray.svg?style=for-the-badge&logo=apple)](
+    https://github.com/iTaxoTools/DNAconvert/releases/download/v1.1.0/DNAconvert-1.1.0-macos-universal2.dmg)
 
 ## Usage
     usage: DNAconvert [-h] [--cmd] [--allow_empty_sequences]
@@ -95,17 +109,8 @@ In the file `DNAconvert/config.json` (found in `%APPDATA%\iTaxoTools` or in `$XD
 determines the parser. `(method)` is either `internal` or `python-nexus`.
 
 ## Generating an executable
-Using [PyInstaller](http://www.pyinstaller.org) is recommended. You should first clone the repository and install DNAconvert with all dependencies (includes PyInstaller):
-```
-git clone https://github.com/iTaxoTools/DNAconvert.git
-cd DNAconvert
-pip install ".[dev]"
-```
-
-After the following instruction, the directory `dist` will be created (among others) and the executable will be inside it:
-```
-pyinstaller scripts/DNAconvert.spec
-```
+Scripts for building Windows and macOS executables are included in the `tools` folder.
+Executables are also built automatically using GitHub actions.
 
 ## Dependencies
 Automatically installed when using pip:
