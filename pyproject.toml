@@ -2,3 +2,53 @@
 requires = ["setuptools>=40.8.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "DNAconvert"
+dynamic = ["version"]
+description = "Converts between genetic formats"
+readme = "README.md"
+requires-python = ">=3.8.6, <4"
+keywords = []
+authors = [
+    { name = "Vladimir Kharchev" },
+]
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "python-nexus",
+    "appdirs",
+    "dendropy",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller",
+    "pytest",
+]
+
+[project.entry-points.pyinstaller40]
+hook-dirs = "itaxotools.__pyinstaller.DNAconvert:get_hook_dirs"
+tests = "itaxotools.__pyinstaller.DNAconvert:get_PyInstaller_tests"
+
+[project.scripts]
+DNAconvert = "itaxotools.DNAconvert:main"
+
+[project.urls]
+Homepage = "https://itaxotools.org/"
+Source = "https://github.com/iTaxoTools/DNAconvert"
+
+[tool.setuptools.packages.find]
+namespaces = true
+where = ["src"]
+
+[tool.setuptools_scm]
