@@ -111,7 +111,7 @@ def main(path: str):
     with open(path) as file:
         text = file.read()
 
-    wheels = safe_load(text)
+    wheels = safe_load(text) or []
 
     with tempfile.TemporaryDirectory() as tmp_dir:
         download_wheels(wheels, Path(tmp_dir))
