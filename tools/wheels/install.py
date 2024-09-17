@@ -101,6 +101,8 @@ def download_wheels(wheels: list[dict], tmp_dir: Path):
 
 def install_all(tmp_dir: Path):
     wheels = list(tmp_dir.glob("*.whl")) + list(tmp_dir.glob("*.tar.gz"))
+    if not wheels:
+        return
     cmd = [sys.executable, "-m", "pip", "install", "--force-reinstall"]
     cmd.extend(wheel.name for wheel in wheels)
     print("Running:", " ".join(cmd))
