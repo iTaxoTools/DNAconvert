@@ -353,6 +353,7 @@ class GenbankFastaFile:
         "dev-stage",
         "ecotype",
         "environmental-samplefocus",
+        "geo_loc_name",
         "germlinehaplogroup",
         "haplotype",
         "host",
