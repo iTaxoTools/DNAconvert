@@ -353,6 +353,7 @@ class GenbankFastaFile:
         "dev-stage",
         "ecotype",
         "environmental-samplefocus",
+        "geo_loc_name",
         "germlinehaplogroup",
         "haplotype",
         "host",
@@ -559,9 +560,11 @@ class MolDFastaFile:
                 name = (
                     record["specimen_voucher"]
                     if "specimen_voucher" in fields
-                    else record["specimen-voucher"]
-                    if "specimen-voucher" in fields
-                    else record["isolate"]
+                    else (
+                        record["specimen-voucher"]
+                        if "specimen-voucher" in fields
+                        else record["isolate"]
+                    )
                 )
                 name = sanitize(name)
             else:
@@ -575,9 +578,7 @@ class MolDFastaFile:
             species = (
                 record["species"]
                 if "species" in fields
-                else record["organism"]
-                if "organism" in fields
-                else ""
+                else record["organism"] if "organism" in fields else ""
             )
             species = sanitize(species)
             if not species:
@@ -651,6 +652,7 @@ class AliFile:
                 else:
                     spaces_count = seq_start_match.start()
                 sequence = "?" * spaces_count + sequence[spaces_count:]
+                sequence = sequence.replace("*", "-")
                 yield Record(seqid=seqid, sequence=sequence)
 
         return fields, record_generator
