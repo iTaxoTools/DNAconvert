@@ -86,7 +86,10 @@ def convertDNA(
     fields, records = informat.read(infile)
 
     # start the writer
-    writer = outformat.write(outfile, fields)
+    if hasattr(outformat, "write_takes_kwargs"):
+        writer = outformat.write(outfile, fields, **options)
+    else:
+        writer = outformat.write(outfile, fields)
     next(writer)
 
     # keep track of the number of skipped records
