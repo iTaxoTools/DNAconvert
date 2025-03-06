@@ -536,8 +536,10 @@ class GenbankFastaFile:
 class MolDFastaFile:
     """class for MolD FASTA format"""
 
+    write_take_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options) -> Generator:
         """MolD writer method"""
 
         # assemble the name from fields if 'specimen_voucher' or 'isolate' is missing
@@ -566,10 +568,15 @@ class MolDFastaFile:
                         else record["isolate"]
                     )
                 )
-                name = sanitize(name)
+                if options.preserve_special:
+                    name = sanitize(name)
             else:
                 try:
-                    name = sanitize(record["seqid"])
+                    name = (
+                        sanitize(record["seqid"])
+                        if options.preserve_special
+                        else record["seqid"]
+                    )
                 except KeyError:
                     name = unicifier.unique(name_assembler.name(record))
                     warnings.warn(
@@ -580,7 +587,8 @@ class MolDFastaFile:
                 if "species" in fields
                 else record["organism"] if "organism" in fields else ""
             )
-            species = sanitize(species)
+            if options.preserve_special:
+                species = sanitize(species)
             if not species:
                 raise ValueError(
                     'Conversion to MolD FASTA requires either a "species" or an "organism" field. Neither was found'
