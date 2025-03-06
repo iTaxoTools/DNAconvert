@@ -83,7 +83,10 @@ def convertDNA(
         return
 
     # initialize reading the file
-    fields, records = informat.read(infile)
+    if hasattr(informat, "read_takes_kwargs"):
+        fields, records = informat.read(infile, **options)
+    else:
+        fields, records = informat.read(infile)
 
     # start the writer
     if hasattr(outformat, "write_takes_kwargs"):
