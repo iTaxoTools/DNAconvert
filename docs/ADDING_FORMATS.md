@@ -22,6 +22,26 @@ The `read` method receives an input file `file`. It should return a list of fiel
 yield one-by-one objects of class `Record`, which together contain all the relevant information in the file. Each `Record` must contain at
 least all the fields named in the list. Can raise `ValueError`, if the file cannot be parsed.
 
+### Accessing options
+It's possible for the methods of format classes to access options set by the user.
+
+For the `write` method to access the options add `write_takes_kwargs` attribute and change the signature of the `write` method as follows:
+```python
+write_takes_kwargs = True
+@staticmethod
+def write(file, fields, **options)
+```
+
+For the `read` method to access the options add `read_takes_kwargs` attribute and change the signature of the `write` method as follows:
+```python
+read_takes_kwargs = True
+@staticmethod
+def read(file, **options)
+```
+
+`options` is a dictionary of booleans. Currently the only relevant options is `options.preserve_special`. If it's set, special characters
+in sequence names should be left unchanged.
+
 ## Registering the format
 In the file `lib\formats.py`
 1) Import the module
