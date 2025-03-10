@@ -85,7 +85,7 @@ class NoHeaderTab:
     """Class for reading and writing tab-separated files without headers with genetic information"""
 
     dna_characters = set("ATGCRYMKSWBDHVNUatgcrymkswbdhvnu-?")
-    read_take_kwargs = True
+    read_takes_kwargs = True
 
     @staticmethod
     def is_sequence(s: str) -> bool:

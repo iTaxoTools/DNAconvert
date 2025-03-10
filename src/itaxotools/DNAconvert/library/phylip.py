@@ -8,13 +8,14 @@ class RelPhylipFile:
     """
     class for the relaxed Phylip format
     """
+
     @staticmethod
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
         """
         the reader method for the relaxed Phylip format
         """
         # Phylip always have the same fields
-        fields = ['seqid', 'sequence']
+        fields = ["seqid", "sequence"]
 
         def record_generator() -> Iterator[Record]:
             # skip the first line
@@ -28,10 +29,13 @@ class RelPhylipFile:
                 name, _, sequence = line.partition(" ")
                 # return the record
                 yield Record(seqid=name, sequence=sequence)
+
         return fields, record_generator
 
+    write_takes_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options: bool) -> Generator:
         """
         the writer method for the relaxed Phylip format
         """
@@ -53,28 +57,30 @@ class RelPhylipFile:
         # formats all the sequences to the same maximum length
         aligner = dna_aligner(max_length, min_length)
         # generate the seqid from the fields
-        name_assembler = NameAssembler(fields)
+        name_assembler = NameAssembler(
+            fields, preserve_special=options.preserve_special
+        )
 
         # print the relaxed Phylip heading
         print(len(records), max_length, file=file)
 
         # print the records
         for record in records:
-            print(name_assembler.name(record), aligner(
-                record['sequence']), file=file)
+            print(name_assembler.name(record), aligner(record["sequence"]), file=file)
 
 
 class PhylipFile:
     """
     class for the Phylip format
     """
+
     @staticmethod
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
         """
         the reader method for the Phylip format
         """
         # Phylip always have the same fields
-        fields = ['seqid', 'sequence']
+        fields = ["seqid", "sequence"]
 
         def record_generator() -> Iterator[Record]:
             # skip the first line
@@ -89,10 +95,13 @@ class PhylipFile:
                 # everything else in the sequence
                 sequence = line[10:]
                 yield Record(seqid=name, sequence=sequence)
+
         return fields, record_generator
 
+    write_takes_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options: bool) -> Generator:
         """
         the writer method for the Phylip format
         """
@@ -114,7 +123,9 @@ class PhylipFile:
         # formats all the sequences to the same maximum length
         aligner = dna_aligner(max_length, min_length)
         # generate the seqid from the fields
-        name_assembler = NameAssembler(fields, abbreviate_species=True)
+        name_assembler = NameAssembler(
+            fields, abbreviate_species=True, preserve_special=options.preserve_special
+        )
         # makes seqid unique within 10 characters
         unicifier = Unicifier(10)
 
@@ -123,5 +134,9 @@ class PhylipFile:
 
         # write the records
         for record in records:
-            print(unicifier.unique(name_assembler.name(record)),
-                  aligner(record['sequence']), sep=" ", file=file)
+            print(
+                unicifier.unique(name_assembler.name(record)),
+                aligner(record["sequence"]),
+                sep=" ",
+                file=file,
+            )

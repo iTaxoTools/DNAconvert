@@ -1,4 +1,15 @@
-from typing import TextIO, Optional, Tuple, Callable, Iterator, List, Set, ClassVar, Generator, DefaultDict
+from typing import (
+    TextIO,
+    Optional,
+    Tuple,
+    Callable,
+    Iterator,
+    List,
+    Set,
+    ClassVar,
+    Generator,
+    DefaultDict,
+)
 from .record import *
 from .utils import *
 from collections import defaultdict
@@ -12,7 +23,8 @@ class Tokenizer:
 
     Emits the stream of words and punctuation
     """
-    punctuation: ClassVar[Set[str]] = set('=;')
+
+    punctuation: ClassVar[Set[str]] = set("=;")
 
     def __init__(self, file: TextIO):
         """
@@ -20,7 +32,7 @@ class Tokenizer:
         """
         # check that the file is in NEXUS format
         magic_word = file.read(6)
-        if magic_word != '#NEXUS':
+        if magic_word != "#NEXUS":
             raise ValueError("The input file is not a nexus file")
         # contains the underlying file
         self.file = file
@@ -75,10 +87,10 @@ class Tokenizer:
             if c is None:
                 # EOF is reached, should not happen in a well-formed file
                 raise ValueError("Nexus: EOF inside a comment")
-            elif c == '[':
+            elif c == "[":
                 # comment inside a comment
                 self.skip_comment
-            elif c == ']':
+            elif c == "]":
                 # end of the comment
                 break
 
@@ -92,11 +104,11 @@ class Tokenizer:
             if c is None:
                 # EOF is reached, should not happen in a well-formed file
                 raise ValueError("Nexus: EOF inside a quoted value")
-            elif c == '\'':
+            elif c == "'":
                 # possible end of the quoted value
-                if self.peek_char == '\'':
+                if self.peek_char == "'":
                     # '' is ', and not the end
-                    s += ['\'']
+                    s += ["'"]
                 else:
                     # the end of the line
                     return s
@@ -104,8 +116,8 @@ class Tokenizer:
                 # update the line
                 s += [c]
 
-    def __iter__(self) -> 'Tokenizer':
-        """ Tokenizer is an Iterator"""
+    def __iter__(self) -> "Tokenizer":
+        """Tokenizer is an Iterator"""
         return self
 
     def __next__(self) -> str:
@@ -125,10 +137,10 @@ class Tokenizer:
                 token = self.replace_token([c])
                 if token:
                     return token
-            elif c == '[':
+            elif c == "[":
                 # a comment => skip it
                 self.skip_comment()
-            elif c == '\'':
+            elif c == "'":
                 # a quoted value => read it and save into the token
                 token = self.replace_token(self.read_quoted())
                 if token:
@@ -163,7 +175,7 @@ class NexusCommands:
         """
         self.tokenizer = Tokenizer(file)
 
-    def __iter__(self) -> 'NexusCommands':
+    def __iter__(self) -> "NexusCommands":
         """
         NexusCommands is an Iterator
         """
@@ -181,10 +193,11 @@ class NexusCommands:
                 except StopIteration:
                     # EOF is reached; should not happen in a well-formed file
                     raise ValueError("Nexus: EOF inside a command")
-                if arg == ';':
+                if arg == ";":
                     break
                 else:
                     yield arg
+
         return command, arguments()
 
     @staticmethod
@@ -214,22 +227,24 @@ class NexusReader:
         # holds the length of sequence for the current block
         self.nchar = None
 
-    def execute(self, command: str, args: Iterator[str]) -> Optional[Iterator[Tuple[str, str]]]:
+    def execute(
+        self, command: str, args: Iterator[str]
+    ) -> Optional[Iterator[Tuple[str, str]]]:
         """
         Executes a NEXUS command and updates the internal state
 
         Returns an iterator over sequences in a matrix, if the command is 'matrix'
         """
         # for each command execute the corresponding method
-        if command == 'format':
+        if command == "format":
             self.configure_format(args)
             return None
-        elif command == 'dimensions':
+        elif command == "dimensions":
             self.read_dimensions(args)
-        elif command == 'end' or command == 'endblock':
+        elif command == "end" or command == "endblock":
             self.block_reset()
             return None
-        elif command == 'matrix':
+        elif command == "matrix":
             return self.sequences(args)
         else:
             return None
@@ -240,18 +255,20 @@ class NexusReader:
         """
         # If the 'datatype' is DNA, RNA, Nucleotide or Protein, prepare for reading
         for arg in args:
-            if arg.casefold() == 'datatype':
-                if next(args) != '=':
+            if arg.casefold() == "datatype":
+                if next(args) != "=":
                     continue
-                if re.search(r'DNA|RNA|Nucleotide|Protein', next(args), flags=re.IGNORECASE):
+                if re.search(
+                    r"DNA|RNA|Nucleotide|Protein", next(args), flags=re.IGNORECASE
+                ):
                     self.read_matrix = True
-            elif arg.casefold() == 'interleave':
+            elif arg.casefold() == "interleave":
                 self.interleave = True
 
     def read_dimensions(self, args: Iterator[str]) -> None:
         for arg in args:
-            if arg.casefold() == 'nchar':
-                if next(args) != '=':
+            if arg.casefold() == "nchar":
+                if next(args) != "=":
                     continue
                 try:
                     self.nchar = int(next(args))
@@ -278,17 +295,21 @@ class NexusReader:
             except StopIteration:
                 # expects the value to come in pairs (name, sequence)
                 raise ValueError(
-                    f"In the Nexus file: {arg} has no corresponding sequence")
+                    f"In the Nexus file: {arg} has no corresponding sequence"
+                )
         return iter(matrix.items())
 
-    def sequences_noninterleaved(self, args: Iterator[str]) -> Iterator[Tuple[str, str]]:
+    def sequences_noninterleaved(
+        self, args: Iterator[str]
+    ) -> Iterator[Tuple[str, str]]:
         if not self.nchar:
             raise ValueError(
-                "Cannot parse non-interleaved NEXUS file without an 'nchar' value")
+                "Cannot parse non-interleaved NEXUS file without an 'nchar' value"
+            )
         for arg in args:
             seqid = arg
             sequence = ""
-            while (len(sequence) < self.nchar):
+            while len(sequence) < self.nchar:
                 sequence += next(args)
             yield (seqid, sequence)
 
@@ -297,7 +318,7 @@ def seqid_max_reducer(acc: int, record: Record) -> int:
     """
     A reducer to determine the longest sequence name
     """
-    l = len(record['seqid'])
+    l = len(record["seqid"])
     return max(acc, l)
 
 
@@ -305,7 +326,9 @@ class NexusFile:
     """class for the NEXUS file"""
 
     # the text which is always in the beginning of the NEXUS file
-    nexus_preamble: ClassVar[str] = """\
+    nexus_preamble: ClassVar[
+        str
+    ] = """\
 #NEXUS
 
 begin data;
@@ -317,7 +340,7 @@ begin data;
     def read(file: TextIO) -> Tuple[List[str], Callable[[], Iterator[Record]]]:
         """the NEXUS reader method"""
         # NEXUS always have the same fields
-        fields = ['seqid', 'sequence']
+        fields = ["seqid", "sequence"]
 
         def record_generator() -> Iterator[Record]:
             # create the virtual machine
@@ -329,15 +352,20 @@ begin data;
                     # capture the records
                     for seqid, sequence in records:
                         yield Record(seqid=seqid, sequence=sequence)
+
         return fields, record_generator
 
+    write_takes_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options: bool) -> Generator:
         """the NEXUS writer method"""
         # aggregate minimum sequence length, maximum sequence length and the maximum seqid length
         aggregator = PhylipAggregator((0, seqid_max_reducer))
         # assembles the seqid
-        name_assembler = NameAssembler(fields)
+        name_assembler = NameAssembler(
+            fields, preserve_special=options.preserve_special
+        )
         # makes the seqid unique within 100 characters
         unicifier = Unicifier(100)
 
@@ -349,7 +377,7 @@ begin data;
             except GeneratorExit:
                 break
             # the seqid needs to be generated before using the aggregator
-            record['seqid'] = unicifier.unique(name_assembler.name(record))
+            record["seqid"] = unicifier.unique(name_assembler.name(record))
             aggregator.send(record)
             records.append(record)
 
@@ -363,19 +391,21 @@ begin data;
         print(NexusFile.nexus_preamble, file=file)
 
         # print the dimensions command
-        print(
-            f"dimensions Nchar={max_length} Ntax={len(records)};", file=file)
+        print(f"dimensions Nchar={max_length} Ntax={len(records)};", file=file)
 
         # print the format command
         print(NexusFile.nexus_format_line, file=file)
 
-        file.write('\n')
+        file.write("\n")
 
         # print the matrix command
         print("matrix", file=file)
         for record in records:
-            print(record['seqid'].ljust(seqid_max_length), aligner(
-                record['sequence']), file=file)
+            print(
+                record["seqid"].ljust(seqid_max_length),
+                aligner(record["sequence"]),
+                file=file,
+            )
 
         # finish the block
         print(";\n", file=file)
@@ -389,12 +419,13 @@ class NexusFileSimple(NexusFile):
         """NEXUS reader method using parser from python-nexus"""
         # NEXUS always have the same fields
         raise ValueError(
-            "python-nexus parser is temporarily disabled. Use 'internal' parser instead")
-        fields = ['seqid', 'sequence']
+            "python-nexus parser is temporarily disabled. Use 'internal' parser instead"
+        )
+        fields = ["seqid", "sequence"]
 
         def record_generator() -> Iterator[Record]:
             nexus_file = python_nexus.NexusReader.from_file(file.name)
-            if 'data' in nexus_file.blocks:
+            if "data" in nexus_file.blocks:
                 for seqid, sequence in nexus_file.data.matrix.items():
                     yield Record(seqid=seqid, sequence="".join(sequence))
 
