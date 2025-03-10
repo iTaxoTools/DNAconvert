@@ -39,11 +39,15 @@ def split_file(file: TextIO) -> Iterator[List[str]]:
 class Fastafile:
     """Class for standard FASTA files"""
 
+    write_takes_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options: bool) -> Generator:
         """FASTA writer method"""
         # the standard NameAssembler
-        name_assembler = NameAssembler(fields)
+        name_assembler = NameAssembler(
+            fields, preserve_special=options.preserve_special
+        )
 
         # the writing loop
         while True:
@@ -78,11 +82,15 @@ class Fastafile:
 class FastafileNoGaps:
     """Class for standard FASTA files without gaps"""
 
+    write_takes_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options: bool) -> Generator:
         """FASTA no gaps writer method"""
         # the standard NameAssembler
-        name_assembler = NameAssembler(fields)
+        name_assembler = NameAssembler(
+            fields, preserve_special=options.preserve_special
+        )
 
         # the writing loop
         while True:
@@ -314,7 +322,8 @@ class NameAssemblerGB(NameAssembler):
     It gives the higher priority to copying the seqid. Otherwise it is assembled from the organism and specimen_voucher field
     """
 
-    def __init__(self, fields: List[str]):
+    def __init__(self, fields: List[str], preserve_special: bool):
+        self.preserve_special = preserve_special
         if "seqid" in fields:
             self.name = self._simple_name
         else:
@@ -460,8 +469,10 @@ class GenbankFastaFile:
 
         return GenbankFastaFile.genbankfields, record_generator
 
+    write_takes_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options: bool) -> Generator:
         """Genbank FASTA writer method"""
         # discard the invalid fields
         fields = [
@@ -490,7 +501,9 @@ class GenbankFastaFile:
         no_dashes = True
 
         # creates seqid for Genbank FASTA
-        name_assembler = NameAssemblerGB(fields)
+        name_assembler = NameAssemblerGB(
+            fields, preserve_special=options.preserve_special
+        )
         # makes the seqid unique within 25 characters
         unicifier = Unicifier(25)
 
@@ -536,12 +549,16 @@ class GenbankFastaFile:
 class MolDFastaFile:
     """class for MolD FASTA format"""
 
+    write_takes_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options) -> Generator:
         """MolD writer method"""
 
         # assemble the name from fields if 'specimen_voucher' or 'isolate' is missing
-        name_assembler = NameAssembler(fields, abbreviate_species=True)
+        name_assembler = NameAssembler(
+            fields, abbreviate_species=True, preserve_special=options.preserve_special
+        )
         unicifier = Unicifier()
 
         # the writing loop
@@ -566,10 +583,15 @@ class MolDFastaFile:
                         else record["isolate"]
                     )
                 )
-                name = sanitize(name)
+                if options.preserve_special:
+                    name = sanitize(name)
             else:
                 try:
-                    name = sanitize(record["seqid"])
+                    name = (
+                        sanitize(record["seqid"])
+                        if options.preserve_special
+                        else record["seqid"]
+                    )
                 except KeyError:
                     name = unicifier.unique(name_assembler.name(record))
                     warnings.warn(
@@ -580,7 +602,8 @@ class MolDFastaFile:
                 if "species" in fields
                 else record["organism"] if "organism" in fields else ""
             )
-            species = sanitize(species)
+            if options.preserve_special:
+                species = sanitize(species)
             if not species:
                 raise ValueError(
                     'Conversion to MolD FASTA requires either a "species" or an "organism" field. Neither was found'
@@ -609,11 +632,15 @@ class MolDFastaFile:
 class AliFile:
     """Class for Ali files"""
 
+    write_takes_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options: bool) -> Generator:
         """Ali writer method"""
         # the standard NameAssembler
-        name_assembler = NameAssembler(fields)
+        name_assembler = NameAssembler(
+            fields, preserve_special=options.preserve_special
+        )
 
         # Ali needs two empty lines with a hashtag
         print("#", file=file)

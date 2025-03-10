@@ -11,11 +11,15 @@ from .utils import NameAssembler
 class NeXMLFile:
     """Class for NeXML files"""
 
+    write_takes_kwargs = True
+
     @staticmethod
-    def write(file: TextIO, fields: List[str]) -> Generator:
+    def write(file: TextIO, fields: List[str], **options: bool) -> Generator:
         """NeXML writer method"""
 
-        name_assembler = NameAssembler(fields)
+        name_assembler = NameAssembler(
+            fields, preserve_special=options.preserve_special
+        )
         sequence_dict: Dict[str, str] = {}
 
         while True:

@@ -83,10 +83,16 @@ def convertDNA(
         return
 
     # initialize reading the file
-    fields, records = informat.read(infile)
+    if hasattr(informat, "read_takes_kwargs"):
+        fields, records = informat.read(infile, **options)
+    else:
+        fields, records = informat.read(infile)
 
     # start the writer
-    writer = outformat.write(outfile, fields)
+    if hasattr(outformat, "write_takes_kwargs"):
+        writer = outformat.write(outfile, fields, **options)
+    else:
+        writer = outformat.write(outfile, fields)
     next(writer)
 
     # keep track of the number of skipped records
@@ -326,6 +332,7 @@ def launch_gui() -> None:
             allow_empty_sequences=allow_empty_sequences.get(),
             automatic_renaming=automatic_renaming.get(),
             preserve_spaces=preserve_spaces.get(),
+            preserve_special=preserve_special.get(),
         )
         output_box.text.delete("1.0", "end")
         output_box.text.insert("1.0", output_data.getvalue())
@@ -353,6 +360,7 @@ def launch_gui() -> None:
                         allow_empty_sequences=allow_empty_sequences.get(),
                         automatic_renaming=automatic_renaming.get(),
                         preserve_spaces=preserve_spaces.get(),
+                        preserve_special=preserve_special.get(),
                     )
                 # display the warnings generated during the conversion
                 for w in warns:
@@ -405,6 +413,14 @@ def launch_gui() -> None:
         middle_frame, text="Preserve spaces in sequences", variable=preserve_spaces
     )
 
+    # checkbox to preserve special characters in sequence names (i.e. not "sanitize")
+    preserve_special = tk.BooleanVar()
+    preserve_special_chk = ttk.Checkbutton(
+        middle_frame,
+        text="Preserve special characters in sequence names",
+        variable=preserve_special,
+    )
+
     # place input widget group
     infile_lbl.grid(column=0, row=0, sticky=tk.W)
     infile_entry.grid(column=0, row=1, sticky=tk.W)
@@ -428,6 +444,7 @@ def launch_gui() -> None:
     automatic_renaming_chk.grid(column=0, row=0, sticky="n")
     dar_lbl.grid(column=1, row=0)
     preserve_spaces_chk.grid(column=0, row=4, sticky="w")
+    preserve_special_chk.grid(column=0, row=5, sticky="w")
 
     # place a separator above boxes
     ttk.Separator(root).grid(column=0, row=3, sticky="nsew", ipady=10)
