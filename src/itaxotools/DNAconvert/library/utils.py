@@ -89,7 +89,10 @@ class NameAssembler:
 
     def _simple_name(self, record: Record) -> str:
         """used when there no information fields"""
-        return sanitize(record["seqid"])
+        if self.preserve_special:
+            return record["seqid"]
+        else:
+            return sanitize(record["seqid"])
 
     def _complex_name(self, record: Record) -> str:
         """used when information fields (all except 'seqid' and 'sequence') are present
@@ -99,12 +102,22 @@ class NameAssembler:
         parts = [record[field] for field in self._fields if record[field] != ""]
         if self.abbreviate_species and self._fields[0] == "species":
             parts[0] = NameAssembler._species_abbr(parts[0])
-        return "_".join(map(sanitize, parts))
+        if self.preserve_special:
+            return "_".join(parts)
+        else:
+            return "_".join(map(sanitize, parts))
 
-    def __init__(self, fields: List[str], *, abbreviate_species: bool = False):
+    def __init__(
+        self,
+        fields: List[str],
+        *,
+        abbreviate_species: bool = False,
+        preserve_special: bool,
+    ):
         # copy the fields to not mutate the original
         fields = fields.copy()
         self.abbreviate_species = abbreviate_species
+        self.preserve_special = preserve_special
         try:
             # seqid should not be used for the name generation
             fields.remove("seqid")
