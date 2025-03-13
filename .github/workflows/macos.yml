@@ -13,7 +13,7 @@ jobs:
 
   build-bundle:
     name: Build macOS bundle
-    runs-on: macos-12
+    runs-on: macos-13
 
     steps:
       - name: Checkout
@@ -37,7 +37,7 @@ jobs:
       - name: Make bundle
         uses: iTaxoTools/TaxIGui/.github/actions/make-bundle@main
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_BUNDLE }}
           path: dist/*.zip
