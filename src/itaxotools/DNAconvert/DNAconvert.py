@@ -501,6 +501,7 @@ def main() -> None:
                     allow_empty_sequences=args.allow_empty_sequences,
                     automatic_renaming=args.automatic_renaming,
                     preserve_spaces=args.preserve_spaces,
+                    preserve_special=False,
                 )
 
                 # display the warnings generated during the conversion

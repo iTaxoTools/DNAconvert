@@ -40,6 +40,7 @@ def test_into_tab(name: str, format_name: str) -> None:
             allow_empty_sequences=False,
             automatic_renaming=False,
             preserve_spaces=False,
+            preserve_special=False,
         )
         assert output.getvalue().splitlines() == out_testfile.read_text().splitlines()
 
@@ -62,6 +63,7 @@ def test_from_tab(name: str, format_name: str) -> None:
             allow_empty_sequences=False,
             automatic_renaming=False,
             preserve_spaces=False,
+            preserve_special=False,
         )
         if format_name == "ali_fasta":
             # todo: find a good way to compare `output` and `testfile` for Ali format
